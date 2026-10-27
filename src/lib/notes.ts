@@ -1,5 +1,6 @@
 import { POINTS, VOCAB } from "../data";
 import type { VocabWordRw } from "../data";
+import { addDays } from "./date";
 import type { ByLang, GrammarPoint, Lang, Note } from "../types";
 
 export const NOTE_TAGS: { common: [string, string][]; en: [string, string][]; ja: [string, string][] } = {
@@ -75,6 +76,54 @@ export function weakStats(notes: Note[], lang: Lang): [string, number][] {
     .filter((n) => n.rv)
     .forEach((n) => (n.tags || []).forEach((t) => (c[t] = (c[t] || 0) + 1)));
   return Object.entries(c).sort((a, b) => b[1] - a[1]);
+}
+
+/** todayStr이 속한 주의 월요일 날짜(YYYY-MM-DD)를 구한다. */
+export function mondayOf(todayStr: string): string {
+  const [y, m, d] = todayStr.split("-").map(Number);
+  const dow = new Date(y, m - 1, d).getDay(); // 0=일 .. 6=토
+  const back = dow === 0 ? 6 : dow - 1;
+  return addDays(todayStr, -back);
+}
+
+/** 이번 주(월~일)에 쓴(ko를 적어둔) 문장·단어 노트 개수. */
+export function weekNoteCount(notes: Note[], lang: Lang, todayStr: string): number {
+  const mon = mondayOf(todayStr);
+  const sun = addDays(mon, 6);
+  return notesOf(notes, lang).filter((n) => n.made >= mon && n.made <= sun).length;
+}
+
+function weakStatsInRange(notes: Note[], lang: Lang, from: string, to: string): Record<string, number> {
+  const c: Record<string, number> = {};
+  notesOf(notes, lang)
+    .filter((n) => n.rv && n.rv >= from && n.rv <= to)
+    .forEach((n) => (n.tags || []).forEach((t) => (c[t] = (c[t] || 0) + 1)));
+  return c;
+}
+
+export interface WeakTrendItem {
+  tag: string;
+  thisWeek: number;
+  lastWeek: number;
+  delta: number;
+}
+
+/**
+ * 이번 주에 검토 완료한 노트의 약점 태그 빈도를, 지난주와 비교한다.
+ * 노트는 "검토할 때마다 쌓이는 기록"이 아니라 최신 자기평가만 남기므로, 완벽한 이력은 아니고
+ * "이번 주에 마지막으로 검토한 노트들의 약점"과 "지난주에 마지막으로 검토한 노트들의 약점"을 비교하는 근사치다.
+ */
+export function weakTrend(notes: Note[], lang: Lang, todayStr: string): WeakTrendItem[] {
+  const mon = mondayOf(todayStr);
+  const sun = addDays(mon, 6);
+  const lastMon = addDays(mon, -7);
+  const lastSun = addDays(mon, -1);
+  const thisW = weakStatsInRange(notes, lang, mon, sun);
+  const lastW = weakStatsInRange(notes, lang, lastMon, lastSun);
+  const tags = new Set([...Object.keys(thisW), ...Object.keys(lastW)]);
+  return [...tags]
+    .map((tag) => ({ tag, thisWeek: thisW[tag] || 0, lastWeek: lastW[tag] || 0, delta: (thisW[tag] || 0) - (lastW[tag] || 0) }))
+    .sort((a, b) => b.thisWeek - a.thisWeek || b.delta - a.delta);
 }
 
 const hintTokens = (m: string) =>

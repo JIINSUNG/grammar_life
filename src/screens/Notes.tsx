@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { today } from "../lib/date";
-import { nDue, nStatus, nid, notesOf, tagLabel, weakStats, TAG_Q, gMatch } from "../lib/notes";
+import { nDue, nStatus, nid, notesOf, tagLabel, weakStats, weakTrend, weekNoteCount, TAG_Q, gMatch } from "../lib/notes";
 import type { AppState, Lang, Note } from "../types";
 
 export function NoteTab({
@@ -29,6 +29,8 @@ export function NoteTab({
   const due = nDue(st.notes, lang, t);
   const weak = weakStats(st.notes, lang);
   const rv = ns.filter((n) => n.rv);
+  const weekCount = weekNoteCount(st.notes, lang, t);
+  const trend = weakTrend(st.notes, lang, t).slice(0, 5);
 
   const gain = (add: number) => up((p) => ({ ...p, xp: p.xp + add, days: { ...p.days, [t]: (p.days[t] || 0) + add } }));
 
@@ -93,6 +95,37 @@ export function NoteTab({
           <button type="button" className="btn pri wide" onClick={startReview}>
             복습 시작
           </button>
+        </section>
+      )}
+      {(weekCount > 0 || trend.length > 0) && (
+        <section className="card">
+          <div className="rh">
+            <span className="eyebrow">이번 주 기록</span>
+          </div>
+          <div className="stats">
+            <div className="card st">
+              <span className="eyebrow">이번 주에 쓴 문장</span>
+              <b className="num">{weekCount}개</b>
+            </div>
+          </div>
+          {trend.length > 0 && (
+            <>
+              <span className="sub">자주 놓친 점 변화 · 지난주 대비</span>
+              {trend.map((x) => (
+                <div className="wk" key={x.tag}>
+                  <span className="wkl">{tagLabel(lang, x.tag)}</span>
+                  <div className="bar">
+                    <div style={{ width: Math.min(100, x.thisWeek * 20) + "%" }} />
+                  </div>
+                  <small className="num sub">{x.thisWeek}</small>
+                  <span className={"tag " + (x.delta > 0 ? "bad" : x.delta < 0 ? "rev" : "todo")}>
+                    {x.delta > 0 ? `▲ ${x.delta}` : x.delta < 0 ? `▼ ${Math.abs(x.delta)}` : "–"}
+                  </span>
+                </div>
+              ))}
+              <p className="hint">지난주보다 늘었으면 ▲, 줄었으면 ▼로 표시돼요. 검토를 마친 노트의 자기평가 체크를 기준으로 계산해요.</p>
+            </>
+          )}
         </section>
       )}
       {rv.length > 0 && (
