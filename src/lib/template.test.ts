@@ -31,7 +31,8 @@ describe("josa", () => {
 /**
  * legacy/tools/check-templates.js 포팅: 모든 설문 조합 × 모든 템플릿에서
  * {slot} 누락(채워지지 않은 중괄호), 오답 3개 서로 다름·정답과도 다름을 확인한다.
- * 레거시 기준선: built 909000 bad 0.
+ * 설문 선택지(JOBS/HOBBIES 등)가 늘어나면 조합 수도 같이 늘어나므로, 기대 개수는 고정값이 아니라
+ * 현재 데이터 기준으로 계산한다 — 중요한 건 bad가 항상 0이라는 것.
  */
 describe("check-templates (설문 조합 전수검사)", () => {
   it("모든 설문 조합에서 슬롯 누락·오답 중복이 없다", () => {
@@ -58,7 +59,9 @@ describe("check-templates (설문 조합 전수검사)", () => {
         });
       }
     }
+    const templateCount = (["en", "ja"] as const).reduce((sum, lang) => sum + POINTS[lang].reduce((s, p) => s + p.tpl.length, 0), 0);
+    const expected = templateCount * JOBS.length * RIDES.length * HOBBIES.length * PLANS.length;
     expect(bad.slice(0, 10)).toEqual([]);
-    expect(built).toBe(909000);
+    expect(built).toBe(expected);
   });
 });

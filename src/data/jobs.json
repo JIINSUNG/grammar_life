@@ -113,5 +113,51 @@
       "cust": "손님",
       "prod": "재킷"
     }
+  },
+  {
+    "id": "office",
+    "ko": "회사",
+    "en": {
+      "place": "an office",
+      "wp": "office",
+      "cust": "clients",
+      "prod": "reports",
+      "prodS": "report"
+    },
+    "ja": {
+      "place": "会社",
+      "wp": "会社",
+      "cust": "クライアント",
+      "prod": "資料"
+    },
+    "k": {
+      "place": "회사",
+      "wp": "회사",
+      "cust": "클라이언트",
+      "prod": "자료"
+    }
+  },
+  {
+    "id": "dev",
+    "ko": "프로그래머",
+    "en": {
+      "place": "a software company",
+      "wp": "company",
+      "cust": "clients",
+      "prod": "apps",
+      "prodS": "app"
+    },
+    "ja": {
+      "place": "IT企業",
+      "wp": "会社",
+      "cust": "クライアント",
+      "prod": "アプリ"
+    },
+    "k": {
+      "place": "IT 회사",
+      "wp": "회사",
+      "cust": "클라이언트",
+      "prod": "앱"
+    }
   }
 ]

@@ -5,6 +5,8 @@ const JOBS=[
   {id:"cafe",ko:"카페",en:{place:"a cafe",wp:"cafe",cust:"customers",prod:"lattes",prodS:"latte"},ja:{place:"カフェ",wp:"カフェ",cust:"お客様",prod:"ラテ"},k:{place:"카페",wp:"카페",cust:"손님",prod:"라테"}},
   {id:"conv",ko:"편의점",en:{place:"a convenience store",wp:"store",cust:"customers",prod:"snacks",prodS:"snack"},ja:{place:"コンビニ",wp:"店",cust:"お客様",prod:"お菓子"},k:{place:"편의점",wp:"편의점",cust:"손님",prod:"과자"}},
   {id:"cloth",ko:"옷 가게",en:{place:"a clothing store",wp:"store",cust:"customers",prod:"jackets",prodS:"jacket"},ja:{place:"アパレルショップ",wp:"店",cust:"お客様",prod:"ジャケット"},k:{place:"옷 가게",wp:"가게",cust:"손님",prod:"재킷"}},
+  {id:"office",ko:"회사",en:{place:"an office",wp:"office",cust:"clients",prod:"reports",prodS:"report"},ja:{place:"会社",wp:"会社",cust:"クライアント",prod:"資料"},k:{place:"회사",wp:"회사",cust:"클라이언트",prod:"자료"}},
+  {id:"dev",ko:"프로그래머",en:{place:"a software company",wp:"company",cust:"clients",prod:"apps",prodS:"app"},ja:{place:"IT企業",wp:"会社",cust:"クライアント",prod:"アプリ"},k:{place:"IT 회사",wp:"회사",cust:"클라이언트",prod:"앱"}},
 ];
 const RIDES=[
   {id:"bike",ko:"자전거",en:"by bike",ja:"自転車で",k:"자전거로"},
@@ -23,6 +25,10 @@ const HOBBIES=[
   {id:"drive",ko:"드라이브",en:"driving",enB:"drive",ja:"ドライブ"},
   {id:"movie",ko:"영화 감상",en:"watching movies",enB:"watch movies",ja:"映画鑑賞"},
   {id:"shop",ko:"쇼핑",en:"shopping",enB:"shop",ja:"買い物"},
+  {id:"guitar",ko:"기타",en:"playing guitar",enB:"play guitar",ja:"ギター"},
+  {id:"piano",ko:"피아노",en:"playing piano",enB:"play piano",ja:"ピアノ"},
+  {id:"anime",ko:"애니",en:"watching anime",enB:"watch anime",ja:"アニメ鑑賞"},
+  {id:"ott",ko:"OTT 감상",en:"watching OTT shows",enB:"watch OTT shows",ja:"配信視聴"},
 ];
 const PLANS=[
   {id:"jptrip",ko:"일본 여행",en:"the trip to Japan",ja:"日本旅行"},

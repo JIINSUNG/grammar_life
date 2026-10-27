@@ -61,5 +61,33 @@
     "en": "shopping",
     "enB": "shop",
     "ja": "買い物"
+  },
+  {
+    "id": "guitar",
+    "ko": "기타",
+    "en": "playing guitar",
+    "enB": "play guitar",
+    "ja": "ギター"
+  },
+  {
+    "id": "piano",
+    "ko": "피아노",
+    "en": "playing piano",
+    "enB": "play piano",
+    "ja": "ピアノ"
+  },
+  {
+    "id": "anime",
+    "ko": "애니",
+    "en": "watching anime",
+    "enB": "watch anime",
+    "ja": "アニメ鑑賞"
+  },
+  {
+    "id": "ott",
+    "ko": "OTT 감상",
+    "en": "watching OTT shows",
+    "enB": "watch OTT shows",
+    "ja": "配信視聴"
   }
 ]
