@@ -1,14 +1,6 @@
-import jobsData from "../data/jobs.json";
-import ridesData from "../data/rides.json";
-import hobbiesData from "../data/hobbies.json";
-import plansData from "../data/plans.json";
+import { HOBBIES, JOBS, PLANS, RIDES } from "../data";
 import { pick, shuffle } from "./util";
-import type { GrammarPoint, HobbyOption, JobOption, Lang, PlanOption, Profile, RideOption } from "../types";
-
-const JOBS = jobsData as JobOption[];
-const RIDES = ridesData as RideOption[];
-const HOBBIES = hobbiesData as HobbyOption[];
-const PLANS = plansData as PlanOption[];
+import type { GrammarPoint, Lang, Profile } from "../types";
 
 type SlotLang = "ko" | Lang;
 

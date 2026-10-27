@@ -1,15 +1,8 @@
-import pointsEnData from "../data/points.en.json";
-import pointsJaData from "../data/points.ja.json";
-import vocabEnData from "../data/vocab.en.json";
-import vocabJaData from "../data/vocab.ja.json";
-import goalsData from "../data/goals.json";
+import { GOALS, POINTS, VOCAB } from "../data";
 import { addDays } from "./date";
 import { shuffle } from "./util";
-import type { ByLang, GoalOption, GrammarPoint, Lang, ProgressEntry, VocabWord } from "../types";
-
-const POINTS: ByLang<GrammarPoint[]> = { en: pointsEnData as GrammarPoint[], ja: pointsJaData as GrammarPoint[] };
-const VOCAB: ByLang<VocabWord[]> = { en: vocabEnData as VocabWord[], ja: vocabJaData as VocabWord[] };
-const GOALS = goalsData as GoalOption[];
+import type { ByLang, GrammarPoint, Lang, ProgressEntry } from "../types";
+import type { VocabWordRw } from "../data";
 
 export { POINTS, VOCAB };
 
@@ -18,6 +11,13 @@ export const INTERVAL = [0, 1, 2, 4, 7, 15];
 
 export const JLV = ["입문", "N5", "N4", "N3", "N2"];
 export const LANG_LABEL: Record<Lang, string> = { en: "English", ja: "日本語" };
+
+/** 문법·단어 퀴즈에서 묻는 확신도. 노트 자기평가의 CONF_N(자신 있어요/반반/자신 없어요)과는 다른 척도. */
+export const CONF: [string, string][] = [
+  ["sure", "확실해요"],
+  ["unsure", "애매해요"],
+  ["guess", "찍었어요"],
+];
 
 /* ---------- 문법 복습 상자 ---------- */
 
@@ -83,14 +83,14 @@ export function vTrack(track: string | undefined, jstart: string | undefined, la
   return "N5";
 }
 
-export function vDue(vprog: Record<string, ProgressEntry>, lang: Lang, todayStr: string): VocabWord[] {
+export function vDue(vprog: Record<string, ProgressEntry>, lang: Lang, todayStr: string): VocabWordRw[] {
   return VOCAB[lang].filter((w) => {
     const g = vprog[w.id];
     return g && g.due <= todayStr;
   });
 }
 
-export function vNew(vprog: Record<string, ProgressEntry>, lang: Lang, track: string): VocabWord[] {
+export function vNew(vprog: Record<string, ProgressEntry>, lang: Lang, track: string): VocabWordRw[] {
   const fresh = VOCAB[lang].filter((w) => !vprog[w.id]);
   const order = [track, ...VTRACKS[lang].filter((x) => x !== track)];
   return order.flatMap((lv) => fresh.filter((w) => w.lv === lv)).slice(0, VNEW);
@@ -104,13 +104,13 @@ const meaningTokens = (m: string) =>
     .filter(Boolean);
 
 /** 뜻(또는 단어)이 겹치는 단어는 같은 문제의 보기로 나오지 않도록 걸러가며 오답 3개를 고른다. */
-export function vOpts(w: VocabWord, lang: Lang, rev: boolean): { opts: VocabWord[]; a: number } {
+export function vOpts(w: VocabWordRw, lang: Lang, rev: boolean): { opts: VocabWordRw[]; a: number } {
   const all = VOCAB[lang];
-  const key = (x: VocabWord) => (rev ? x.w : x.m);
+  const key = (x: VocabWordRw) => (rev ? x.w : x.m);
   const pool = [...shuffle(all.filter((x) => x.c === w.c && x.lv === w.lv)), ...shuffle(all.filter((x) => x.c === w.c && x.lv !== w.lv)), ...shuffle(all)];
   const used = new Set(meaningTokens(w.m));
   const seen = new Set([key(w)]);
-  const d: VocabWord[] = [];
+  const d: VocabWordRw[] = [];
   for (const x of pool) {
     if (d.length >= 3) break;
     const tk = meaningTokens(x.m);
@@ -125,15 +125,15 @@ export function vOpts(w: VocabWord, lang: Lang, rev: boolean): { opts: VocabWord
 
 export interface VocabStep {
   type: "vq";
-  w: VocabWord;
+  w: VocabWordRw;
   /** 상자 2단계부터는 뜻을 보고 단어를 고르는 거꾸로 문제 */
   rev: boolean;
   retry: number;
-  opts: VocabWord[];
+  opts: VocabWordRw[];
   a: number;
 }
 
-export function vStep(w: VocabWord, lang: Lang, box: number, retry: number): VocabStep {
+export function vStep(w: VocabWordRw, lang: Lang, box: number, retry: number): VocabStep {
   const rev = box >= 2;
   return { type: "vq", w, rev, retry, ...vOpts(w, lang, rev) };
 }

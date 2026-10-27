@@ -30,6 +30,24 @@ npm run gen-ruby
 `npm run build` 전에 자동으로 실행된다(`prebuild`). kuromoji는 devDependency라 빌드 결과물엔 안 들어간다.
 일본어 문법·단어를 추가했으면 이 스크립트를 다시 돌려 `ruby.json`을 갱신해야 한다.
 
+## 화면 구조
+
+- `src/components/` — Sent, Ruby, Speak, VWord, TabBar, Icon 같은 공용 조각
+- `src/screens/` — 탭 하나에 해당하는 화면 (Today, GrammarList, Vocab, Notes, ExamHome, Me, Survey)
+- `src/flows/` — 탭 바가 사라지고 전체화면으로 진행하는 흐름 (Session, VocabSession, NoteEditor, NoteReview, Exam)
+- `src/App.tsx` — 레거시 `App()`과 동일하게 profile/tab/run 상태를 들고 화면을 고른다
+
+일본어 콘텐츠(POINTS.ja, EXAM.ja, JOBS/RIDES/HOBBIES/PLANS의 ja 필드)는 `src/data/index.ts`에서 **앱이 뜰 때 한 번만**
+`ruby.json`으로 후리가나를 구워서 내보낸다(레거시가 모듈 로드 시점에 한 번 rubify해두던 것과 같은 타이밍 — 화면 쪽은 `src/data/*.json`을
+직접 import하지 않고 이 파일의 export만 쓴다).
+
+## 테스트
+
+```
+npm test          # Vitest (로직 단위 테스트)
+npm run e2e        # Playwright (설문 → 오늘 루틴 → 단어 루틴 → 노트 → 실전 → 백업 코드, 핵심 흐름 E2E)
+```
+
 ## 개발
 
 ```

@@ -1,16 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { josa, build } from "./template";
-import { POINTS } from "./srs";
-import jobsData from "../data/jobs.json";
-import ridesData from "../data/rides.json";
-import hobbiesData from "../data/hobbies.json";
-import plansData from "../data/plans.json";
-import type { JobOption, Profile, RideOption, HobbyOption, PlanOption } from "../types";
-
-const JOBS = jobsData as JobOption[];
-const RIDES = ridesData as RideOption[];
-const HOBBIES = hobbiesData as HobbyOption[];
-const PLANS = plansData as PlanOption[];
+import { HOBBIES, JOBS, PLANS, POINTS, RIDES } from "../data";
+import type { Profile } from "../types";
 
 describe("josa", () => {
   it("받침 있는 단어는 첫 번째 조사(은/이/을/과)", () => {

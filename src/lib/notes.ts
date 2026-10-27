@@ -1,11 +1,6 @@
-import pointsEnData from "../data/points.en.json";
-import pointsJaData from "../data/points.ja.json";
-import vocabEnData from "../data/vocab.en.json";
-import vocabJaData from "../data/vocab.ja.json";
-import type { ByLang, GrammarPoint, Lang, Note, VocabWord } from "../types";
-
-const POINTS: ByLang<GrammarPoint[]> = { en: pointsEnData as GrammarPoint[], ja: pointsJaData as GrammarPoint[] };
-const VOCAB: ByLang<VocabWord[]> = { en: vocabEnData as VocabWord[], ja: vocabJaData as VocabWord[] };
+import { POINTS, VOCAB } from "../data";
+import type { VocabWordRw } from "../data";
+import type { ByLang, GrammarPoint, Lang, Note } from "../types";
 
 export const NOTE_TAGS: { common: [string, string][]; en: [string, string][]; ja: [string, string][] } = {
   common: [
@@ -90,7 +85,7 @@ const hintTokens = (m: string) =>
     .filter((x) => x.length >= 2);
 
 /** 한국어 원문에 들어 있는 뜻으로 단어 힌트를 찾는다 (인사말·막연한 "표현" 분류는 제외). */
-export function vocabHints(ko: string, lang: Lang): VocabWord[] {
+export function vocabHints(ko: string, lang: Lang): VocabWordRw[] {
   if (!ko) return [];
   return VOCAB[lang].filter((w) => w.c !== "인사" && w.c !== "표현" && hintTokens(w.m).some((t) => ko.includes(t))).slice(0, 10);
 }

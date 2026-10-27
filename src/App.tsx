@@ -1,44 +1,132 @@
-import pointsEn from "./data/points.en.json";
-import pointsJa from "./data/points.ja.json";
-import examEn from "./data/exam.en.json";
-import examJa from "./data/exam.ja.json";
-import vocabEn from "./data/vocab.en.json";
-import vocabJa from "./data/vocab.ja.json";
-import jobs from "./data/jobs.json";
-import rides from "./data/rides.json";
-import hobbies from "./data/hobbies.json";
-import plans from "./data/plans.json";
-import goals from "./data/goals.json";
-import type { GrammarPoint, ExamQuestion, VocabWord, JobOption, RideOption, HobbyOption, PlanOption, GoalOption } from "./types";
+import { useEffect, useState } from "react";
+import { Survey } from "./screens/Survey";
+import { Today } from "./screens/Today";
+import { GrammarList } from "./screens/GrammarList";
+import { VocabTab } from "./screens/Vocab";
+import { NoteTab } from "./screens/Notes";
+import { ExamHome } from "./screens/ExamHome";
+import { Me } from "./screens/Me";
+import { Session, type SessionPlanItem } from "./flows/Session";
+import { VocabSession } from "./flows/VocabSession";
+import { NoteEditor } from "./flows/NoteEditor";
+import { NoteReview } from "./flows/NoteReview";
+import { Exam } from "./flows/Exam";
+import { TabBar } from "./components/TabBar";
+import { blankState, load, save } from "./lib/storage";
+import { today } from "./lib/date";
+import { dueList, nextNew } from "./lib/srs";
+import type { AppState, Profile } from "./types";
 
-// 1단계 임시 확인용 화면. 실제 화면은 4단계에서 만든다.
-const points = { en: pointsEn as GrammarPoint[], ja: pointsJa as GrammarPoint[] };
-const exam = { en: examEn as ExamQuestion[], ja: examJa as ExamQuestion[] };
-const vocab = { en: vocabEn as VocabWord[], ja: vocabJa as VocabWord[] };
-const survey = {
-  jobs: jobs as JobOption[],
-  rides: rides as RideOption[],
-  hobbies: hobbies as HobbyOption[],
-  plans: plans as PlanOption[],
-  goals: goals as GoalOption[],
-};
+type Run =
+  | { kind: "session"; key: number; plan: SessionPlanItem[] }
+  | { kind: "vocab"; key: number }
+  | { kind: "note"; key: number; id: string }
+  | { kind: "nreview"; key: number }
+  | { kind: "exam"; key: number }
+  | null;
 
-function App() {
+export default function App() {
+  const [st, setSt] = useState<AppState>(() => load() ?? blankState());
+  const up = (fn: (s: AppState) => AppState) =>
+    setSt((p) => {
+      const n = fn(p);
+      save(n);
+      return n;
+    });
+  const [gq, setGq] = useState("");
+  const [tab, setTab] = useState("today");
+  const [run, setRun] = useState<Run>(null);
+  const [editProf, setEditProf] = useState(false);
+  const lang = st.lang;
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [tab, run]);
+
+  if (!st.profile || editProf) {
+    return (
+      <Survey
+        init={st.profile}
+        onDone={(p: Profile) => {
+          up((s) => ({ ...s, profile: p }));
+          setEditProf(false);
+        }}
+        onCancel={st.profile ? () => setEditProf(false) : null}
+      />
+    );
+  }
+
+  if (run?.kind === "session") return <Session key={run.key} st={st} lang={lang} plan={run.plan} up={up} onExit={() => setRun(null)} />;
+  if (run?.kind === "vocab") return <VocabSession key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
+  if (run?.kind === "note") return <NoteEditor key={run.key} st={st} lang={lang} id={run.id} up={up} onClose={() => setRun(null)} />;
+  if (run?.kind === "nreview") return <NoteReview key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
+  if (run?.kind === "exam")
+    return (
+      <Exam
+        key={run.key}
+        st={st}
+        lang={lang}
+        up={up}
+        onExit={() => setRun(null)}
+        startReview={(ids) => setRun({ kind: "session", key: Date.now(), plan: ids.map((id) => ({ id, mode: "review" })) })}
+      />
+    );
+
+  const startRoutine = () => {
+    const due = dueList(st.prog[lang], lang, today()).slice(0, 4).map((p) => ({ id: p.id, mode: "review" as const }));
+    const nw = nextNew(st.prog[lang], lang, st.profile?.jstart);
+    const plan = [...(nw ? [{ id: nw.id, mode: "new" as const }] : []), ...due];
+    if (plan.length) setRun({ kind: "session", key: Date.now(), plan });
+  };
+  const openPoint = (id: string) => setRun({ kind: "session", key: Date.now(), plan: [{ id, mode: st.prog[lang][id] ? "study" : "new" }] });
+
   return (
-    <main style={{ fontFamily: "sans-serif", padding: 20, lineHeight: 1.8 }}>
-      <h1>내 생활 문법 — 1단계 데이터 확인</h1>
-      <ul>
-        <li>문법 포인트: 영어 {points.en.length}개 · 일본어 {points.ja.length}개</li>
-        <li>실전 문제: 영어 {exam.en.length}개 · 일본어 {exam.ja.length}개</li>
-        <li>단어: 영어 {vocab.en.length}개 · 일본어 {vocab.ja.length}개</li>
-        <li>
-          설문 선택지: 직업 {survey.jobs.length} · 출퇴근 {survey.rides.length} · 취미 {survey.hobbies.length} · 예정 {survey.plans.length} ·
-          목표 {survey.goals.length}
-        </li>
-      </ul>
-      <p>화면은 4단계에서 만듭니다. 지금은 JSON 데이터가 빌드에 정상적으로 들어오는지만 확인하는 중입니다.</p>
-    </main>
+    <>
+      <header className="top">
+        <div className="wrap topin">
+          <div className="brand">
+            내 생활 <b>문법</b>
+          </div>
+          <div className="langsw" role="group" aria-label="공부할 언어">
+            {(["en", "ja"] as const).map((l) => (
+              <button type="button" key={l} aria-pressed={lang === l} onClick={() => up((s) => ({ ...s, lang: l }))}>
+                {l === "en" ? "EN" : "日本語"}
+              </button>
+            ))}
+          </div>
+        </div>
+      </header>
+      <main className="wrap main">
+        {tab === "today" && (
+          <Today
+            st={st}
+            lang={lang}
+            start={startRoutine}
+            openPoint={openPoint}
+            goExam={() => setRun({ kind: "exam", key: Date.now() })}
+            goVocab={() => setRun({ kind: "vocab", key: Date.now() })}
+            goNote={() => setTab("note")}
+          />
+        )}
+        {tab === "grammar" && <GrammarList key={gq} initQ={gq} st={st} lang={lang} openPoint={openPoint} />}
+        {tab === "vocab" && <VocabTab st={st} lang={lang} up={up} start={() => setRun({ kind: "vocab", key: Date.now() })} />}
+        {tab === "note" && (
+          <NoteTab
+            st={st}
+            lang={lang}
+            up={up}
+            openNote={(id) => setRun({ kind: "note", id, key: Date.now() })}
+            startReview={() => setRun({ kind: "nreview", key: Date.now() })}
+            openGrammar={(q) => {
+              setGq(q);
+              setTab("grammar");
+            }}
+          />
+        )}
+        {tab === "exam" && <ExamHome st={st} lang={lang} start={() => setRun({ kind: "exam", key: Date.now() })} />}
+        {tab === "me" && <Me st={st} up={up} edit={() => setEditProf(true)} />}
+      </main>
+      <TabBar tab={tab} onChange={setTab} />
+    </>
   );
 }
-
-export default App;
