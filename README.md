@@ -20,6 +20,16 @@ node scripts/convert-legacy.mjs
 실행하면 개수를 출력하고, `CLAUDE.md`에 적힌 기대 개수(영어 문법 48 · 일본어 208 · CQ 256 · 단어 일본어 805 · 영어 589)와
 다르면 에러로 종료한다. 레거시 콘텐츠(문법·단어·실전 문제 등)를 추가·수정했으면 이 스크립트를 다시 돌려 `src/data/*.json`을 갱신해야 한다.
 
+## 후리가나
+
+```
+npm run gen-ruby
+```
+
+`src/data/*.json`의 일본어 문장 조각을 kuromoji로 분석해 `src/data/ruby.json`(｜漢字《かな》 사전)을 만든다.
+`npm run build` 전에 자동으로 실행된다(`prebuild`). kuromoji는 devDependency라 빌드 결과물엔 안 들어간다.
+일본어 문법·단어를 추가했으면 이 스크립트를 다시 돌려 `ruby.json`을 갱신해야 한다.
+
 ## 개발
 
 ```
