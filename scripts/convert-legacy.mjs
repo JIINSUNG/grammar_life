@@ -100,12 +100,14 @@ if (unusedCq.length) {
   console.warn("어느 포인트에도 안 쓰인 CQ:", unusedCq);
 }
 
-const EXPECT = { en: 48, ja: 208, cq: 256, vocabJa: 805, vocabEn: 589 };
+// 콘텐츠를 의도적으로 추가했으면 이 숫자도 같이 갱신한다(README에도 같은 숫자가 적혀 있음).
+// 이 값과 달라졌다는 건 "의도한 변경인지" 확인이 필요하다는 신호 — 의도했으면 숫자를 올리고, 아니면 원인을 찾는다.
+const EXPECT = { en: 48, ja: 214, cq: 262, vocabJa: 830, vocabEn: 589 };
 const actual = { en: POINTS.en.length, ja: POINTS.ja.length, cq: Object.keys(CQ).length, vocabJa: VOCAB_JA.length, vocabEn: VOCAB_EN.length };
 const mismatch = Object.keys(EXPECT).filter((k) => EXPECT[k] !== actual[k]);
 if (mismatch.length) {
-  console.error("CLAUDE.md 기대 개수와 다름:", mismatch.map((k) => `${k} 기대 ${EXPECT[k]} 실제 ${actual[k]}`));
+  console.error("기대 개수와 다름 (의도한 변경이면 scripts/convert-legacy.mjs의 EXPECT를 갱신):", mismatch.map((k) => `${k} 기대 ${EXPECT[k]} 실제 ${actual[k]}`));
   process.exitCode = 1;
 } else {
-  console.log("개수 검증 통과 (CLAUDE.md 기대치와 일치)");
+  console.log("개수 검증 통과 (EXPECT와 일치)");
 }
