@@ -50,6 +50,15 @@ export function save(state: AppState): void {
   }
 }
 
+/** localStorage가 기기 저장공간 부족으로 조용히 지워지지 않도록, 가능하면 영구 저장을 요청한다. 실패해도 무해. */
+export function requestPersistentStorage(): void {
+  try {
+    void navigator.storage?.persist?.();
+  } catch {
+    /* 지원 안 하는 브라우저는 무시 */
+  }
+}
+
 export function exportBackup(state: AppState): string {
   const payload: BackupPayload = { app: "grammar-life", v: 1, at: new Date().toISOString(), data: state };
   return JSON.stringify(payload);

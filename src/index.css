@@ -201,3 +201,8 @@ mark{background:linear-gradient(transparent 52%,var(--mark) 52%);color:inherit;p
 .tag.todo{background:var(--field);color:var(--muted)}
 .nrow .pmain b{font-weight:600;line-height:1.45}.nrow .pmain small{white-space:normal;line-height:1.5;margin-top:2px}.nrow .pside{align-items:flex-end;gap:6px}
 .note .card{gap:10px}
+
+/* 순간 메모 (어디서든 바로 적기) */
+.fab{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(78px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;background:var(--accent);color:var(--accent-fg);font-size:28px;line-height:1;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.22);z-index:7}
+.qn-sheet{position:fixed;inset:0;z-index:8;background:rgba(0,0,0,.4);display:flex;align-items:flex-end;justify-content:center}
+.qn-sheet>div{background:var(--surface);width:100%;max-width:560px;border-radius:20px 20px 0 0;padding:18px max(18px,env(safe-area-inset-right,0px)) max(18px,env(safe-area-inset-bottom,0px)) max(18px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;gap:10px}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#2F45C8" />
+  <rect x="138" y="292" width="236" height="110" fill="#FFE15C" />
+  <text x="256" y="380" text-anchor="middle" font-family="'Hahmlet','Zen Kaku Gothic New',serif" font-size="320" font-weight="700" fill="#FFFFFF">文</text>
+</svg>

@@ -32,7 +32,7 @@ npm run gen-ruby
 
 ## 화면 구조
 
-- `src/components/` — Sent, Ruby, Speak, VWord, TabBar, Icon 같은 공용 조각
+- `src/components/` — Sent, Ruby, Speak, VWord, TabBar, Icon, QuickNote 같은 공용 조각
 - `src/screens/` — 탭 하나에 해당하는 화면 (Today, GrammarList, Vocab, Notes, ExamHome, Me, Survey)
 - `src/flows/` — 탭 바가 사라지고 전체화면으로 진행하는 흐름 (Session, VocabSession, NoteEditor, NoteReview, Exam)
 - `src/App.tsx` — 레거시 `App()`과 동일하게 profile/tab/run 상태를 들고 화면을 고른다
@@ -40,6 +40,12 @@ npm run gen-ruby
 일본어 콘텐츠(POINTS.ja, EXAM.ja, JOBS/RIDES/HOBBIES/PLANS의 ja 필드)는 `src/data/index.ts`에서 **앱이 뜰 때 한 번만**
 `ruby.json`으로 후리가나를 구워서 내보낸다(레거시가 모듈 로드 시점에 한 번 rubify해두던 것과 같은 타이밍 — 화면 쪽은 `src/data/*.json`을
 직접 import하지 않고 이 파일의 export만 쓴다).
+
+### 순간 메모
+
+어느 탭에 있든 오른쪽 아래 + 버튼(`QuickNote`)으로 "이거 영어·일본어로 뭐라 하지" 싶은 순간 바로 한국어 문장을 적어둘 수 있다.
+저장만 하고 끝 — 영작·일작은 노트 탭에서 나중에 이어서 한다(기존 "적어 두기" 흐름 그대로, 새 데이터 구조 없음). 휴대폰에 설치한
+PWA 아이콘을 꾹 누르면 뜨는 "순간 메모" 바로가기(`/?quick=1`)로 들어오면 이 입력창이 바로 열린다.
 
 ## 테스트
 
@@ -55,3 +61,38 @@ npm install
 npm run dev
 npm run build
 ```
+
+## PWA
+
+`npm run build`가 매니페스트(이름 "내 생활 문법", 아이콘, theme color)와 오프라인 캐시(서비스 워커)를 같이 만든다
+(`vite-plugin-pwa`, `registerType: "autoUpdate"`). 문법·단어 데이터(JSON)까지 전부 미리 캐시하므로, 한 번 접속한
+뒤에는 오프라인에서도 설문·학습·실전·노트가 그대로 동작한다(`npx vite preview`로 빌드 후 오프라인 전환해서 확인함).
+휴대폰에서 "홈 화면에 추가"로 앱처럼 설치할 수 있다.
+
+아이콘은 `public/icon.svg` 하나가 원본이고, `node scripts/gen-icons.mjs`로 PNG(192/512/마스커블/favicon/apple-touch-icon)를
+한 번 구워서 `public/`에 커밋해 둔다. 아이콘을 바꾸면 `icon.svg`를 고치고 스크립트를 다시 돌리면 된다. 저장 공간이 기기
+정리로 날아가지 않도록 `navigator.storage.persist()`도 앱 시작 시 요청한다(지원 안 하면 조용히 무시됨).
+
+## 배포 (Vercel 또는 Cloudflare Pages)
+
+서버·환경 변수·백엔드가 전혀 없는 정적 사이트라 두 곳 다 설정이 거의 필요 없다.
+
+**Vercel**
+1. GitHub 저장소를 Vercel에 연결한다.
+2. Framework Preset: Vite. Build Command `npm run build`, Output Directory `dist` (기본값 그대로면 자동 인식됨).
+3. 환경 변수: 없음.
+
+**Cloudflare Pages**
+1. 저장소 연결 후 Build command `npm run build`, Build output directory `dist`.
+2. 환경 변수: 없음.
+
+배포 전에 로컬에서 `npm run build && npx vite preview`로 한 번 띄워보고, PWA 설치·오프라인 동작까지 확인하는 걸 권장한다.
+
+## 레거시 앱에서 기록 옮기는 법
+
+기존 `legacy/grammar-app.html`(또는 배포돼 있던 이전 버전)을 쓰던 사람이 새 앱으로 넘어올 때:
+
+1. 레거시 앱에서 **나 › 기록 옮기기 › 백업 코드 만들기**를 누르고, 나온 코드를 전부 복사한다.
+2. 새 앱에서 설문을 마치고 **나 › 기록 옮기기 › 백업 코드 붙여넣기**에 그대로 붙여넣고 가져오기를 누른다.
+3. 진도·단어·노트·XP·설문이 모두 그대로 복원된다. (`{app:"grammar-life",v:1,data}` 래핑 형식과, 레거시 구버전이 만든
+   래핑 없는 raw 형식 둘 다 읽을 수 있다 — `src/lib/storage.test.ts`에서 둘 다 테스트함.)

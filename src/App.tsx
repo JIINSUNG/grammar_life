@@ -12,7 +12,8 @@ import { NoteEditor } from "./flows/NoteEditor";
 import { NoteReview } from "./flows/NoteReview";
 import { Exam } from "./flows/Exam";
 import { TabBar } from "./components/TabBar";
-import { blankState, load, save } from "./lib/storage";
+import { QuickNote } from "./components/QuickNote";
+import { blankState, load, requestPersistentStorage, save } from "./lib/storage";
 import { today } from "./lib/date";
 import { dueList, nextNew } from "./lib/srs";
 import type { AppState, Profile } from "./types";
@@ -42,6 +43,16 @@ export default function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [tab, run]);
+
+  useEffect(() => {
+    requestPersistentStorage();
+  }, []);
+
+  // 홈 화면 아이콘 꾹 눌러서 쓰는 "순간 메모" PWA 바로가기(/?quick=1)로 들어왔는지 확인
+  const [autoQuick] = useState(() => new URLSearchParams(window.location.search).get("quick") === "1");
+  useEffect(() => {
+    if (autoQuick) window.history.replaceState(null, "", window.location.pathname);
+  }, [autoQuick]);
 
   if (!st.profile || editProf) {
     return (
@@ -127,6 +138,7 @@ export default function App() {
         {tab === "me" && <Me st={st} up={up} edit={() => setEditProf(true)} />}
       </main>
       <TabBar tab={tab} onChange={setTab} />
+      <QuickNote st={st} up={up} autoOpen={autoQuick} />
     </>
   );
 }
