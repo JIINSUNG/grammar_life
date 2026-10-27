@@ -1,0 +1,117 @@
+[
+  {
+    "id": "elec",
+    "ko": "가전 매장",
+    "en": {
+      "place": "an electronics store",
+      "wp": "store",
+      "cust": "customers",
+      "prod": "robot vacuums",
+      "prodS": "robot vacuum"
+    },
+    "ja": {
+      "place": "家電量販店",
+      "wp": "店",
+      "cust": "お客様",
+      "prod": "ロボット掃除機"
+    },
+    "k": {
+      "place": "가전 매장",
+      "wp": "매장",
+      "cust": "손님",
+      "prod": "로봇청소기"
+    }
+  },
+  {
+    "id": "phone",
+    "ko": "휴대폰 매장",
+    "en": {
+      "place": "a phone store",
+      "wp": "store",
+      "cust": "customers",
+      "prod": "smartphones",
+      "prodS": "smartphone"
+    },
+    "ja": {
+      "place": "携帯ショップ",
+      "wp": "店",
+      "cust": "お客様",
+      "prod": "スマホ"
+    },
+    "k": {
+      "place": "휴대폰 매장",
+      "wp": "매장",
+      "cust": "손님",
+      "prod": "스마트폰"
+    }
+  },
+  {
+    "id": "cafe",
+    "ko": "카페",
+    "en": {
+      "place": "a cafe",
+      "wp": "cafe",
+      "cust": "customers",
+      "prod": "lattes",
+      "prodS": "latte"
+    },
+    "ja": {
+      "place": "カフェ",
+      "wp": "カフェ",
+      "cust": "お客様",
+      "prod": "ラテ"
+    },
+    "k": {
+      "place": "카페",
+      "wp": "카페",
+      "cust": "손님",
+      "prod": "라테"
+    }
+  },
+  {
+    "id": "conv",
+    "ko": "편의점",
+    "en": {
+      "place": "a convenience store",
+      "wp": "store",
+      "cust": "customers",
+      "prod": "snacks",
+      "prodS": "snack"
+    },
+    "ja": {
+      "place": "コンビニ",
+      "wp": "店",
+      "cust": "お客様",
+      "prod": "お菓子"
+    },
+    "k": {
+      "place": "편의점",
+      "wp": "편의점",
+      "cust": "손님",
+      "prod": "과자"
+    }
+  },
+  {
+    "id": "cloth",
+    "ko": "옷 가게",
+    "en": {
+      "place": "a clothing store",
+      "wp": "store",
+      "cust": "customers",
+      "prod": "jackets",
+      "prodS": "jacket"
+    },
+    "ja": {
+      "place": "アパレルショップ",
+      "wp": "店",
+      "cust": "お客様",
+      "prod": "ジャケット"
+    },
+    "k": {
+      "place": "옷 가게",
+      "wp": "가게",
+      "cust": "손님",
+      "prod": "재킷"
+    }
+  }
+]

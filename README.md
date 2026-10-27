@@ -1,75 +1,29 @@
-# React + TypeScript + Vite
+# 내 생활 문법
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+영어·일본어 문법 학습 웹앱. 설문(직업·출퇴근·취미·예정)으로 내 하루가 들어간 예문을 만들어 공부한다.
+서버·DB·로그인·AI API 없이 정적 호스팅(Vercel/Cloudflare Pages)만 쓴다. 규칙은 `CLAUDE.md` 참고.
 
-Currently, two official plugins are available:
+## 레거시
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+`legacy/grammar-app.html`이 지금 운영 중인 원본(단일 HTML, 동작 기준)이다. `legacy/src/*.js`가 그걸 만든 조각이고,
+`python3 legacy/build.py`로 다시 합칠 수 있다.
 
-## React Compiler
+## 데이터 이식
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+`legacy/src`의 데이터 파일을 `legacy/build.py`와 **같은 순서**로 Node `vm`에서 실행해 `src/data/*.json`으로 뽑는다
+(순서가 다르면 깨진다 — 파일 간에 서로 참조하는 헬퍼·배열이 있음).
 
 ```
+node scripts/convert-legacy.mjs
+```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+실행하면 개수를 출력하고, `CLAUDE.md`에 적힌 기대 개수(영어 문법 48 · 일본어 208 · CQ 256 · 단어 일본어 805 · 영어 589)와
+다르면 에러로 종료한다. 레거시 콘텐츠(문법·단어·실전 문제 등)를 추가·수정했으면 이 스크립트를 다시 돌려 `src/data/*.json`을 갱신해야 한다.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 개발
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```
+npm install
+npm run dev
+npm run build
 ```

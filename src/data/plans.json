@@ -1,0 +1,32 @@
+[
+  {
+    "id": "jptrip",
+    "ko": "일본 여행",
+    "en": "the trip to Japan",
+    "ja": "日本旅行"
+  },
+  {
+    "id": "family",
+    "ko": "가족 여행",
+    "en": "the family trip",
+    "ja": "家族旅行"
+  },
+  {
+    "id": "biz",
+    "ko": "출장",
+    "en": "the business trip",
+    "ja": "出張"
+  },
+  {
+    "id": "interview",
+    "ko": "면접",
+    "en": "the job interview",
+    "ja": "面接"
+  },
+  {
+    "id": "wedding",
+    "ko": "친구 결혼식",
+    "en": "a friend's wedding",
+    "ja": "友達の結婚式"
+  }
+]

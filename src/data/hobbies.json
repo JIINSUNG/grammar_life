@@ -1,0 +1,65 @@
+[
+  {
+    "id": "game",
+    "ko": "게임",
+    "en": "playing games",
+    "enB": "play games",
+    "ja": "ゲーム"
+  },
+  {
+    "id": "gym",
+    "ko": "운동",
+    "en": "working out",
+    "enB": "work out",
+    "ja": "筋トレ"
+  },
+  {
+    "id": "cook",
+    "ko": "요리",
+    "en": "cooking",
+    "enB": "cook",
+    "ja": "料理"
+  },
+  {
+    "id": "travel",
+    "ko": "여행",
+    "en": "traveling",
+    "enB": "travel",
+    "ja": "旅行"
+  },
+  {
+    "id": "jog",
+    "ko": "조깅",
+    "en": "jogging",
+    "enB": "jog",
+    "ja": "ジョギング"
+  },
+  {
+    "id": "read",
+    "ko": "독서",
+    "en": "reading",
+    "enB": "read",
+    "ja": "読書"
+  },
+  {
+    "id": "drive",
+    "ko": "드라이브",
+    "en": "driving",
+    "enB": "drive",
+    "ja": "ドライブ"
+  },
+  {
+    "id": "movie",
+    "ko": "영화 감상",
+    "en": "watching movies",
+    "enB": "watch movies",
+    "ja": "映画鑑賞"
+  },
+  {
+    "id": "shop",
+    "ko": "쇼핑",
+    "en": "shopping",
+    "enB": "shop",
+    "ja": "買い物"
+  }
+]

@@ -1,122 +1,44 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import pointsEn from "./data/points.en.json";
+import pointsJa from "./data/points.ja.json";
+import examEn from "./data/exam.en.json";
+import examJa from "./data/exam.ja.json";
+import vocabEn from "./data/vocab.en.json";
+import vocabJa from "./data/vocab.ja.json";
+import jobs from "./data/jobs.json";
+import rides from "./data/rides.json";
+import hobbies from "./data/hobbies.json";
+import plans from "./data/plans.json";
+import goals from "./data/goals.json";
+import type { GrammarPoint, ExamQuestion, VocabWord, JobOption, RideOption, HobbyOption, PlanOption, GoalOption } from "./types";
+
+// 1단계 임시 확인용 화면. 실제 화면은 4단계에서 만든다.
+const points = { en: pointsEn as GrammarPoint[], ja: pointsJa as GrammarPoint[] };
+const exam = { en: examEn as ExamQuestion[], ja: examJa as ExamQuestion[] };
+const vocab = { en: vocabEn as VocabWord[], ja: vocabJa as VocabWord[] };
+const survey = {
+  jobs: jobs as JobOption[],
+  rides: rides as RideOption[],
+  hobbies: hobbies as HobbyOption[],
+  plans: plans as PlanOption[],
+  goals: goals as GoalOption[],
+};
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+    <main style={{ fontFamily: "sans-serif", padding: 20, lineHeight: 1.8 }}>
+      <h1>내 생활 문법 — 1단계 데이터 확인</h1>
+      <ul>
+        <li>문법 포인트: 영어 {points.en.length}개 · 일본어 {points.ja.length}개</li>
+        <li>실전 문제: 영어 {exam.en.length}개 · 일본어 {exam.ja.length}개</li>
+        <li>단어: 영어 {vocab.en.length}개 · 일본어 {vocab.ja.length}개</li>
+        <li>
+          설문 선택지: 직업 {survey.jobs.length} · 출퇴근 {survey.rides.length} · 취미 {survey.hobbies.length} · 예정 {survey.plans.length} ·
+          목표 {survey.goals.length}
+        </li>
+      </ul>
+      <p>화면은 4단계에서 만듭니다. 지금은 JSON 데이터가 빌드에 정상적으로 들어오는지만 확인하는 중입니다.</p>
+    </main>
+  );
 }
 
-export default App
+export default App;

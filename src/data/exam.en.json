@@ -1,0 +1,434 @@
+[
+  {
+    "q": "All employees are required to ------- their ID badges at all times.",
+    "o": [
+      "wear",
+      "wearing",
+      "wore",
+      "to wear"
+    ],
+    "a": 0,
+    "p": "E3",
+    "ex": "be required to 뒤에는 동사원형이 와요. 이미 to가 있으니 to wear는 중복이에요."
+  },
+  {
+    "q": "The new store manager responded ------- to the customer's complaint.",
+    "o": [
+      "quick",
+      "quickly",
+      "quickness",
+      "quicker"
+    ],
+    "a": 1,
+    "p": "E5",
+    "ex": "동사 responded를 꾸미는 자리라 부사 quickly가 와요."
+  },
+  {
+    "q": "------- the heavy rain, the outdoor sale event was held as scheduled.",
+    "o": [
+      "Although",
+      "Despite",
+      "Because",
+      "Unless"
+    ],
+    "a": 1,
+    "p": "E9",
+    "ex": "뒤에 명사구 the heavy rain만 있으니 전치사 Despite가 맞아요."
+  },
+  {
+    "q": "Ms. Kim ------- at the Gangnam branch since 2022.",
+    "o": [
+      "works",
+      "worked",
+      "has worked",
+      "will work"
+    ],
+    "a": 2,
+    "p": "E1",
+    "ex": "since 2022(2022년 이후로 지금까지)는 현재완료와 함께 써요."
+  },
+  {
+    "q": "The shipment of new laptops ------- by Friday afternoon.",
+    "o": [
+      "delivers",
+      "will deliver",
+      "will be delivered",
+      "delivering"
+    ],
+    "a": 2,
+    "p": "E2",
+    "ex": "배송품은 배달'되는' 대상이고 by Friday가 미래라서 will be delivered예요."
+  },
+  {
+    "q": "Please contact the front desk as soon as you ------- at the hotel.",
+    "o": [
+      "arrive",
+      "will arrive",
+      "arrived",
+      "arriving"
+    ],
+    "a": 0,
+    "p": "E6",
+    "ex": "as soon as 뒤에서는 미래 일이라도 현재시제를 써요."
+  },
+  {
+    "q": "The candidate ------- résumé impressed the hiring team will be contacted next week.",
+    "o": [
+      "who",
+      "whose",
+      "which",
+      "whom"
+    ],
+    "a": 1,
+    "p": "E4",
+    "ex": "'그 지원자의 이력서'처럼 소유 관계라 whose가 와요."
+  },
+  {
+    "q": "This year's sales figures are ------- higher than last year's.",
+    "o": [
+      "very",
+      "much",
+      "more",
+      "most"
+    ],
+    "a": 1,
+    "p": "E7",
+    "ex": "비교급 higher를 강조할 때는 very가 아니라 much를 써요."
+  },
+  {
+    "q": "Visitors ------- not enter the warehouse without a safety helmet.",
+    "o": [
+      "must",
+      "have",
+      "should to",
+      "need to"
+    ],
+    "a": 0,
+    "p": "E8",
+    "ex": "must not = ~하면 안 된다. 조동사 뒤엔 to를 붙이지 않아요."
+  },
+  {
+    "q": "If the budget ------- larger, we would hire two more staff members.",
+    "o": [
+      "is",
+      "were",
+      "will be",
+      "has been"
+    ],
+    "a": 1,
+    "p": "E10",
+    "ex": "뒤에 would hire가 있으니 가정법 과거, be동사는 were예요."
+  },
+  {
+    "q": "The marketing team finished ------- the survey results yesterday.",
+    "o": [
+      "analyze",
+      "to analyze",
+      "analyzing",
+      "analyzed"
+    ],
+    "a": 2,
+    "p": "E3",
+    "ex": "finish 뒤에는 동명사(-ing)가 와요."
+  },
+  {
+    "q": "The conference room ------- every evening by the cleaning staff.",
+    "o": [
+      "cleans",
+      "is cleaned",
+      "is cleaning",
+      "clean"
+    ],
+    "a": 1,
+    "p": "E2",
+    "ex": "회의실은 청소'되는' 대상이고 by the cleaning staff가 있으니 수동태예요."
+  },
+  {
+    "q": "The store will remain open ------- the holiday weekend.",
+    "o": [
+      "while",
+      "during",
+      "although",
+      "when"
+    ],
+    "a": 1,
+    "p": "E9",
+    "ex": "뒤에 명사구가 오니 전치사 during이 맞아요. while은 접속사예요."
+  },
+  {
+    "q": "Our customer service representatives are ------- trained to handle returns.",
+    "o": [
+      "high",
+      "highly",
+      "higher",
+      "height"
+    ],
+    "a": 1,
+    "p": "E5",
+    "ex": "과거분사 trained를 꾸미는 자리라 부사 highly(매우)가 와요."
+  },
+  {
+    "q": "Mr. Lee usually ------- to work by subway.",
+    "o": [
+      "commute",
+      "commutes",
+      "is commuting",
+      "commuting"
+    ],
+    "a": 1,
+    "p": "E11",
+    "ex": "usually는 습관이라 현재형, 주어가 3인칭 단수라 commutes."
+  },
+  {
+    "q": "The power went out while the team ------- the presentation.",
+    "o": [
+      "prepares",
+      "prepared",
+      "was preparing",
+      "has prepared"
+    ],
+    "a": 2,
+    "p": "E12",
+    "ex": "while 뒤 배경이 되는 진행 중인 동작은 과거진행."
+  },
+  {
+    "q": "The manager will have the technician ------- the printer this afternoon.",
+    "o": [
+      "repair",
+      "repairs",
+      "to repair",
+      "repaired"
+    ],
+    "a": 0,
+    "p": "E14",
+    "ex": "have + 사람 + 동사원형."
+  },
+  {
+    "q": "Please review the ------- document before the meeting.",
+    "o": [
+      "attach",
+      "attaching",
+      "attached",
+      "attachment"
+    ],
+    "a": 2,
+    "p": "E15",
+    "ex": "문서는 첨부'된' 것이라 과거분사 attached."
+  },
+  {
+    "q": "The list of new products ------- updated every Monday.",
+    "o": [
+      "is",
+      "are",
+      "were",
+      "be"
+    ],
+    "a": 0,
+    "p": "E16",
+    "ex": "진짜 주어는 The list(단수)예요."
+  },
+  {
+    "q": "Each department must submit ------- budget proposal by Friday.",
+    "o": [
+      "it",
+      "its",
+      "it's",
+      "itself"
+    ],
+    "a": 1,
+    "p": "E17",
+    "ex": "명사 앞 소유격 자리라 its."
+  },
+  {
+    "q": "The annual sale will begin ------- November 25.",
+    "o": [
+      "in",
+      "at",
+      "on",
+      "for"
+    ],
+    "a": 2,
+    "p": "E18",
+    "ex": "날짜 앞은 on."
+  },
+  {
+    "q": "Could you tell me where ------- ?",
+    "o": [
+      "is the nearest branch",
+      "the nearest branch is",
+      "does the nearest branch",
+      "the nearest branch does"
+    ],
+    "a": 1,
+    "p": "E19",
+    "ex": "간접의문문은 의문사 + 주어 + 동사 어순."
+  },
+  {
+    "q": "Staff members have gotten used to ------- the new inventory system.",
+    "o": [
+      "use",
+      "using",
+      "used",
+      "be used"
+    ],
+    "a": 1,
+    "p": "E20",
+    "ex": "get used to 뒤에는 -ing."
+  },
+  {
+    "q": "Customers were ------- with the quick delivery service.",
+    "o": [
+      "satisfy",
+      "satisfying",
+      "satisfied",
+      "satisfaction"
+    ],
+    "a": 2,
+    "p": "E15",
+    "ex": "만족을 느끼는 쪽(손님)이라 satisfied."
+  },
+  {
+    "q": "Ms. Park ------- for the company since she graduated.",
+    "o": [
+      "works",
+      "has been working",
+      "is working",
+      "worked"
+    ],
+    "a": 1,
+    "p": "E21",
+    "ex": "since + 과거 시점 → 현재완료(진행)."
+  },
+  {
+    "q": "By the time the manager arrived, the staff ------- the store.",
+    "o": [
+      "has cleaned",
+      "cleans",
+      "had cleaned",
+      "will clean"
+    ],
+    "a": 2,
+    "p": "E22",
+    "ex": "과거 시점(arrived)보다 먼저 → had p.p."
+  },
+  {
+    "q": "If we had ordered earlier, we ------- the items on time.",
+    "o": [
+      "would receive",
+      "would have received",
+      "will receive",
+      "received"
+    ],
+    "a": 1,
+    "p": "E23",
+    "ex": "If + had p.p. → would have p.p."
+  },
+  {
+    "q": "The company hired more staff ------- meet the holiday demand.",
+    "o": [
+      "in order to",
+      "so that",
+      "because of",
+      "due to"
+    ],
+    "a": 0,
+    "p": "E24",
+    "ex": "in order to + 동사원형 = ~하기 위해."
+  },
+  {
+    "q": "The meeting room is not large ------- to hold all employees.",
+    "o": [
+      "too",
+      "so",
+      "enough",
+      "such"
+    ],
+    "a": 2,
+    "p": "E25",
+    "ex": "형용사 + enough to."
+  },
+  {
+    "q": "The new product was ------- popular that it sold out in a day.",
+    "o": [
+      "such",
+      "so",
+      "too",
+      "very"
+    ],
+    "a": 1,
+    "p": "E26",
+    "ex": "so + 형용사 + that."
+  },
+  {
+    "q": "We look forward to ------- with you again.",
+    "o": [
+      "work",
+      "working",
+      "worked",
+      "be worked"
+    ],
+    "a": 1,
+    "p": "E33",
+    "ex": "look forward to + -ing."
+  },
+  {
+    "q": "Refunds will not be given ------- the receipt is presented.",
+    "o": [
+      "unless",
+      "if",
+      "as long as",
+      "because"
+    ],
+    "a": 0,
+    "p": "E37",
+    "ex": "~하지 않으면 → unless."
+  },
+  {
+    "q": "Customers can pay ------- by credit card or by bank transfer.",
+    "o": [
+      "both",
+      "either",
+      "neither",
+      "whether"
+    ],
+    "a": 1,
+    "p": "E38",
+    "ex": "either A or B."
+  },
+  {
+    "q": "We have two branches; one is in Seoul and ------- is in Busan.",
+    "o": [
+      "another",
+      "other",
+      "the other",
+      "others"
+    ],
+    "a": 2,
+    "p": "E35",
+    "ex": "둘 중 나머지 하나 → the other."
+  },
+  {
+    "q": "The manager asked the staff ------- the inventory by Friday.",
+    "o": [
+      "check",
+      "checking",
+      "to check",
+      "checked"
+    ],
+    "a": 2,
+    "p": "E36",
+    "ex": "ask + 사람 + to부정사."
+  },
+  {
+    "q": "This is the office ------- the new manager will work.",
+    "o": [
+      "which",
+      "where",
+      "what",
+      "when"
+    ],
+    "a": 1,
+    "p": "E29",
+    "ex": "장소 + where + 완전한 문장."
+  }
+]

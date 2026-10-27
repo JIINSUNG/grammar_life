@@ -1,0 +1,4714 @@
+[
+  {
+    "id": "ve:customer",
+    "w": "customer",
+    "r": "",
+    "m": "손님, 고객",
+    "lv": "기초",
+    "c": "사람"
+  },
+  {
+    "id": "ve:staff",
+    "w": "staff",
+    "r": "",
+    "m": "직원(들)",
+    "lv": "기초",
+    "c": "사람"
+  },
+  {
+    "id": "ve:manager",
+    "w": "manager",
+    "r": "",
+    "m": "관리자, 점장",
+    "lv": "기초",
+    "c": "사람"
+  },
+  {
+    "id": "ve:coworker",
+    "w": "coworker",
+    "r": "",
+    "m": "동료",
+    "lv": "기초",
+    "c": "사람"
+  },
+  {
+    "id": "ve:friend",
+    "w": "friend",
+    "r": "",
+    "m": "친구",
+    "lv": "기초",
+    "c": "사람"
+  },
+  {
+    "id": "ve:family",
+    "w": "family",
+    "r": "",
+    "m": "가족",
+    "lv": "기초",
+    "c": "사람"
+  },
+  {
+    "id": "ve:neighbor",
+    "w": "neighbor",
+    "r": "",
+    "m": "이웃",
+    "lv": "기초",
+    "c": "사람"
+  },
+  {
+    "id": "ve:store",
+    "w": "store",
+    "r": "",
+    "m": "가게",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:office",
+    "w": "office",
+    "r": "",
+    "m": "사무실",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:station",
+    "w": "station",
+    "r": "",
+    "m": "역",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:entrance",
+    "w": "entrance",
+    "r": "",
+    "m": "입구",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:exit",
+    "w": "exit",
+    "r": "",
+    "m": "출구",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:counter",
+    "w": "counter",
+    "r": "",
+    "m": "계산대, 카운터",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:warehouse",
+    "w": "warehouse",
+    "r": "",
+    "m": "창고",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:downtown",
+    "w": "downtown",
+    "r": "",
+    "m": "시내",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:nearby",
+    "w": "nearby",
+    "r": "",
+    "m": "근처에",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:work",
+    "w": "work",
+    "r": "",
+    "m": "일하다; 일",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:job",
+    "w": "job",
+    "r": "",
+    "m": "직업, 일",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:shift",
+    "w": "shift",
+    "r": "",
+    "m": "근무 교대(시간)",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:schedule",
+    "w": "schedule",
+    "r": "",
+    "m": "일정",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:break",
+    "w": "break",
+    "r": "",
+    "m": "휴식 시간",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:day off",
+    "w": "day off",
+    "r": "",
+    "m": "쉬는 날",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:weekend",
+    "w": "weekend",
+    "r": "",
+    "m": "주말",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:commute",
+    "w": "commute",
+    "r": "",
+    "m": "통근하다",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:weather",
+    "w": "weather",
+    "r": "",
+    "m": "날씨",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:umbrella",
+    "w": "umbrella",
+    "r": "",
+    "m": "우산",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:money",
+    "w": "money",
+    "r": "",
+    "m": "돈",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:price",
+    "w": "price",
+    "r": "",
+    "m": "가격",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:cheap",
+    "w": "cheap",
+    "r": "",
+    "m": "싼",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:expensive",
+    "w": "expensive",
+    "r": "",
+    "m": "비싼",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:busy",
+    "w": "busy",
+    "r": "",
+    "m": "바쁜",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:free",
+    "w": "free",
+    "r": "",
+    "m": "한가한; 무료의",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:easy",
+    "w": "easy",
+    "r": "",
+    "m": "쉬운",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:difficult",
+    "w": "difficult",
+    "r": "",
+    "m": "어려운",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:heavy",
+    "w": "heavy",
+    "r": "",
+    "m": "무거운",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:light",
+    "w": "light",
+    "r": "",
+    "m": "가벼운; 빛",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:new",
+    "w": "new",
+    "r": "",
+    "m": "새로운",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:old",
+    "w": "old",
+    "r": "",
+    "m": "오래된, 나이 든",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:popular",
+    "w": "popular",
+    "r": "",
+    "m": "인기 있는",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:useful",
+    "w": "useful",
+    "r": "",
+    "m": "유용한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:quiet",
+    "w": "quiet",
+    "r": "",
+    "m": "조용한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:noisy",
+    "w": "noisy",
+    "r": "",
+    "m": "시끄러운",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:tired",
+    "w": "tired",
+    "r": "",
+    "m": "피곤한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:hungry",
+    "w": "hungry",
+    "r": "",
+    "m": "배고픈",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:sure",
+    "w": "sure",
+    "r": "",
+    "m": "확실한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:ready",
+    "w": "ready",
+    "r": "",
+    "m": "준비된",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:buy",
+    "w": "buy",
+    "r": "",
+    "m": "사다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:sell",
+    "w": "sell",
+    "r": "",
+    "m": "팔다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:pay",
+    "w": "pay",
+    "r": "",
+    "m": "지불하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:spend",
+    "w": "spend",
+    "r": "",
+    "m": "(돈·시간을) 쓰다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:save",
+    "w": "save",
+    "r": "",
+    "m": "저축하다; 아끼다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:need",
+    "w": "need",
+    "r": "",
+    "m": "필요하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:want",
+    "w": "want",
+    "r": "",
+    "m": "원하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:try",
+    "w": "try",
+    "r": "",
+    "m": "시도하다, 써 보다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:use",
+    "w": "use",
+    "r": "",
+    "m": "사용하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:help",
+    "w": "help",
+    "r": "",
+    "m": "돕다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:ask",
+    "w": "ask",
+    "r": "",
+    "m": "묻다, 부탁하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:answer",
+    "w": "answer",
+    "r": "",
+    "m": "대답하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:explain",
+    "w": "explain",
+    "r": "",
+    "m": "설명하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:show",
+    "w": "show",
+    "r": "",
+    "m": "보여 주다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:find",
+    "w": "find",
+    "r": "",
+    "m": "찾다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:look for",
+    "w": "look for",
+    "r": "",
+    "m": "~을 찾다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:wait",
+    "w": "wait",
+    "r": "",
+    "m": "기다리다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:bring",
+    "w": "bring",
+    "r": "",
+    "m": "가져오다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:carry",
+    "w": "carry",
+    "r": "",
+    "m": "들고 다니다, 나르다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:open",
+    "w": "open",
+    "r": "",
+    "m": "열다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:close",
+    "w": "close",
+    "r": "",
+    "m": "닫다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:start",
+    "w": "start",
+    "r": "",
+    "m": "시작하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:finish",
+    "w": "finish",
+    "r": "",
+    "m": "끝내다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:forget",
+    "w": "forget",
+    "r": "",
+    "m": "잊다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:remember",
+    "w": "remember",
+    "r": "",
+    "m": "기억하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:choose",
+    "w": "choose",
+    "r": "",
+    "m": "고르다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:compare",
+    "w": "compare",
+    "r": "",
+    "m": "비교하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:change",
+    "w": "change",
+    "r": "",
+    "m": "바꾸다; 거스름돈",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:check",
+    "w": "check",
+    "r": "",
+    "m": "확인하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:call",
+    "w": "call",
+    "r": "",
+    "m": "전화하다; 부르다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:always",
+    "w": "always",
+    "r": "",
+    "m": "항상",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:usually",
+    "w": "usually",
+    "r": "",
+    "m": "보통",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:often",
+    "w": "often",
+    "r": "",
+    "m": "자주",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:sometimes",
+    "w": "sometimes",
+    "r": "",
+    "m": "가끔",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:never",
+    "w": "never",
+    "r": "",
+    "m": "절대 ~않다",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:already",
+    "w": "already",
+    "r": "",
+    "m": "이미",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:still",
+    "w": "still",
+    "r": "",
+    "m": "아직, 여전히",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:soon",
+    "w": "soon",
+    "r": "",
+    "m": "곧",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:almost",
+    "w": "almost",
+    "r": "",
+    "m": "거의",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:together",
+    "w": "together",
+    "r": "",
+    "m": "함께",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:available",
+    "w": "available",
+    "r": "",
+    "m": "이용 가능한; 시간이 되는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:responsible",
+    "w": "responsible",
+    "r": "",
+    "m": "책임 있는, 담당하는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:convenient",
+    "w": "convenient",
+    "r": "",
+    "m": "편리한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:reliable",
+    "w": "reliable",
+    "r": "",
+    "m": "믿을 수 있는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:efficient",
+    "w": "efficient",
+    "r": "",
+    "m": "효율적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:affordable",
+    "w": "affordable",
+    "r": "",
+    "m": "가격이 적당한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:durable",
+    "w": "durable",
+    "r": "",
+    "m": "내구성 있는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:eligible",
+    "w": "eligible",
+    "r": "",
+    "m": "자격이 있는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:mandatory",
+    "w": "mandatory",
+    "r": "",
+    "m": "의무적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:temporary",
+    "w": "temporary",
+    "r": "",
+    "m": "임시의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:permanent",
+    "w": "permanent",
+    "r": "",
+    "m": "영구적인, 정규의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:previous",
+    "w": "previous",
+    "r": "",
+    "m": "이전의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:upcoming",
+    "w": "upcoming",
+    "r": "",
+    "m": "다가오는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:annual",
+    "w": "annual",
+    "r": "",
+    "m": "연례의, 매년의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:recent",
+    "w": "recent",
+    "r": "",
+    "m": "최근의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:current",
+    "w": "current",
+    "r": "",
+    "m": "현재의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:additional",
+    "w": "additional",
+    "r": "",
+    "m": "추가의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:sufficient",
+    "w": "sufficient",
+    "r": "",
+    "m": "충분한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:appropriate",
+    "w": "appropriate",
+    "r": "",
+    "m": "적절한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:considerable",
+    "w": "considerable",
+    "r": "",
+    "m": "상당한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:extensive",
+    "w": "extensive",
+    "r": "",
+    "m": "광범위한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:outstanding",
+    "w": "outstanding",
+    "r": "",
+    "m": "뛰어난; 미지불의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:confidential",
+    "w": "confidential",
+    "r": "",
+    "m": "기밀의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:complimentary",
+    "w": "complimentary",
+    "r": "",
+    "m": "무료의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:defective",
+    "w": "defective",
+    "r": "",
+    "m": "결함 있는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:approximately",
+    "w": "approximately",
+    "r": "",
+    "m": "대략",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:immediately",
+    "w": "immediately",
+    "r": "",
+    "m": "즉시",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:promptly",
+    "w": "promptly",
+    "r": "",
+    "m": "신속하게; 정각에",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:recently",
+    "w": "recently",
+    "r": "",
+    "m": "최근에",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:currently",
+    "w": "currently",
+    "r": "",
+    "m": "현재",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:previously",
+    "w": "previously",
+    "r": "",
+    "m": "이전에",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:frequently",
+    "w": "frequently",
+    "r": "",
+    "m": "빈번하게",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:regularly",
+    "w": "regularly",
+    "r": "",
+    "m": "정기적으로",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:temporarily",
+    "w": "temporarily",
+    "r": "",
+    "m": "일시적으로",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:unfortunately",
+    "w": "unfortunately",
+    "r": "",
+    "m": "유감스럽게도",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:accordingly",
+    "w": "accordingly",
+    "r": "",
+    "m": "그에 따라",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:nearly",
+    "w": "nearly",
+    "r": "",
+    "m": "거의 (~할 뻔한)",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:exactly",
+    "w": "exactly",
+    "r": "",
+    "m": "정확히",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:apply",
+    "w": "apply",
+    "r": "",
+    "m": "지원하다; 적용하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:submit",
+    "w": "submit",
+    "r": "",
+    "m": "제출하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:attend",
+    "w": "attend",
+    "r": "",
+    "m": "참석하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:announce",
+    "w": "announce",
+    "r": "",
+    "m": "발표하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:arrange",
+    "w": "arrange",
+    "r": "",
+    "m": "준비하다, 정리하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:confirm",
+    "w": "confirm",
+    "r": "",
+    "m": "(예약·일정을) 확정하다, 확인해 주다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:cancel",
+    "w": "cancel",
+    "r": "",
+    "m": "취소하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:postpone",
+    "w": "postpone",
+    "r": "",
+    "m": "연기하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:extend",
+    "w": "extend",
+    "r": "",
+    "m": "연장하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:expand",
+    "w": "expand",
+    "r": "",
+    "m": "확장하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:increase",
+    "w": "increase",
+    "r": "",
+    "m": "증가하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:decrease",
+    "w": "decrease",
+    "r": "",
+    "m": "감소하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:improve",
+    "w": "improve",
+    "r": "",
+    "m": "개선하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:require",
+    "w": "require",
+    "r": "",
+    "m": "요구하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:provide",
+    "w": "provide",
+    "r": "",
+    "m": "제공하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:offer",
+    "w": "offer",
+    "r": "",
+    "m": "제공하다; 제안",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:include",
+    "w": "include",
+    "r": "",
+    "m": "포함하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:exchange",
+    "w": "exchange",
+    "r": "",
+    "m": "교환하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:refund",
+    "w": "refund",
+    "r": "",
+    "m": "환불하다; 환불",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:replace",
+    "w": "replace",
+    "r": "",
+    "m": "교체하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:repair",
+    "w": "repair",
+    "r": "",
+    "m": "수리하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:deliver",
+    "w": "deliver",
+    "r": "",
+    "m": "배달하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:ship",
+    "w": "ship",
+    "r": "",
+    "m": "배송하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:order",
+    "w": "order",
+    "r": "",
+    "m": "주문하다; 주문",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:purchase",
+    "w": "purchase",
+    "r": "",
+    "m": "구매하다; 구매",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:reserve",
+    "w": "reserve",
+    "r": "",
+    "m": "예약하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:recommend",
+    "w": "recommend",
+    "r": "",
+    "m": "추천하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:inform",
+    "w": "inform",
+    "r": "",
+    "m": "알리다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:notify",
+    "w": "notify",
+    "r": "",
+    "m": "통지하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:remind",
+    "w": "remind",
+    "r": "",
+    "m": "상기시키다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:review",
+    "w": "review",
+    "r": "",
+    "m": "검토하다; 후기",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:approve",
+    "w": "approve",
+    "r": "",
+    "m": "승인하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:assign",
+    "w": "assign",
+    "r": "",
+    "m": "배정하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:hire",
+    "w": "hire",
+    "r": "",
+    "m": "고용하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:train",
+    "w": "train",
+    "r": "",
+    "m": "교육하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:handle",
+    "w": "handle",
+    "r": "",
+    "m": "처리하다, 다루다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:manage",
+    "w": "manage",
+    "r": "",
+    "m": "관리하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:organize",
+    "w": "organize",
+    "r": "",
+    "m": "조직하다, 정리하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:inspect",
+    "w": "inspect",
+    "r": "",
+    "m": "점검하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:maintain",
+    "w": "maintain",
+    "r": "",
+    "m": "유지하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:launch",
+    "w": "launch",
+    "r": "",
+    "m": "출시하다; 출시",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:promote",
+    "w": "promote",
+    "r": "",
+    "m": "홍보하다; 승진시키다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:attract",
+    "w": "attract",
+    "r": "",
+    "m": "끌어들이다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:estimate",
+    "w": "estimate",
+    "r": "",
+    "m": "추정하다; 견적",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:afford",
+    "w": "afford",
+    "r": "",
+    "m": "여유가 되다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:appreciate",
+    "w": "appreciate",
+    "r": "",
+    "m": "감사하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:inquiry",
+    "w": "inquiry",
+    "r": "",
+    "m": "문의",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:request",
+    "w": "request",
+    "r": "",
+    "m": "요청",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:receipt",
+    "w": "receipt",
+    "r": "",
+    "m": "영수증",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:invoice",
+    "w": "invoice",
+    "r": "",
+    "m": "청구서",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:warranty",
+    "w": "warranty",
+    "r": "",
+    "m": "보증",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:discount",
+    "w": "discount",
+    "r": "",
+    "m": "할인",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:inventory",
+    "w": "inventory",
+    "r": "",
+    "m": "재고",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:shipment",
+    "w": "shipment",
+    "r": "",
+    "m": "배송(품)",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:delivery",
+    "w": "delivery",
+    "r": "",
+    "m": "배달",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:merchandise",
+    "w": "merchandise",
+    "r": "",
+    "m": "상품",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:item",
+    "w": "item",
+    "r": "",
+    "m": "물품, 항목",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:branch",
+    "w": "branch",
+    "r": "",
+    "m": "지점",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:headquarters",
+    "w": "headquarters",
+    "r": "",
+    "m": "본사",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:department",
+    "w": "department",
+    "r": "",
+    "m": "부서",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:employee",
+    "w": "employee",
+    "r": "",
+    "m": "직원",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:employer",
+    "w": "employer",
+    "r": "",
+    "m": "고용주",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:supervisor",
+    "w": "supervisor",
+    "r": "",
+    "m": "감독자, 상사",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:applicant",
+    "w": "applicant",
+    "r": "",
+    "m": "지원자",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:position",
+    "w": "position",
+    "r": "",
+    "m": "직책, 자리",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:promotion",
+    "w": "promotion",
+    "r": "",
+    "m": "승진; 판촉",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:salary",
+    "w": "salary",
+    "r": "",
+    "m": "급여",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:deadline",
+    "w": "deadline",
+    "r": "",
+    "m": "마감일",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:budget",
+    "w": "budget",
+    "r": "",
+    "m": "예산",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:revenue",
+    "w": "revenue",
+    "r": "",
+    "m": "수익",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:profit",
+    "w": "profit",
+    "r": "",
+    "m": "이익",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:expense",
+    "w": "expense",
+    "r": "",
+    "m": "비용",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:figure",
+    "w": "figure",
+    "r": "",
+    "m": "수치",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:survey",
+    "w": "survey",
+    "r": "",
+    "m": "설문 조사",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:feedback",
+    "w": "feedback",
+    "r": "",
+    "m": "의견",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:complaint",
+    "w": "complaint",
+    "r": "",
+    "m": "불만",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:policy",
+    "w": "policy",
+    "r": "",
+    "m": "정책, 방침",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:procedure",
+    "w": "procedure",
+    "r": "",
+    "m": "절차",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:regulation",
+    "w": "regulation",
+    "r": "",
+    "m": "규정",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:agreement",
+    "w": "agreement",
+    "r": "",
+    "m": "합의, 계약",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:contract",
+    "w": "contract",
+    "r": "",
+    "m": "계약(서)",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:facility",
+    "w": "facility",
+    "r": "",
+    "m": "시설",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:equipment",
+    "w": "equipment",
+    "r": "",
+    "m": "장비",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:device",
+    "w": "device",
+    "r": "",
+    "m": "기기",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:feature",
+    "w": "feature",
+    "r": "",
+    "m": "기능, 특징",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:quality",
+    "w": "quality",
+    "r": "",
+    "m": "품질",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:performance",
+    "w": "performance",
+    "r": "",
+    "m": "성능; 실적",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:capacity",
+    "w": "capacity",
+    "r": "",
+    "m": "용량, 수용력",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:demand",
+    "w": "demand",
+    "r": "",
+    "m": "수요",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:supply",
+    "w": "supply",
+    "r": "",
+    "m": "공급",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:competitor",
+    "w": "competitor",
+    "r": "",
+    "m": "경쟁사",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:advertisement",
+    "w": "advertisement",
+    "r": "",
+    "m": "광고",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:brochure",
+    "w": "brochure",
+    "r": "",
+    "m": "안내 책자",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:Welcome!",
+    "w": "Welcome!",
+    "r": "",
+    "m": "어서 오세요!",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:How can I help you?",
+    "w": "How can I help you?",
+    "r": "",
+    "m": "무엇을 도와드릴까요?",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Are you looking for anything?",
+    "w": "Are you looking for anything?",
+    "r": "",
+    "m": "찾으시는 거 있으세요?",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Take your time.",
+    "w": "Take your time.",
+    "r": "",
+    "m": "천천히 보세요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Just a moment, please.",
+    "w": "Just a moment, please.",
+    "r": "",
+    "m": "잠시만 기다려 주세요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Sorry to keep you waiting.",
+    "w": "Sorry to keep you waiting.",
+    "r": "",
+    "m": "기다리게 해서 죄송합니다.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Let me check.",
+    "w": "Let me check.",
+    "r": "",
+    "m": "확인해 볼게요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:It's sold out.",
+    "w": "It's sold out.",
+    "r": "",
+    "m": "품절이에요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:We're out of stock.",
+    "w": "We're out of stock.",
+    "r": "",
+    "m": "재고가 없어요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Would you like to try it?",
+    "w": "Would you like to try it?",
+    "r": "",
+    "m": "한번 써 보시겠어요?",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Here you are.",
+    "w": "Here you are.",
+    "r": "",
+    "m": "여기 있습니다.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Have a nice day!",
+    "w": "Have a nice day!",
+    "r": "",
+    "m": "좋은 하루 보내세요!",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:in stock",
+    "w": "in stock",
+    "r": "",
+    "m": "재고 있는",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:on sale",
+    "w": "on sale",
+    "r": "",
+    "m": "할인 중인",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:best seller",
+    "w": "best seller",
+    "r": "",
+    "m": "가장 잘 팔리는 상품",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:latest model",
+    "w": "latest model",
+    "r": "",
+    "m": "최신 모델",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:display model",
+    "w": "display model",
+    "r": "",
+    "m": "전시 상품",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:battery life",
+    "w": "battery life",
+    "r": "",
+    "m": "배터리 사용 시간",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:charge",
+    "w": "charge",
+    "r": "",
+    "m": "충전하다; 요금",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:charger",
+    "w": "charger",
+    "r": "",
+    "m": "충전기",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:cable",
+    "w": "cable",
+    "r": "",
+    "m": "케이블",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:screen",
+    "w": "screen",
+    "r": "",
+    "m": "화면",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:setting",
+    "w": "setting",
+    "r": "",
+    "m": "설정",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:noise",
+    "w": "noise",
+    "r": "",
+    "m": "소음",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:suction",
+    "w": "suction",
+    "r": "",
+    "m": "흡입력",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:air purifier",
+    "w": "air purifier",
+    "r": "",
+    "m": "공기청정기",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:humidifier",
+    "w": "humidifier",
+    "r": "",
+    "m": "가습기",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:robot vacuum",
+    "w": "robot vacuum",
+    "r": "",
+    "m": "로봇청소기",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:cash",
+    "w": "cash",
+    "r": "",
+    "m": "현금",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:credit card",
+    "w": "credit card",
+    "r": "",
+    "m": "신용카드",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:installment",
+    "w": "installment",
+    "r": "",
+    "m": "할부",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:tax-free",
+    "w": "tax-free",
+    "r": "",
+    "m": "면세의",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:bag",
+    "w": "bag",
+    "r": "",
+    "m": "봉투",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:gift wrapping",
+    "w": "gift wrapping",
+    "r": "",
+    "m": "선물 포장",
+    "lv": "접객",
+    "c": "매장"
+  },
+  {
+    "id": "ve:breakfast",
+    "w": "breakfast",
+    "r": "",
+    "m": "아침 식사",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:lunch",
+    "w": "lunch",
+    "r": "",
+    "m": "점심 식사",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:dinner",
+    "w": "dinner",
+    "r": "",
+    "m": "저녁 식사",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:meal",
+    "w": "meal",
+    "r": "",
+    "m": "식사",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:grocery store",
+    "w": "grocery store",
+    "r": "",
+    "m": "식료품점",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:kitchen",
+    "w": "kitchen",
+    "r": "",
+    "m": "부엌",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:bedroom",
+    "w": "bedroom",
+    "r": "",
+    "m": "침실",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:bathroom",
+    "w": "bathroom",
+    "r": "",
+    "m": "욕실",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:floor",
+    "w": "floor",
+    "r": "",
+    "m": "바닥; 층",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:wall",
+    "w": "wall",
+    "r": "",
+    "m": "벽",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:window",
+    "w": "window",
+    "r": "",
+    "m": "창문",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:door",
+    "w": "door",
+    "r": "",
+    "m": "문",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:key",
+    "w": "key",
+    "r": "",
+    "m": "열쇠",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:wallet",
+    "w": "wallet",
+    "r": "",
+    "m": "지갑",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:bill",
+    "w": "bill",
+    "r": "",
+    "m": "청구서; 지폐",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:coin",
+    "w": "coin",
+    "r": "",
+    "m": "동전",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:ticket",
+    "w": "ticket",
+    "r": "",
+    "m": "표, 티켓",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:seat",
+    "w": "seat",
+    "r": "",
+    "m": "좌석",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:line",
+    "w": "line",
+    "r": "",
+    "m": "줄; 노선",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:corner",
+    "w": "corner",
+    "r": "",
+    "m": "모퉁이",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:street",
+    "w": "street",
+    "r": "",
+    "m": "거리",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:building",
+    "w": "building",
+    "r": "",
+    "m": "건물",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:hospital",
+    "w": "hospital",
+    "r": "",
+    "m": "병원",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:pharmacy",
+    "w": "pharmacy",
+    "r": "",
+    "m": "약국",
+    "lv": "기초",
+    "c": "장소"
+  },
+  {
+    "id": "ve:medicine",
+    "w": "medicine",
+    "r": "",
+    "m": "약",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:headache",
+    "w": "headache",
+    "r": "",
+    "m": "두통",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:cold",
+    "w": "cold",
+    "r": "",
+    "m": "감기; 추운",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:fever",
+    "w": "fever",
+    "r": "",
+    "m": "열",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:hobby",
+    "w": "hobby",
+    "r": "",
+    "m": "취미",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:exercise",
+    "w": "exercise",
+    "r": "",
+    "m": "운동; 운동하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:walk",
+    "w": "walk",
+    "r": "",
+    "m": "걷다; 산책",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:run",
+    "w": "run",
+    "r": "",
+    "m": "달리다; 운영하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:swim",
+    "w": "swim",
+    "r": "",
+    "m": "수영하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:cook",
+    "w": "cook",
+    "r": "",
+    "m": "요리하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:clean",
+    "w": "clean",
+    "r": "",
+    "m": "청소하다; 깨끗한",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:wash",
+    "w": "wash",
+    "r": "",
+    "m": "씻다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:drive",
+    "w": "drive",
+    "r": "",
+    "m": "운전하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:ride",
+    "w": "ride",
+    "r": "",
+    "m": "타다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:travel",
+    "w": "travel",
+    "r": "",
+    "m": "여행하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:visit",
+    "w": "visit",
+    "r": "",
+    "m": "방문하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:stay",
+    "w": "stay",
+    "r": "",
+    "m": "머무르다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:leave",
+    "w": "leave",
+    "r": "",
+    "m": "떠나다; 두고 오다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:arrive",
+    "w": "arrive",
+    "r": "",
+    "m": "도착하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:return",
+    "w": "return",
+    "r": "",
+    "m": "돌아오다; 반납하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:borrow",
+    "w": "borrow",
+    "r": "",
+    "m": "빌리다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:lend",
+    "w": "lend",
+    "r": "",
+    "m": "빌려주다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:lose",
+    "w": "lose",
+    "r": "",
+    "m": "잃어버리다; 지다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:win",
+    "w": "win",
+    "r": "",
+    "m": "이기다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:hope",
+    "w": "hope",
+    "r": "",
+    "m": "바라다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:believe",
+    "w": "believe",
+    "r": "",
+    "m": "믿다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:understand",
+    "w": "understand",
+    "r": "",
+    "m": "이해하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:decide",
+    "w": "decide",
+    "r": "",
+    "m": "결정하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:plan",
+    "w": "plan",
+    "r": "",
+    "m": "계획하다; 계획",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:prepare",
+    "w": "prepare",
+    "r": "",
+    "m": "준비하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:practice",
+    "w": "practice",
+    "r": "",
+    "m": "연습하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:learn",
+    "w": "learn",
+    "r": "",
+    "m": "배우다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:teach",
+    "w": "teach",
+    "r": "",
+    "m": "가르치다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:study",
+    "w": "study",
+    "r": "",
+    "m": "공부하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:worry",
+    "w": "worry",
+    "r": "",
+    "m": "걱정하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:feel",
+    "w": "feel",
+    "r": "",
+    "m": "느끼다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:smell",
+    "w": "smell",
+    "r": "",
+    "m": "냄새가 나다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:taste",
+    "w": "taste",
+    "r": "",
+    "m": "맛이 나다; 맛",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:hear",
+    "w": "hear",
+    "r": "",
+    "m": "들리다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:listen",
+    "w": "listen",
+    "r": "",
+    "m": "귀 기울여 듣다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:speak",
+    "w": "speak",
+    "r": "",
+    "m": "(언어를) 말하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:talk",
+    "w": "talk",
+    "r": "",
+    "m": "이야기하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:tell",
+    "w": "tell",
+    "r": "",
+    "m": "알려 주다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:agree",
+    "w": "agree",
+    "r": "",
+    "m": "동의하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:happen",
+    "w": "happen",
+    "r": "",
+    "m": "일어나다, 생기다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:grow",
+    "w": "grow",
+    "r": "",
+    "m": "자라다; 키우다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:fix",
+    "w": "fix",
+    "r": "",
+    "m": "고치다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:turn on",
+    "w": "turn on",
+    "r": "",
+    "m": "켜다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:turn off",
+    "w": "turn off",
+    "r": "",
+    "m": "끄다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:pick up",
+    "w": "pick up",
+    "r": "",
+    "m": "집어 들다; 데리러 가다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:put on",
+    "w": "put on",
+    "r": "",
+    "m": "입다, 착용하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:take off",
+    "w": "take off",
+    "r": "",
+    "m": "벗다; 이륙하다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:get up",
+    "w": "get up",
+    "r": "",
+    "m": "(잠자리에서) 일어나다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:hurry",
+    "w": "hurry",
+    "r": "",
+    "m": "서두르다",
+    "lv": "기초",
+    "c": "동사"
+  },
+  {
+    "id": "ve:angry",
+    "w": "angry",
+    "r": "",
+    "m": "화난",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:happy",
+    "w": "happy",
+    "r": "",
+    "m": "행복한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:sad",
+    "w": "sad",
+    "r": "",
+    "m": "슬픈",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:nervous",
+    "w": "nervous",
+    "r": "",
+    "m": "긴장한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:excited",
+    "w": "excited",
+    "r": "",
+    "m": "신난",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:bored",
+    "w": "bored",
+    "r": "",
+    "m": "지루해하는",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:worried",
+    "w": "worried",
+    "r": "",
+    "m": "걱정하는",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:careful",
+    "w": "careful",
+    "r": "",
+    "m": "조심스러운",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:dangerous",
+    "w": "dangerous",
+    "r": "",
+    "m": "위험한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:safe",
+    "w": "safe",
+    "r": "",
+    "m": "안전한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:important",
+    "w": "important",
+    "r": "",
+    "m": "중요한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:different",
+    "w": "different",
+    "r": "",
+    "m": "다른",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:same",
+    "w": "same",
+    "r": "",
+    "m": "같은",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:simple",
+    "w": "simple",
+    "r": "",
+    "m": "단순한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:famous",
+    "w": "famous",
+    "r": "",
+    "m": "유명한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:comfortable",
+    "w": "comfortable",
+    "r": "",
+    "m": "편안한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:crowded",
+    "w": "crowded",
+    "r": "",
+    "m": "붐비는",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:empty",
+    "w": "empty",
+    "r": "",
+    "m": "빈",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:full",
+    "w": "full",
+    "r": "",
+    "m": "가득 찬; 배부른",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:dirty",
+    "w": "dirty",
+    "r": "",
+    "m": "더러운",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:fresh",
+    "w": "fresh",
+    "r": "",
+    "m": "신선한",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:early",
+    "w": "early",
+    "r": "",
+    "m": "이른; 일찍",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:late",
+    "w": "late",
+    "r": "",
+    "m": "늦은; 늦게",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:fast",
+    "w": "fast",
+    "r": "",
+    "m": "빠른; 빨리",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:slow",
+    "w": "slow",
+    "r": "",
+    "m": "느린",
+    "lv": "기초",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:enough",
+    "w": "enough",
+    "r": "",
+    "m": "충분히",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:only",
+    "w": "only",
+    "r": "",
+    "m": "오직, ~만",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:just",
+    "w": "just",
+    "r": "",
+    "m": "방금; 그냥",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:also",
+    "w": "also",
+    "r": "",
+    "m": "또한",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:maybe",
+    "w": "maybe",
+    "r": "",
+    "m": "어쩌면",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:probably",
+    "w": "probably",
+    "r": "",
+    "m": "십중팔구, 아마",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:even",
+    "w": "even",
+    "r": "",
+    "m": "~조차; 심지어",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:again",
+    "w": "again",
+    "r": "",
+    "m": "다시",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:yet",
+    "w": "yet",
+    "r": "",
+    "m": "(부정·의문) 아직",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:later",
+    "w": "later",
+    "r": "",
+    "m": "나중에",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:ago",
+    "w": "ago",
+    "r": "",
+    "m": "~ 전에",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:once",
+    "w": "once",
+    "r": "",
+    "m": "한 번; 예전에",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:twice",
+    "w": "twice",
+    "r": "",
+    "m": "두 번",
+    "lv": "기초",
+    "c": "부사"
+  },
+  {
+    "id": "ve:someone",
+    "w": "someone",
+    "r": "",
+    "m": "누군가",
+    "lv": "기초",
+    "c": "사람"
+  },
+  {
+    "id": "ve:everything",
+    "w": "everything",
+    "r": "",
+    "m": "모든 것",
+    "lv": "기초",
+    "c": "일상"
+  },
+  {
+    "id": "ve:accommodate",
+    "w": "accommodate",
+    "r": "",
+    "m": "수용하다; 편의를 봐 주다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:acquire",
+    "w": "acquire",
+    "r": "",
+    "m": "인수하다; 습득하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:adjust",
+    "w": "adjust",
+    "r": "",
+    "m": "조정하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:allocate",
+    "w": "allocate",
+    "r": "",
+    "m": "할당하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:anticipate",
+    "w": "anticipate",
+    "r": "",
+    "m": "예상하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:assess",
+    "w": "assess",
+    "r": "",
+    "m": "평가하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:assist",
+    "w": "assist",
+    "r": "",
+    "m": "보조하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:authorize",
+    "w": "authorize",
+    "r": "",
+    "m": "권한을 주다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:collaborate",
+    "w": "collaborate",
+    "r": "",
+    "m": "협력하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:comply",
+    "w": "comply",
+    "r": "",
+    "m": "준수하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:conduct",
+    "w": "conduct",
+    "r": "",
+    "m": "실시하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:consult",
+    "w": "consult",
+    "r": "",
+    "m": "상담하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:contribute",
+    "w": "contribute",
+    "r": "",
+    "m": "기여하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:coordinate",
+    "w": "coordinate",
+    "r": "",
+    "m": "조율하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:customize",
+    "w": "customize",
+    "r": "",
+    "m": "맞춤 제작하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:demonstrate",
+    "w": "demonstrate",
+    "r": "",
+    "m": "시연하다; 입증하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:distribute",
+    "w": "distribute",
+    "r": "",
+    "m": "배포하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:enhance",
+    "w": "enhance",
+    "r": "",
+    "m": "향상시키다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:ensure",
+    "w": "ensure",
+    "r": "",
+    "m": "보장하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:establish",
+    "w": "establish",
+    "r": "",
+    "m": "설립하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:evaluate",
+    "w": "evaluate",
+    "r": "",
+    "m": "(가치를) 평가하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:exceed",
+    "w": "exceed",
+    "r": "",
+    "m": "초과하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:facilitate",
+    "w": "facilitate",
+    "r": "",
+    "m": "용이하게 하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:finalize",
+    "w": "finalize",
+    "r": "",
+    "m": "마무리하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:fulfill",
+    "w": "fulfill",
+    "r": "",
+    "m": "이행하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:implement",
+    "w": "implement",
+    "r": "",
+    "m": "시행하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:indicate",
+    "w": "indicate",
+    "r": "",
+    "m": "나타내다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:install",
+    "w": "install",
+    "r": "",
+    "m": "설치하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:interrupt",
+    "w": "interrupt",
+    "r": "",
+    "m": "방해하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:negotiate",
+    "w": "negotiate",
+    "r": "",
+    "m": "협상하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:obtain",
+    "w": "obtain",
+    "r": "",
+    "m": "획득하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:operate",
+    "w": "operate",
+    "r": "",
+    "m": "운영하다; 작동하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:participate",
+    "w": "participate",
+    "r": "",
+    "m": "참가하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:perform",
+    "w": "perform",
+    "r": "",
+    "m": "수행하다; 공연하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:proceed",
+    "w": "proceed",
+    "r": "",
+    "m": "진행하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:prohibit",
+    "w": "prohibit",
+    "r": "",
+    "m": "금지하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:publish",
+    "w": "publish",
+    "r": "",
+    "m": "출판하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:receive",
+    "w": "receive",
+    "r": "",
+    "m": "받다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:register",
+    "w": "register",
+    "r": "",
+    "m": "등록하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:reimburse",
+    "w": "reimburse",
+    "r": "",
+    "m": "환급하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:relocate",
+    "w": "relocate",
+    "r": "",
+    "m": "이전하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:renew",
+    "w": "renew",
+    "r": "",
+    "m": "갱신하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:renovate",
+    "w": "renovate",
+    "r": "",
+    "m": "보수하다, 개조하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:resign",
+    "w": "resign",
+    "r": "",
+    "m": "사임하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:resolve",
+    "w": "resolve",
+    "r": "",
+    "m": "해결하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:retain",
+    "w": "retain",
+    "r": "",
+    "m": "보유하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:retire",
+    "w": "retire",
+    "r": "",
+    "m": "은퇴하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:secure",
+    "w": "secure",
+    "r": "",
+    "m": "확보하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:specify",
+    "w": "specify",
+    "r": "",
+    "m": "명시하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:sponsor",
+    "w": "sponsor",
+    "r": "",
+    "m": "후원하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:streamline",
+    "w": "streamline",
+    "r": "",
+    "m": "간소화하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:subscribe",
+    "w": "subscribe",
+    "r": "",
+    "m": "구독하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:supervise",
+    "w": "supervise",
+    "r": "",
+    "m": "감독하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:transfer",
+    "w": "transfer",
+    "r": "",
+    "m": "옮기다; 전근 가다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:verify",
+    "w": "verify",
+    "r": "",
+    "m": "검증하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:withdraw",
+    "w": "withdraw",
+    "r": "",
+    "m": "철회하다; 인출하다",
+    "lv": "토익",
+    "c": "동사"
+  },
+  {
+    "id": "ve:accounting",
+    "w": "accounting",
+    "r": "",
+    "m": "회계",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:agenda",
+    "w": "agenda",
+    "r": "",
+    "m": "안건",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:appointment",
+    "w": "appointment",
+    "r": "",
+    "m": "(만날) 약속",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:assignment",
+    "w": "assignment",
+    "r": "",
+    "m": "맡은 업무, 과제",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:attendance",
+    "w": "attendance",
+    "r": "",
+    "m": "참석(률)",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:banquet",
+    "w": "banquet",
+    "r": "",
+    "m": "연회",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:candidate",
+    "w": "candidate",
+    "r": "",
+    "m": "후보자",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:client",
+    "w": "client",
+    "r": "",
+    "m": "의뢰인, 거래처",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:colleague",
+    "w": "colleague",
+    "r": "",
+    "m": "직장 동료",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:commission",
+    "w": "commission",
+    "r": "",
+    "m": "수수료",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:conference",
+    "w": "conference",
+    "r": "",
+    "m": "회의, 학회",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:consumer",
+    "w": "consumer",
+    "r": "",
+    "m": "소비자",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:destination",
+    "w": "destination",
+    "r": "",
+    "m": "목적지",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:duty",
+    "w": "duty",
+    "r": "",
+    "m": "직무; 관세",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:expertise",
+    "w": "expertise",
+    "r": "",
+    "m": "전문 지식",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:fare",
+    "w": "fare",
+    "r": "",
+    "m": "(교통) 요금",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:fee",
+    "w": "fee",
+    "r": "",
+    "m": "이용료",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:fund",
+    "w": "fund",
+    "r": "",
+    "m": "자금",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:guideline",
+    "w": "guideline",
+    "r": "",
+    "m": "지침",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:investment",
+    "w": "investment",
+    "r": "",
+    "m": "투자",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:itinerary",
+    "w": "itinerary",
+    "r": "",
+    "m": "여행 일정표",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:landlord",
+    "w": "landlord",
+    "r": "",
+    "m": "집주인",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:lease",
+    "w": "lease",
+    "r": "",
+    "m": "임대차 계약",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:maintenance",
+    "w": "maintenance",
+    "r": "",
+    "m": "유지 보수",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:manual",
+    "w": "manual",
+    "r": "",
+    "m": "설명서",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:merger",
+    "w": "merger",
+    "r": "",
+    "m": "합병",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:objective",
+    "w": "objective",
+    "r": "",
+    "m": "목표",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:outlet",
+    "w": "outlet",
+    "r": "",
+    "m": "콘센트; 할인 매장",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:paperwork",
+    "w": "paperwork",
+    "r": "",
+    "m": "서류 작업",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:personnel",
+    "w": "personnel",
+    "r": "",
+    "m": "인사부; 전 직원",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:premises",
+    "w": "premises",
+    "r": "",
+    "m": "부지, 구내",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:priority",
+    "w": "priority",
+    "r": "",
+    "m": "우선순위",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:proposal",
+    "w": "proposal",
+    "r": "",
+    "m": "제안서",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:quarter",
+    "w": "quarter",
+    "r": "",
+    "m": "분기",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:quote",
+    "w": "quote",
+    "r": "",
+    "m": "견적가",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:recipient",
+    "w": "recipient",
+    "r": "",
+    "m": "수령인",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:reference",
+    "w": "reference",
+    "r": "",
+    "m": "추천서; 참고",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:refreshments",
+    "w": "refreshments",
+    "r": "",
+    "m": "다과",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:registration",
+    "w": "registration",
+    "r": "",
+    "m": "등록",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:renovation",
+    "w": "renovation",
+    "r": "",
+    "m": "보수 공사",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:representative",
+    "w": "representative",
+    "r": "",
+    "m": "담당 직원, 대표자",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:requirement",
+    "w": "requirement",
+    "r": "",
+    "m": "요건",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:reservation",
+    "w": "reservation",
+    "r": "",
+    "m": "예약",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:résumé",
+    "w": "résumé",
+    "r": "",
+    "m": "이력서",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:retailer",
+    "w": "retailer",
+    "r": "",
+    "m": "소매업체",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:shareholder",
+    "w": "shareholder",
+    "r": "",
+    "m": "주주",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:shortage",
+    "w": "shortage",
+    "r": "",
+    "m": "부족",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:subscription",
+    "w": "subscription",
+    "r": "",
+    "m": "구독",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:supplier",
+    "w": "supplier",
+    "r": "",
+    "m": "공급업체",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:venue",
+    "w": "venue",
+    "r": "",
+    "m": "개최 장소",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:vendor",
+    "w": "vendor",
+    "r": "",
+    "m": "판매업체",
+    "lv": "토익",
+    "c": "명사"
+  },
+  {
+    "id": "ve:accurate",
+    "w": "accurate",
+    "r": "",
+    "m": "정확한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:adequate",
+    "w": "adequate",
+    "r": "",
+    "m": "(양이) 충분한, 알맞은",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:advanced",
+    "w": "advanced",
+    "r": "",
+    "m": "고급의, 진보한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:alternative",
+    "w": "alternative",
+    "r": "",
+    "m": "대안의; 대안",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:apparent",
+    "w": "apparent",
+    "r": "",
+    "m": "명백한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:beneficial",
+    "w": "beneficial",
+    "r": "",
+    "m": "유익한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:comprehensive",
+    "w": "comprehensive",
+    "r": "",
+    "m": "포괄적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:consistent",
+    "w": "consistent",
+    "r": "",
+    "m": "일관된",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:crucial",
+    "w": "crucial",
+    "r": "",
+    "m": "중대한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:diverse",
+    "w": "diverse",
+    "r": "",
+    "m": "다양한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:exclusive",
+    "w": "exclusive",
+    "r": "",
+    "m": "독점적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:flexible",
+    "w": "flexible",
+    "r": "",
+    "m": "유연한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:innovative",
+    "w": "innovative",
+    "r": "",
+    "m": "혁신적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:mutual",
+    "w": "mutual",
+    "r": "",
+    "m": "상호의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:numerous",
+    "w": "numerous",
+    "r": "",
+    "m": "수많은",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:optional",
+    "w": "optional",
+    "r": "",
+    "m": "선택적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:potential",
+    "w": "potential",
+    "r": "",
+    "m": "잠재적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:preliminary",
+    "w": "preliminary",
+    "r": "",
+    "m": "예비의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:productive",
+    "w": "productive",
+    "r": "",
+    "m": "생산적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:prominent",
+    "w": "prominent",
+    "r": "",
+    "m": "저명한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:punctual",
+    "w": "punctual",
+    "r": "",
+    "m": "시간을 잘 지키는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:reasonable",
+    "w": "reasonable",
+    "r": "",
+    "m": "합리적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:relevant",
+    "w": "relevant",
+    "r": "",
+    "m": "관련 있는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:remote",
+    "w": "remote",
+    "r": "",
+    "m": "원격의; 외딴",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:substantial",
+    "w": "substantial",
+    "r": "",
+    "m": "상당량의",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:tentative",
+    "w": "tentative",
+    "r": "",
+    "m": "잠정적인",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:valid",
+    "w": "valid",
+    "r": "",
+    "m": "유효한",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:vacant",
+    "w": "vacant",
+    "r": "",
+    "m": "비어 있는",
+    "lv": "토익",
+    "c": "형용사"
+  },
+  {
+    "id": "ve:consequently",
+    "w": "consequently",
+    "r": "",
+    "m": "결과적으로",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:eventually",
+    "w": "eventually",
+    "r": "",
+    "m": "결국",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:gradually",
+    "w": "gradually",
+    "r": "",
+    "m": "점차",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:increasingly",
+    "w": "increasingly",
+    "r": "",
+    "m": "점점 더",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:primarily",
+    "w": "primarily",
+    "r": "",
+    "m": "주로",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:shortly",
+    "w": "shortly",
+    "r": "",
+    "m": "곧, 머지않아",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:significantly",
+    "w": "significantly",
+    "r": "",
+    "m": "상당히",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:thoroughly",
+    "w": "thoroughly",
+    "r": "",
+    "m": "철저히",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:otherwise",
+    "w": "otherwise",
+    "r": "",
+    "m": "그렇지 않으면",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:moreover",
+    "w": "moreover",
+    "r": "",
+    "m": "게다가",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:however",
+    "w": "however",
+    "r": "",
+    "m": "그러나",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:therefore",
+    "w": "therefore",
+    "r": "",
+    "m": "그러므로",
+    "lv": "토익",
+    "c": "부사"
+  },
+  {
+    "id": "ve:despite",
+    "w": "despite",
+    "r": "",
+    "m": "~에도 불구하고",
+    "lv": "토익",
+    "c": "전치사"
+  },
+  {
+    "id": "ve:regarding",
+    "w": "regarding",
+    "r": "",
+    "m": "~에 관하여",
+    "lv": "토익",
+    "c": "전치사"
+  },
+  {
+    "id": "ve:prior to",
+    "w": "prior to",
+    "r": "",
+    "m": "~ 이전에",
+    "lv": "토익",
+    "c": "전치사"
+  },
+  {
+    "id": "ve:in advance",
+    "w": "in advance",
+    "r": "",
+    "m": "미리",
+    "lv": "토익",
+    "c": "전치사"
+  },
+  {
+    "id": "ve:on behalf of",
+    "w": "on behalf of",
+    "r": "",
+    "m": "~을 대신하여",
+    "lv": "토익",
+    "c": "전치사"
+  },
+  {
+    "id": "ve:in charge of",
+    "w": "in charge of",
+    "r": "",
+    "m": "~을 담당하는",
+    "lv": "토익",
+    "c": "전치사"
+  },
+  {
+    "id": "ve:due to",
+    "w": "due to",
+    "r": "",
+    "m": "~ 때문에",
+    "lv": "토익",
+    "c": "전치사"
+  },
+  {
+    "id": "ve:according to",
+    "w": "according to",
+    "r": "",
+    "m": "~에 따르면",
+    "lv": "토익",
+    "c": "전치사"
+  },
+  {
+    "id": "ve:as of",
+    "w": "as of",
+    "r": "",
+    "m": "~부로",
+    "lv": "토익",
+    "c": "전치사"
+  },
+  {
+    "id": "ve:passport",
+    "w": "passport",
+    "r": "",
+    "m": "여권",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:boarding pass",
+    "w": "boarding pass",
+    "r": "",
+    "m": "탑승권",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:gate",
+    "w": "gate",
+    "r": "",
+    "m": "탑승구",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:departure",
+    "w": "departure",
+    "r": "",
+    "m": "출발",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:arrival",
+    "w": "arrival",
+    "r": "",
+    "m": "도착",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:delay",
+    "w": "delay",
+    "r": "",
+    "m": "지연",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:round trip",
+    "w": "round trip",
+    "r": "",
+    "m": "왕복",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:one-way",
+    "w": "one-way",
+    "r": "",
+    "m": "편도",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:aisle seat",
+    "w": "aisle seat",
+    "r": "",
+    "m": "통로 쪽 좌석",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:window seat",
+    "w": "window seat",
+    "r": "",
+    "m": "창가 좌석",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:luggage",
+    "w": "luggage",
+    "r": "",
+    "m": "짐, 수하물",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:baggage claim",
+    "w": "baggage claim",
+    "r": "",
+    "m": "수하물 찾는 곳",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:customs",
+    "w": "customs",
+    "r": "",
+    "m": "세관",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:currency exchange",
+    "w": "currency exchange",
+    "r": "",
+    "m": "환전(소)",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:check in",
+    "w": "check in",
+    "r": "",
+    "m": "체크인하다",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:check out",
+    "w": "check out",
+    "r": "",
+    "m": "체크아웃하다",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:front desk",
+    "w": "front desk",
+    "r": "",
+    "m": "프런트",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:sightseeing",
+    "w": "sightseeing",
+    "r": "",
+    "m": "관광",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:souvenir",
+    "w": "souvenir",
+    "r": "",
+    "m": "기념품",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:map",
+    "w": "map",
+    "r": "",
+    "m": "지도",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:directions",
+    "w": "directions",
+    "r": "",
+    "m": "길 안내",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:subway",
+    "w": "subway",
+    "r": "",
+    "m": "지하철",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:platform",
+    "w": "platform",
+    "r": "",
+    "m": "승강장",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:landmark",
+    "w": "landmark",
+    "r": "",
+    "m": "명소",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:to go",
+    "w": "to go",
+    "r": "",
+    "m": "포장(테이크아웃)",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:restroom",
+    "w": "restroom",
+    "r": "",
+    "m": "화장실",
+    "lv": "여행",
+    "c": "여행"
+  },
+  {
+    "id": "ve:Where is the station?",
+    "w": "Where is the station?",
+    "r": "",
+    "m": "역이 어디예요?",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:How much is this?",
+    "w": "How much is this?",
+    "r": "",
+    "m": "이거 얼마예요?",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Can I pay by card?",
+    "w": "Can I pay by card?",
+    "r": "",
+    "m": "카드로 계산할 수 있나요?",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I'd like to check in.",
+    "w": "I'd like to check in.",
+    "r": "",
+    "m": "체크인하고 싶어요.",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Could you take a picture of us?",
+    "w": "Could you take a picture of us?",
+    "r": "",
+    "m": "사진 좀 찍어 주실래요?",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I have a reservation.",
+    "w": "I have a reservation.",
+    "r": "",
+    "m": "예약했어요.",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Can I have the bill?",
+    "w": "Can I have the bill?",
+    "r": "",
+    "m": "계산서 주시겠어요?",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Table for two, please.",
+    "w": "Table for two, please.",
+    "r": "",
+    "m": "두 명 자리 부탁해요.",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:What do you recommend?",
+    "w": "What do you recommend?",
+    "r": "",
+    "m": "뭘 추천하세요?",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Excuse me.",
+    "w": "Excuse me.",
+    "r": "",
+    "m": "실례합니다.",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Could you say that again?",
+    "w": "Could you say that again?",
+    "r": "",
+    "m": "다시 말씀해 주시겠어요?",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I'm just looking.",
+    "w": "I'm just looking.",
+    "r": "",
+    "m": "그냥 둘러보는 중이에요.",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Is this seat taken?",
+    "w": "Is this seat taken?",
+    "r": "",
+    "m": "이 자리 있나요?",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:How long does it take?",
+    "w": "How long does it take?",
+    "r": "",
+    "m": "얼마나 걸려요?",
+    "lv": "여행",
+    "c": "표현"
+  },
+  {
+    "id": "ve:This way, please.",
+    "w": "This way, please.",
+    "r": "",
+    "m": "이쪽으로 오세요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Let me show you.",
+    "w": "Let me show you.",
+    "r": "",
+    "m": "보여 드릴게요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:It comes in three colors.",
+    "w": "It comes in three colors.",
+    "r": "",
+    "m": "세 가지 색상이 있어요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:This is our most popular model.",
+    "w": "This is our most popular model.",
+    "r": "",
+    "m": "가장 인기 있는 모델이에요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Would you like a bag?",
+    "w": "Would you like a bag?",
+    "r": "",
+    "m": "봉투 필요하세요?",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Do you have a membership?",
+    "w": "Do you have a membership?",
+    "r": "",
+    "m": "멤버십 있으세요?",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Cash or card?",
+    "w": "Cash or card?",
+    "r": "",
+    "m": "현금이세요, 카드세요?",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Please sign here.",
+    "w": "Please sign here.",
+    "r": "",
+    "m": "여기 서명해 주세요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Here's your receipt.",
+    "w": "Here's your receipt.",
+    "r": "",
+    "m": "영수증 여기 있습니다.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:You can exchange it within 7 days.",
+    "w": "You can exchange it within 7 days.",
+    "r": "",
+    "m": "7일 안에 교환할 수 있어요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:It has a one-year warranty.",
+    "w": "It has a one-year warranty.",
+    "r": "",
+    "m": "보증 기간이 1년이에요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:We can deliver it to your home.",
+    "w": "We can deliver it to your home.",
+    "r": "",
+    "m": "댁으로 배송해 드릴 수 있어요.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:Thank you for waiting.",
+    "w": "Thank you for waiting.",
+    "r": "",
+    "m": "기다려 주셔서 감사합니다.",
+    "lv": "접객",
+    "c": "인사"
+  },
+  {
+    "id": "ve:specs",
+    "w": "specs",
+    "r": "",
+    "m": "사양, 스펙",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:wireless",
+    "w": "wireless",
+    "r": "",
+    "m": "무선의",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:waterproof",
+    "w": "waterproof",
+    "r": "",
+    "m": "방수의",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:lightweight",
+    "w": "lightweight",
+    "r": "",
+    "m": "경량의",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:portable",
+    "w": "portable",
+    "r": "",
+    "m": "휴대용의",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:power bank",
+    "w": "power bank",
+    "r": "",
+    "m": "보조배터리",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:earbuds",
+    "w": "earbuds",
+    "r": "",
+    "m": "무선 이어폰",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:smartwatch",
+    "w": "smartwatch",
+    "r": "",
+    "m": "스마트워치",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:fast charging",
+    "w": "fast charging",
+    "r": "",
+    "m": "고속 충전",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:storage",
+    "w": "storage",
+    "r": "",
+    "m": "저장 공간; 보관",
+    "lv": "접객",
+    "c": "가전"
+  },
+  {
+    "id": "ve:compatible",
+    "w": "compatible",
+    "r": "",
+    "m": "호환되는",
+    "lv": "접객",
+    "c": "가전"
+  }
+]
