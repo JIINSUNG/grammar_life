@@ -4,7 +4,7 @@ import { Backup } from "./Me/Backup";
 import { addDays, today } from "../lib/date";
 import { blankState } from "../lib/storage";
 import { POINTS, HOBBIES, JOBS, PLANS, RIDES } from "../data";
-import { goalXp, streak } from "../lib/srs";
+import { goalXp, streak, VNEW } from "../lib/srs";
 import type { AppState, Lang } from "../types";
 
 export function Me({ st, up, edit }: { st: AppState; up: (fn: (s: AppState) => AppState) => void; edit: () => void }) {
@@ -117,7 +117,7 @@ export function Me({ st, up, edit }: { st: AppState; up: (fn: (s: AppState) => A
           <dd>{p.plans.map((h) => PLANS.find((x) => x.id === h)!.ko).join(", ")}</dd>
           <dt>목표</dt>
           <dd>
-            TOEIC {p.toeic} · JLPT {p.jlpt} · 하루 {p.goal}분
+            TOEIC {p.toeic} · JLPT {p.jlpt} · 하루 {p.goal}분 · 새 단어 {p.vgoal || VNEW}개
           </dd>
         </dl>
       </section>

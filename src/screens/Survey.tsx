@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Sent } from "../components/Sent";
 import { build } from "../lib/template";
-import { JLV } from "../lib/srs";
+import { JLV, VGOALS } from "../lib/srs";
 import { GOALS, HOBBIES, JLPT_GOALS, JOBS, PLANS, POINTS, RIDES, TOEIC_GOALS } from "../data";
 import type { Profile } from "../types";
 
@@ -49,7 +49,7 @@ function Chips<T extends { id: string; ko: string } | string>({
 
 export function Survey({ init, onDone, onCancel }: { init: Profile | null; onDone: (p: Profile) => void; onCancel: (() => void) | null }) {
   const [p, setP] = useState<Profile>(
-    () => init || { job: "elec", ride: "bike", hobbies: ["game", "gym"], plans: ["jptrip"], goal: 10, toeic: "800", jlpt: "N2", jstart: "입문" }
+    () => init || { job: "elec", ride: "bike", hobbies: ["game", "gym"], plans: ["jptrip"], goal: 10, toeic: "800", jlpt: "N2", jstart: "입문", vgoal: VGOALS[0] }
   );
   const set = <K extends keyof Profile>(k: K) => (v: Profile[K]) => setP({ ...p, [k]: v });
   const tog = (k: "hobbies" | "plans") => (id: string) => setP({ ...p, [k]: p[k].includes(id) ? p[k].filter((x) => x !== id) : [...p[k], id] });
@@ -102,6 +102,15 @@ export function Survey({ init, onDone, onCancel }: { init: Profile | null; onDon
           {GOALS.map(({ minutes, label }) => (
             <button type="button" key={minutes} className="chip" aria-pressed={p.goal === minutes} onClick={() => setP({ ...p, goal: minutes })}>
               {label}
+            </button>
+          ))}
+        </div>
+      </Q>
+      <Q n="8" t="하루에 새 단어를 몇 개 외울까요?">
+        <div className="chips">
+          {VGOALS.map((n) => (
+            <button type="button" key={n} className="chip" aria-pressed={(p.vgoal || VGOALS[0]) === n} onClick={() => setP({ ...p, vgoal: n })}>
+              {n}개
             </button>
           ))}
         </div>

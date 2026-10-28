@@ -103,6 +103,8 @@ export interface Profile {
   jlpt: string;
   /** 일본어 문법 시작 레벨. 기본값 "입문" */
   jstart?: string;
+  /** 하루에 외울 새 단어 개수. 없으면 VNEW(10)개. */
+  vgoal?: number;
 }
 
 export interface ProgressEntry {

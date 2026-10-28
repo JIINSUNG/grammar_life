@@ -2,7 +2,7 @@ import { Sent } from "../components/Sent";
 import { Speak } from "../components/Speak";
 import { build } from "../lib/template";
 import { today } from "../lib/date";
-import { dueList, dueStarredPoints, goalXp, nextLevelProgress, nextNew, streak, vDue, vNew, vTrack, VREV } from "../lib/srs";
+import { dueList, dueStarredPoints, goalXp, levelTitle, nextLevelProgress, nextNew, streak, vDue, vNew, VNEW, vTrack, VREV } from "../lib/srs";
 import { nDue, notesOf, nStatus } from "../lib/notes";
 import { POINTS, VOCAB } from "../data";
 import type { AppState, Lang } from "../types";
@@ -33,7 +33,7 @@ export function Today({
   const nTodo = notesOf(st.notes, lang).filter((n) => nStatus(n) !== "done").length;
   const nD = nDue(st.notes, lang, t).length;
   const track = vTrack(st.vtrack[lang], prof.jstart, lang);
-  const vn = vNew(st.vprog[lang], lang, track).length;
+  const vn = vNew(st.vprog[lang], lang, track, prof.vgoal || VNEW).length;
   const vd = vDue(st.vprog[lang], lang, t).length;
   const g = goalXp(prof.goal);
   const tx = st.days[t] || 0;
@@ -75,6 +75,7 @@ export function Today({
           </div>
           <div>
             <span className="eyebrow">레벨 {lvl}</span>
+            <b className="goal">{levelTitle(lvl)}</b>
             <div className="bar">
               <div style={{ width: lp / 2 + "%" }} />
             </div>

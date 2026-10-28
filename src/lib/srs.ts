@@ -14,6 +14,30 @@ export const ELV = ["입문", "기초", "중급", "토익 빈출"];
 export const LEVELS: ByLang<string[]> = { en: ELV, ja: JLV };
 export const LANG_LABEL: Record<Lang, string> = { en: "English", ja: "日本語" };
 
+/**
+ * XP 레벨(200XP당 1레벨, Today.tsx)은 실제 실력과는 무관한 게임화용 숫자라
+ * "레벨 7이 대체 뭔데?" 싶을 수 있다. 실력 지표는 nextLevelProgress가 따로
+ * 보여주고, 여기 호칭은 꾸준함을 보여주는 재미용 라벨일 뿐이다.
+ */
+export const LEVEL_TITLES: [number, string][] = [
+  [1, "새싹 학습자"],
+  [3, "꾸준러"],
+  [5, "문법 매니아"],
+  [8, "말하기 러너"],
+  [12, "유창함 헌터"],
+  [18, "언어 고수"],
+  [25, "문법 마스터"],
+];
+
+export function levelTitle(level: number): string {
+  let title = LEVEL_TITLES[0][1];
+  for (const [min, t] of LEVEL_TITLES) {
+    if (level < min) break;
+    title = t;
+  }
+  return title;
+}
+
 /** 문법·단어 퀴즈에서 묻는 확신도. 노트 자기평가의 CONF_N(자신 있어요/반반/자신 없어요)과는 다른 척도. */
 export const CONF: [string, string][] = [
   ["sure", "확실해요"],
@@ -120,7 +144,9 @@ export function streak(days: Record<string, number>, todayStr: string): number {
 /* ---------- 단어 복습 상자 ---------- */
 
 export const VTRACKS: ByLang<string[]> = { en: ["기초", "토익", "여행", "접객"], ja: ["N5", "N4", "N3", "N2", "여행", "접객"] };
-export const VNEW = 10;
+/** 설정에서 고를 수 있는 "하루 새 단어" 개수. 기본값은 첫 번째 값(10). */
+export const VGOALS = [10, 15, 20, 30];
+export const VNEW = VGOALS[0];
 export const VREV = 20;
 
 export function vTrack(track: string | undefined, jstart: string | undefined, lang: Lang): string {
@@ -138,10 +164,10 @@ export function vDue(vprog: Record<string, ProgressEntry>, lang: Lang, todayStr:
   });
 }
 
-export function vNew(vprog: Record<string, ProgressEntry>, lang: Lang, track: string): VocabWordRw[] {
+export function vNew(vprog: Record<string, ProgressEntry>, lang: Lang, track: string, limit: number = VNEW): VocabWordRw[] {
   const fresh = VOCAB[lang].filter((w) => !vprog[w.id]);
   const order = [track, ...VTRACKS[lang].filter((x) => x !== track)];
-  return order.flatMap((lv) => fresh.filter((w) => w.lv === lv)).slice(0, VNEW);
+  return order.flatMap((lv) => fresh.filter((w) => w.lv === lv)).slice(0, limit);
 }
 
 /** 어렵다고 표시(⭐)한 단어 전부, 복습 예정일이 빠른 순으로. 문법의 starredPoints와 같은 구조. */

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { VWord } from "../components/VWord";
 import { canSpeak, speak } from "../lib/speech";
 import { today, addDays } from "../lib/date";
-import { CONF, INTERVAL, VREV, vDue, vNew, vOpts, vStep, vTrack, type VocabStep } from "../lib/srs";
+import { CONF, INTERVAL, VNEW, VREV, vDue, vNew, vOpts, vStep, vTrack, type VocabStep } from "../lib/srs";
 import { shuffle } from "../lib/util";
 import { MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
 import type { AppState, Lang, ProgressEntry } from "../types";
@@ -14,7 +14,7 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
   const [steps, setSteps] = useState<Step[]>(() => {
     const pr = st.vprog[lang];
     const track = vTrack(st.vtrack[lang], st.profile?.jstart, lang);
-    const nw = vNew(pr, lang, track);
+    const nw = vNew(pr, lang, track, st.profile?.vgoal || VNEW);
     const due = shuffle(vDue(pr, lang, today())).slice(0, VREV);
     const boxOf = (w: VocabWordRw) => pr[w.id]?.box || 0;
     return [...nw.map((w) => ({ type: "card" as const, w })), ...shuffle([...nw, ...due]).map((w) => vStep(w, lang, boxOf(w), 0))];

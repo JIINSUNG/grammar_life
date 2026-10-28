@@ -2,7 +2,7 @@ import { useState } from "react";
 import { VWord } from "../components/VWord";
 import { today } from "../lib/date";
 import { canSpeak, speak } from "../lib/speech";
-import { VOCAB, VTRACKS, starredVocab, vDue, vNew, vTrack } from "../lib/srs";
+import { VNEW, VOCAB, VTRACKS, starredVocab, vDue, vNew, vTrack } from "../lib/srs";
 import { MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
 import { VERB_PAIRS, VERB_PAIR_GROUPS } from "../data/verb-pairs";
 import type { AppState, Lang } from "../types";
@@ -70,7 +70,7 @@ export function VocabTab({
   const [more, setMore] = useState(60);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [draft, setDraft] = useState("");
-  const vn = vNew(pr, lang, tr).length;
+  const vn = vNew(pr, lang, tr, st.profile?.vgoal || VNEW).length;
   const vd = vDue(pr, lang, t).length;
   const starred = starredVocab(pr, lang).length;
   const stat = VTRACKS[lang].map((l) => {
