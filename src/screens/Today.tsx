@@ -2,7 +2,7 @@ import { Sent } from "../components/Sent";
 import { Speak } from "../components/Speak";
 import { build } from "../lib/template";
 import { today } from "../lib/date";
-import { dueList, goalXp, nextNew, streak, vDue, vNew, vTrack, VREV } from "../lib/srs";
+import { dueList, dueStarredPoints, goalXp, nextNew, streak, vDue, vNew, vTrack, VREV } from "../lib/srs";
 import { nDue, notesOf, nStatus } from "../lib/notes";
 import { POINTS, VOCAB } from "../data";
 import type { AppState, Lang } from "../types";
@@ -17,6 +17,7 @@ export function Today({
   goExam,
   goVocab,
   goNote,
+  goFlash,
 }: {
   st: AppState;
   lang: Lang;
@@ -25,6 +26,7 @@ export function Today({
   goExam: () => void;
   goVocab: () => void;
   goNote: () => void;
+  goFlash: () => void;
 }) {
   const t = today();
   const prof = st.profile!;
@@ -47,6 +49,7 @@ export function Today({
   const C = 2 * Math.PI * r;
   const pct = Math.min(1, tx / g);
   const mastered = POINTS[lang].filter((x) => (st.prog[lang][x.id]?.box || 0) >= 4).length;
+  const flashDue = dueStarredPoints(st.prog[lang], lang, t).length;
 
   return (
     <>
@@ -179,6 +182,15 @@ export function Today({
           <small className="sub">복습 4단계 이상</small>
         </div>
       </section>
+      {flashDue > 0 && (
+        <button type="button" className="card minic" style={{ width: "100%", flexDirection: "row", justifyContent: "space-between", alignItems: "center" }} onClick={goFlash}>
+          <span>
+            <span className="eyebrow">⭐ 어렵다고 표시한 문법</span>
+            <b style={{ display: "block" }}>오늘 집중 복습 {flashDue}개</b>
+          </span>
+          <span className="link">시작 ›</span>
+        </button>
+      )}
     </>
   );
 }

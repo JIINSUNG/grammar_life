@@ -1,7 +1,7 @@
 import { GOALS, POINTS, VOCAB } from "../data";
 import { addDays } from "./date";
 import { shuffle } from "./util";
-import type { ByLang, GrammarPoint, Lang, ProgressEntry } from "../types";
+import type { ByLang, FlashRating, GrammarPoint, Lang, ProgressEntry } from "../types";
 import type { VocabWordRw } from "../data";
 
 export { POINTS, VOCAB };
@@ -49,6 +49,29 @@ export function dueList(prog: Record<string, ProgressEntry>, lang: Lang, todaySt
 export function nextNew(prog: Record<string, ProgressEntry>, lang: Lang, jstart: string | undefined): GrammarPoint | undefined {
   const start = lang === "ja" ? Math.max(0, JLV.indexOf(jstart || "입문")) : 0;
   return POINTS[lang].find((p) => !prog[p.id] && (lang !== "ja" || JLV.indexOf(p.lv) >= start)) ?? POINTS[lang].find((p) => !prog[p.id]);
+}
+
+/* ---------- 어렵다고 표시한 문법 (Anki 스타일 복습 카드) ---------- */
+
+/** 어렵다고 표시(⭐)한 문법 전부, 복습 예정일이 빠른 순으로. */
+export function starredPoints(prog: Record<string, ProgressEntry>, lang: Lang): GrammarPoint[] {
+  return POINTS[lang].filter((p) => prog[p.id]?.starred).sort((a, b) => (prog[a.id]?.due ?? "").localeCompare(prog[b.id]?.due ?? ""));
+}
+
+/** 어렵다고 표시한 것 중 오늘 복습할 차례인 것만. */
+export function dueStarredPoints(prog: Record<string, ProgressEntry>, lang: Lang, todayStr: string): GrammarPoint[] {
+  return starredPoints(prog, lang).filter((p) => (prog[p.id]?.due ?? todayStr) <= todayStr);
+}
+
+/**
+ * Anki 카드처럼 "다시/어려움/좋음/쉬움" 넷 중 하나로 평가해서 다음 복습일을 정한다.
+ * gradePoint(퀴즈 정답 기반)와 달리, 카드를 떠올려본 스스로의 평가만으로 상자를 조정한다.
+ */
+export function gradeFlash(prev: ProgressEntry | undefined, rating: FlashRating, todayStr: string): ProgressEntry {
+  const g = prev ?? { box: 0, ok: 0, tot: 0, due: todayStr, starred: true };
+  const box = rating === "again" ? 1 : rating === "hard" ? Math.max(1, g.box) : rating === "good" ? Math.min(5, g.box + 1) : Math.min(5, g.box + 2);
+  const due = rating === "again" ? todayStr : addDays(todayStr, INTERVAL[box]);
+  return { ...g, box, due, tot: g.tot + 1, ok: g.ok + (rating === "again" ? 0 : 1), last: todayStr };
 }
 
 /* ---------- 진도·목표 ---------- */

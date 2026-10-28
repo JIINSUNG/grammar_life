@@ -38,12 +38,20 @@ npm run gen-ruby
 
 - `src/components/` — Sent, Ruby, Speak, VWord, TabBar, Icon, QuickNote 같은 공용 조각
 - `src/screens/` — 탭 하나에 해당하는 화면 (Today, GrammarList, Vocab, Notes, ExamHome, Me, Survey)
-- `src/flows/` — 탭 바가 사라지고 전체화면으로 진행하는 흐름 (Session, VocabSession, NoteEditor, NoteReview, Exam)
+- `src/flows/` — 탭 바가 사라지고 전체화면으로 진행하는 흐름 (Session, VocabSession, NoteEditor, NoteReview, Exam, FlashReview)
 - `src/App.tsx` — 레거시 `App()`과 동일하게 profile/tab/run 상태를 들고 화면을 고른다
 
 일본어 콘텐츠(POINTS.ja, EXAM.ja, JOBS/RIDES/HOBBIES/PLANS의 ja 필드)는 `src/data/index.ts`에서 **앱이 뜰 때 한 번만**
 `ruby.json`으로 후리가나를 구워서 내보낸다(레거시가 모듈 로드 시점에 한 번 rubify해두던 것과 같은 타이밍 — 화면 쪽은 `src/data/*.json`을
 직접 import하지 않고 이 파일의 export만 쓴다).
+
+### 어렵다고 표시한 문법 (Anki 스타일 복습 카드)
+
+문법 탭 각 항목 옆 ☆를 누르면 "어렵다고 표시"되고(진도가 한 번이라도 생긴 문법만 가능), 문법 탭 상단과 오늘 탭에
+"집중 복습" 카드가 떠서 Anki 카드처럼 앞면(설명) → 뒤집기 → 뒷면(용어·예문) → 다시/어려움/좋음/쉬움 네 단계로
+평가한다. 평가는 기존 복습 상자(`ProgressEntry.box`)를 그대로 쓰되, 퀴즈 정답이 아니라 스스로 평가한 결과로
+상자를 조정한다(`lib/srs.ts`의 `gradeFlash`). `starred`는 `ProgressEntry`에 추가한 선택 필드라 기존 저장 데이터와
+호환되고 마이그레이션이 필요 없다.
 
 ### 순간 메모
 

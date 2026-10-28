@@ -11,6 +11,7 @@ import { VocabSession } from "./flows/VocabSession";
 import { NoteEditor } from "./flows/NoteEditor";
 import { NoteReview } from "./flows/NoteReview";
 import { Exam } from "./flows/Exam";
+import { FlashReview } from "./flows/FlashReview";
 import { TabBar } from "./components/TabBar";
 import { QuickNote } from "./components/QuickNote";
 import { blankState, load, requestPersistentStorage, save } from "./lib/storage";
@@ -24,6 +25,7 @@ type Run =
   | { kind: "note"; key: number; id: string }
   | { kind: "nreview"; key: number }
   | { kind: "exam"; key: number }
+  | { kind: "flash"; key: number }
   | null;
 
 export default function App() {
@@ -71,6 +73,7 @@ export default function App() {
   if (run?.kind === "vocab") return <VocabSession key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
   if (run?.kind === "note") return <NoteEditor key={run.key} st={st} lang={lang} id={run.id} up={up} onClose={() => setRun(null)} />;
   if (run?.kind === "nreview") return <NoteReview key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
+  if (run?.kind === "flash") return <FlashReview key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
   if (run?.kind === "exam")
     return (
       <Exam
@@ -117,9 +120,12 @@ export default function App() {
             goExam={() => setRun({ kind: "exam", key: Date.now() })}
             goVocab={() => setRun({ kind: "vocab", key: Date.now() })}
             goNote={() => setTab("note")}
+            goFlash={() => setRun({ kind: "flash", key: Date.now() })}
           />
         )}
-        {tab === "grammar" && <GrammarList key={gq} initQ={gq} st={st} lang={lang} openPoint={openPoint} />}
+        {tab === "grammar" && (
+          <GrammarList key={gq} initQ={gq} st={st} lang={lang} up={up} openPoint={openPoint} startFlash={() => setRun({ kind: "flash", key: Date.now() })} />
+        )}
         {tab === "vocab" && <VocabTab st={st} lang={lang} up={up} start={() => setRun({ kind: "vocab", key: Date.now() })} />}
         {tab === "note" && (
           <NoteTab

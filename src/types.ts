@@ -114,7 +114,11 @@ export interface ProgressEntry {
   lucky?: number;
   lastPass?: boolean;
   last?: string;
+  /** 어렵다고 직접 표시(Anki의 별표 비슷한 것). true면 복습 카드 모음에 계속 나옴. */
+  starred?: boolean;
 }
+
+export type FlashRating = "again" | "hard" | "good" | "easy";
 
 export type ByLang<T> = { en: T; ja: T };
 
