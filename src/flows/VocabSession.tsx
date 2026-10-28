@@ -4,6 +4,7 @@ import { canSpeak, speak } from "../lib/speech";
 import { today, addDays } from "../lib/date";
 import { CONF, INTERVAL, VREV, vDue, vNew, vOpts, vStep, vTrack, type VocabStep } from "../lib/srs";
 import { shuffle } from "../lib/util";
+import { MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
 import type { AppState, Lang, ProgressEntry } from "../types";
 import type { VocabWordRw } from "../data";
 
@@ -24,8 +25,16 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
   const [res, setRes] = useState<Record<number, { ok: boolean; conf: string | null }>>({});
   const [xp, setXp] = useState(0);
   const [ended, setEnded] = useState(false);
+  const [editingHint, setEditingHint] = useState(false);
+  const [hintDraft, setHintDraft] = useState("");
   const s = steps[i];
   const reveal = pick != null && conf != null;
+
+  const mnemonicOf = (w: VocabWordRw) => st.mnemonics?.[w.id] || (lang === "ja" ? MNEMONICS_SEED_JA[w.id] : undefined);
+  const saveHint = (w: VocabWordRw) => {
+    up((p) => ({ ...p, mnemonics: { ...p.mnemonics, [w.id]: hintDraft.trim() } }));
+    setEditingHint(false);
+  };
 
   const gain = (add: number) => {
     const t = today();
@@ -57,6 +66,7 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
   const next = () => {
     setPick(null);
     setConf(null);
+    setEditingHint(false);
     if (i + 1 >= steps.length) finish();
     else setI(i + 1);
   };
@@ -174,6 +184,7 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
 
   if (s.type === "card") {
     const w = s.w;
+    const mnemonic = mnemonicOf(w);
     return (
       <main className="wrap main sess">
         {bar}
@@ -187,6 +198,47 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
           </div>
           {w.r && w.r !== w.w && <p className="vread ja">{w.r}</p>}
           <p className="vmean">{w.m}</p>
+          {!editingHint && (
+            <div style={{ display: "flex", gap: 8, alignItems: "flex-start" }}>
+              {mnemonic ? (
+                <small className="sub" style={{ flex: 1 }}>
+                  💡 {mnemonic}
+                </small>
+              ) : (
+                <span />
+              )}
+              <button
+                type="button"
+                className="link sm"
+                onClick={() => {
+                  setHintDraft(st.mnemonics?.[w.id] ?? "");
+                  setEditingHint(true);
+                }}
+              >
+                {mnemonic ? "수정" : "+ 연상 힌트 적기"}
+              </button>
+            </div>
+          )}
+          {editingHint && (
+            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
+              <textarea
+                className="inp ta"
+                rows={2}
+                placeholder="예) 猿(さる,원숭이) → '사루'처럼 들려서, 원숭이가 야구장에서 춤추는 모습을 떠올려요"
+                value={hintDraft}
+                onChange={(e) => setHintDraft(e.target.value)}
+                autoFocus
+              />
+              <div style={{ display: "flex", gap: 8, justifyContent: "flex-end" }}>
+                <button type="button" className="btn sm" onClick={() => setEditingHint(false)}>
+                  취소
+                </button>
+                <button type="button" className="btn pri sm" onClick={() => saveHint(w)}>
+                  저장
+                </button>
+              </div>
+            </div>
+          )}
         </section>
         <button type="button" className="btn pri wide" onClick={next}>
           외웠어요, 다음
@@ -244,6 +296,7 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
             </div>
             {w.r && w.r !== w.w && <p className="vread ja">{w.r}</p>}
             <p className="why">{w.m}</p>
+            {mnemonicOf(w) && <p className="why sub">💡 {mnemonicOf(w)}</p>}
           </div>
         )}
       </section>
