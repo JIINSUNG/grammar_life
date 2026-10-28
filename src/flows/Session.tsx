@@ -76,12 +76,13 @@ export function Session({
   const [i, setI] = useState(0);
   const [pick, setPick] = useState<number | null>(null);
   const [conf, setConf] = useState<string | null>(null);
-  const [res, setRes] = useState<Record<number, { ok: boolean; conf: string | null }>>({});
+  const [submitted, setSubmitted] = useState(false);
+  const [res, setRes] = useState<Record<number, { ok: boolean; conf: string | null; pick: number }>>({});
   const [xp, setXp] = useState(0);
   const [ended, setEnded] = useState(false);
   const [seedBump, setSeedBump] = useState<Record<string, number>>({});
   const s = steps[i];
-  const reveal = s && s.type === "concept" ? pick != null : pick != null && conf != null;
+  const reveal = s && s.type === "concept" ? pick != null && submitted : pick != null && conf != null;
 
   const gain = (add: number) => {
     const t = today();
@@ -117,18 +118,33 @@ export function Session({
     setEnded(true);
   };
 
+  const loadStep = (idx: number) => {
+    const r = res[idx];
+    setPick(r ? r.pick : null);
+    setConf(r ? r.conf : null);
+    setSubmitted(!!r);
+  };
+
   const next = () => {
-    setPick(null);
-    setConf(null);
-    if (i + 1 >= steps.length) finish();
-    else setI(i + 1);
+    if (i + 1 >= steps.length) {
+      finish();
+      return;
+    }
+    loadStep(i + 1);
+    setI(i + 1);
+  };
+
+  const goBack = () => {
+    if (i === 0) return;
+    loadStep(i - 1);
+    setI(i - 1);
   };
 
   const record = (k: number, c: string | null) => {
     if (s.type === "learn") return;
     const ok = k === s.q.a;
     const solid = s.type === "concept" ? ok : ok && c === "sure";
-    setRes((r) => ({ ...r, [i]: { ok, conf: c } }));
+    setRes((r) => ({ ...r, [i]: { ok, conf: c, pick: k } }));
     const add = s.type === "concept" ? (ok ? 5 : 0) : solid ? 10 : ok ? 4 : 0;
     if (add) {
       gain(add);
@@ -144,9 +160,14 @@ export function Session({
   };
 
   const answer = (k: number) => {
-    if (pick != null) return;
+    if (reveal) return;
     setPick(k);
-    if (s.type === "concept") record(k, null);
+  };
+
+  const confirmConcept = () => {
+    if (pick == null || submitted) return;
+    setSubmitted(true);
+    record(pick, null);
   };
 
   const chooseConf = (c: string) => {
@@ -215,6 +236,11 @@ export function Session({
       <button type="button" className="link" onClick={onExit} aria-label="그만하기">
         ✕
       </button>
+      {i > 0 && (
+        <button type="button" className="link" onClick={goBack} aria-label="이전 문제">
+          ‹ 이전
+        </button>
+      )}
       <div className="prog">
         <div style={{ width: (i / steps.length) * 100 + "%" }} />
       </div>
@@ -309,8 +335,8 @@ export function Session({
               <button
                 type="button"
                 key={k}
-                className={"opt" + (pick != null && k === q.a ? " right" : "") + (pick === k && k !== q.a ? " wrong" : "")}
-                disabled={pick != null}
+                className={"opt" + (reveal && k === q.a ? " right" : "") + (reveal && pick === k && k !== q.a ? " wrong" : "") + (!reveal && pick === k ? " sel" : "")}
+                disabled={reveal}
                 onClick={() => answer(k)}
               >
                 <span className="ol">{k + 1}</span>
@@ -328,6 +354,11 @@ export function Session({
             </div>
           )}
         </section>
+        {pick != null && !reveal && (
+          <button type="button" className="btn pri wide" onClick={confirmConcept}>
+            정답 확인
+          </button>
+        )}
         {reveal && (
           <button type="button" className="btn pri wide" onClick={next}>
             다음
@@ -358,7 +389,7 @@ export function Session({
               type="button"
               key={k}
               className={"opt" + (reveal && k === q.a ? " right" : "") + (reveal && pick === k && k !== q.a ? " wrong" : "") + (!reveal && pick === k ? " sel" : "")}
-              disabled={pick != null}
+              disabled={reveal}
               onClick={() => answer(k)}
             >
               <span className="ol">{lang === "ja" ? k + 1 : "ABCD"[k]}</span>
