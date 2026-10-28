@@ -119,6 +119,16 @@ export function vNew(vprog: Record<string, ProgressEntry>, lang: Lang, track: st
   return order.flatMap((lv) => fresh.filter((w) => w.lv === lv)).slice(0, VNEW);
 }
 
+/** 어렵다고 표시(⭐)한 단어 전부, 복습 예정일이 빠른 순으로. 문법의 starredPoints와 같은 구조. */
+export function starredVocab(vprog: Record<string, ProgressEntry>, lang: Lang): VocabWordRw[] {
+  return VOCAB[lang].filter((w) => vprog[w.id]?.starred).sort((a, b) => (vprog[a.id]?.due ?? "").localeCompare(vprog[b.id]?.due ?? ""));
+}
+
+/** 어렵다고 표시한 단어 중 오늘 복습할 차례인 것만. */
+export function dueStarredVocab(vprog: Record<string, ProgressEntry>, lang: Lang, todayStr: string): VocabWordRw[] {
+  return starredVocab(vprog, lang).filter((w) => (vprog[w.id]?.due ?? todayStr) <= todayStr);
+}
+
 const meaningTokens = (m: string) =>
   m
     .replace(/\([^)]*\)/g, "")

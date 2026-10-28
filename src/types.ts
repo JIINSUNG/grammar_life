@@ -181,6 +181,8 @@ export interface AppState {
   voice?: VoicePref;
   /** 후리가나 표시 여부. 기본값 true */
   furi?: boolean;
+  /** 단어별 내가 직접 적은 연상 암기 메모. key는 VocabWord.id. 추천 힌트(mnemonics-seed.ts)와 별개로, 적으면 그게 우선 보임. */
+  mnemonics?: Record<string, string>;
 }
 
 /** 백업 코드 포맷: {app:"grammar-life", v:1, at, data:<AppState>} */

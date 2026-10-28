@@ -16,6 +16,7 @@ export function blankState(): AppState {
     days: {},
     seeds: {},
     exams: [],
+    mnemonics: {},
   };
 }
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { INTERVAL, POINTS, VOCAB, dueStarredPoints, gradeFlash, gradePoint, starredPoints, vOpts } from "./srs";
+import { INTERVAL, POINTS, VOCAB, dueStarredPoints, dueStarredVocab, gradeFlash, gradePoint, starredPoints, starredVocab, vOpts } from "./srs";
 import { addDays } from "./date";
 
 describe("gradePoint", () => {
@@ -116,5 +116,19 @@ describe("vOpts", () => {
         }
       }
     }
+  });
+});
+
+describe("starredVocab / dueStarredVocab (단어판 Anki 복습, 문법과 같은 구조)", () => {
+  it("starred만 돌려주고 due 순으로 정렬, 오늘 이전만 due 목록에 포함된다", () => {
+    const lang = "en";
+    const [w1, w2, w3] = VOCAB[lang];
+    const vprog = {
+      [w1.id]: { box: 1, ok: 0, tot: 0, due: "2026-01-10", starred: true },
+      [w2.id]: { box: 1, ok: 0, tot: 0, due: "2026-01-02", starred: true },
+      [w3.id]: { box: 1, ok: 0, tot: 0, due: "2026-01-01" },
+    };
+    expect(starredVocab(vprog, lang).map((w) => w.id)).toEqual([w2.id, w1.id]);
+    expect(dueStarredVocab(vprog, lang, "2026-01-05").map((w) => w.id)).toEqual([w2.id]);
   });
 });

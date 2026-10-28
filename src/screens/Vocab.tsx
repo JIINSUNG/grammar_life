@@ -2,20 +2,77 @@ import { useState } from "react";
 import { VWord } from "../components/VWord";
 import { today } from "../lib/date";
 import { canSpeak, speak } from "../lib/speech";
-import { VOCAB, VTRACKS, vDue, vNew, vTrack } from "../lib/srs";
+import { VOCAB, VTRACKS, starredVocab, vDue, vNew, vTrack } from "../lib/srs";
+import { MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
+import { VERB_PAIRS, VERB_PAIR_GROUPS } from "../data/verb-pairs";
 import type { AppState, Lang } from "../types";
 
 const TRACK_LABEL: Record<string, string> = { 토익: "토익 빈출", 기초: "기초 생활", 접객: "매장·접객", 여행: "여행 회화" };
 
-export function VocabTab({ st, lang, up, start }: { st: AppState; lang: Lang; up: (fn: (s: AppState) => AppState) => void; start: () => void }) {
+function VerbPairs() {
+  const [open, setOpen] = useState(false);
+  return (
+    <section className="card">
+      <button type="button" className="rh" style={{ width: "100%", textAlign: "left", background: "none" }} onClick={() => setOpen(!open)}>
+        <span className="eyebrow">헷갈리는 자동사·타동사</span>
+        <span className="link">{open ? "접기" : "펼치기"}</span>
+      </button>
+      {open && (
+        <>
+          <p className="hint" style={{ margin: 0 }}>
+            둘 다 외우려 하지 말고, 아래 패턴 규칙부터 기억하면 훨씬 쉬워요.
+          </p>
+          {VERB_PAIR_GROUPS.map((g) => {
+            const pairs = VERB_PAIRS.filter((p) => p.group === g.id);
+            return (
+              <div key={g.id} className="box" style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <b style={{ fontSize: 14 }}>{g.title}</b>
+                <p className="hint" style={{ margin: 0 }}>
+                  {g.rule}
+                </p>
+                {pairs.map((p) => (
+                  <div key={p.id} className="wk" style={{ gridTemplateColumns: "1fr 1fr", fontSize: 13 }}>
+                    <span>
+                      <b className="ja">{p.intr.w}</b>({p.intr.r}) <small className="sub">{p.intr.m}</small>
+                    </span>
+                    <span>
+                      <b className="ja">{p.tr.w}</b>({p.tr.r}) <small className="sub">{p.tr.m}</small>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            );
+          })}
+        </>
+      )}
+    </section>
+  );
+}
+
+export function VocabTab({
+  st,
+  lang,
+  up,
+  start,
+  startFlash,
+}: {
+  st: AppState;
+  lang: Lang;
+  up: (fn: (s: AppState) => AppState) => void;
+  start: () => void;
+  startFlash: () => void;
+}) {
   const pr = st.vprog[lang];
   const tr = vTrack(st.vtrack[lang], st.profile?.jstart, lang);
   const t = today();
   const [lvF, setLvF] = useState("all");
   const [q, setQ] = useState("");
   const [more, setMore] = useState(60);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [draft, setDraft] = useState("");
   const vn = vNew(pr, lang, tr).length;
   const vd = vDue(pr, lang, t).length;
+  const starred = starredVocab(pr, lang).length;
   const stat = VTRACKS[lang].map((l) => {
     const ws = VOCAB[lang].filter((w) => w.lv === l);
     return [l, ws.filter((w) => (pr[w.id]?.box || 0) >= 3).length, ws.filter((w) => pr[w.id]).length, ws.length] as const;
@@ -24,11 +81,38 @@ export function VocabTab({ st, lang, up, start }: { st: AppState; lang: Lang; up
   const list = VOCAB[lang].filter((w) => (lvF === "all" || w.lv === lvF) && (!ql || (w.w + " " + w.r + " " + w.m).toLowerCase().includes(ql)));
   const vSay = (w: (typeof VOCAB)[Lang][number]) => speak(lang === "ja" ? w.r || w.w : w.w, lang, { rate: st.voice?.rate, voiceName: st.voice?.[lang] });
 
+  const toggleStar = (id: string) =>
+    up((s) => {
+      const g = s.vprog[lang][id];
+      if (!g) return s;
+      return { ...s, vprog: { ...s.vprog, [lang]: { ...s.vprog[lang], [id]: { ...g, starred: !g.starred } } } };
+    });
+
+  const saveMnemonic = (id: string) => {
+    up((s) => ({ ...s, mnemonics: { ...s.mnemonics, [id]: draft.trim() } }));
+    setEditingId(null);
+    setDraft("");
+  };
+
   return (
     <>
       <h1 className="ptitle">
         {lang === "en" ? "영어" : "일본어"} 자주 쓰는 단어 {VOCAB[lang].length}개
       </h1>
+      {starred > 0 && (
+        <section className="card routine">
+          <div className="rh">
+            <div>
+              <span className="eyebrow">⭐ 어렵다고 표시한 단어</span>
+              <h2>{starred}개 집중 복습</h2>
+            </div>
+          </div>
+          <p className="sub">Anki 카드처럼, 뜻을 떠올려보고 뒤집어서 확인한 뒤 얼마나 기억났는지 평가해요.</p>
+          <button type="button" className="btn pri wide" onClick={startFlash}>
+            집중 복습 시작
+          </button>
+        </section>
+      )}
       <section className="card routine">
         <div className="rh">
           <div>
@@ -41,6 +125,7 @@ export function VocabTab({ st, lang, up, start }: { st: AppState; lang: Lang; up
           단어 루틴 시작
         </button>
       </section>
+      {lang === "ja" && <VerbPairs />}
       <section className="card">
         <span className="eyebrow">새 단어는 어디서 가져올까요</span>
         <div className="chips">
@@ -96,8 +181,22 @@ export function VocabTab({ st, lang, up, start }: { st: AppState; lang: Lang; up
         {list.slice(0, more).map((w) => {
           const g = pr[w.id];
           const due = g && g.due <= t;
+          const mnemonic = st.mnemonics?.[w.id] || (lang === "ja" ? MNEMONICS_SEED_JA[w.id] : undefined);
+          const editing = editingId === w.id;
           return (
-            <div key={w.id} className="card prow vrowc">
+            <div key={w.id} className="card prow vrowc" style={{ flexWrap: "wrap" }}>
+              {g && (
+                <button
+                  type="button"
+                  className="link"
+                  style={{ fontSize: 18, flexShrink: 0, background: "none" }}
+                  aria-pressed={!!g.starred}
+                  aria-label={g.starred ? "어렵다고 표시 해제" : "어렵다고 표시"}
+                  onClick={() => toggleStar(w.id)}
+                >
+                  <span style={{ color: g.starred ? "var(--mark)" : "var(--muted)" }}>{g.starred ? "★" : "☆"}</span>
+                </button>
+              )}
               <div className="pmain">
                 <b>
                   <VWord w={w} furi={st.furi} />
@@ -122,6 +221,47 @@ export function VocabTab({ st, lang, up, start }: { st: AppState; lang: Lang; up
                     <path d="M13 7.5a3.5 3.5 0 0 1 0 5M15 5a7 7 0 0 1 0 10" stroke="currentColor" strokeWidth={1.6} fill="none" strokeLinecap="round" />
                   </svg>
                 </button>
+              )}
+              {!editing && (
+                <div style={{ flexBasis: "100%", display: "flex", gap: 8, alignItems: "flex-start" }}>
+                  {mnemonic ? (
+                    <small className="sub" style={{ flex: 1 }}>
+                      💡 {mnemonic}
+                    </small>
+                  ) : (
+                    <span />
+                  )}
+                  <button
+                    type="button"
+                    className="link sm"
+                    onClick={() => {
+                      setEditingId(w.id);
+                      setDraft(st.mnemonics?.[w.id] ?? "");
+                    }}
+                  >
+                    {mnemonic ? "수정" : "+ 연상 힌트 적기"}
+                  </button>
+                </div>
+              )}
+              {editing && (
+                <div style={{ flexBasis: "100%", display: "flex", flexDirection: "column", gap: 6 }}>
+                  <textarea
+                    className="inp ta"
+                    rows={2}
+                    placeholder="예) 猿(さる,원숭이) → '사루'처럼 들려서, 원숭이가 야구장에서 춤추는 모습을 떠올려요"
+                    value={draft}
+                    onChange={(e) => setDraft(e.target.value)}
+                    autoFocus
+                  />
+                  <div style={{ display: "flex", gap: 8, justifyContent: "flex-end" }}>
+                    <button type="button" className="btn sm" onClick={() => setEditingId(null)}>
+                      취소
+                    </button>
+                    <button type="button" className="btn pri sm" onClick={() => saveMnemonic(w.id)}>
+                      저장
+                    </button>
+                  </div>
+                </div>
               )}
             </div>
           );
