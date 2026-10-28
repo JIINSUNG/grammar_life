@@ -2,7 +2,7 @@ import { Sent } from "../components/Sent";
 import { Speak } from "../components/Speak";
 import { build } from "../lib/template";
 import { today } from "../lib/date";
-import { dueList, dueStarredPoints, goalXp, nextNew, streak, vDue, vNew, vTrack, VREV } from "../lib/srs";
+import { dueList, dueStarredPoints, goalXp, nextLevelProgress, nextNew, streak, vDue, vNew, vTrack, VREV } from "../lib/srs";
 import { nDue, notesOf, nStatus } from "../lib/notes";
 import { POINTS, VOCAB } from "../data";
 import type { AppState, Lang } from "../types";
@@ -50,6 +50,7 @@ export function Today({
   const pct = Math.min(1, tx / g);
   const mastered = POINTS[lang].filter((x) => (st.prog[lang][x.id]?.box || 0) >= 4).length;
   const flashDue = dueStarredPoints(st.prog[lang], lang, t).length;
+  const levelProgress = nextLevelProgress(st.prog[lang], lang);
 
   return (
     <>
@@ -82,6 +83,7 @@ export function Today({
           <div>
             <span className="eyebrow">목표</span>
             <b className="goal">{lang === "en" ? "TOEIC " + prof.toeic : "JLPT " + prof.jlpt}</b>
+            <small className="sub">{levelProgress ? `${levelProgress.level}까지 ${levelProgress.remaining}개` : "모든 레벨 완료!"}</small>
           </div>
         </div>
       </section>

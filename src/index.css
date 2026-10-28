@@ -138,6 +138,7 @@ mark{background:linear-gradient(transparent 52%,var(--mark) 52%);color:inherit;p
 .why{margin:0;font-size:13.5px}
 .fb.lucky{background:var(--lucky-bg)}.fb.lucky>b{color:var(--lucky)}
 .qtop{display:flex;gap:8px;align-items:center}
+.qprompt{margin:0;font-size:14px;font-weight:700;color:var(--muted)}
 .qtext.concept{font-size:17px;font-weight:700}
 .confbox{border-radius:14px;padding:14px;background:var(--surface);box-shadow:inset 0 0 0 1.5px var(--accent);display:flex;flex-direction:column;gap:6px}
 .confbox p{margin:0}

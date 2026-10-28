@@ -10,6 +10,8 @@ export { POINTS, VOCAB };
 export const INTERVAL = [0, 1, 2, 4, 7, 15];
 
 export const JLV = ["입문", "N5", "N4", "N3", "N2"];
+export const ELV = ["입문", "기초", "중급", "토익 빈출"];
+export const LEVELS: ByLang<string[]> = { en: ELV, ja: JLV };
 export const LANG_LABEL: Record<Lang, string> = { en: "English", ja: "日本語" };
 
 /** 문법·단어 퀴즈에서 묻는 확신도. 노트 자기평가의 CONF_N(자신 있어요/반반/자신 없어요)과는 다른 척도. */
@@ -49,6 +51,29 @@ export function dueList(prog: Record<string, ProgressEntry>, lang: Lang, todaySt
 export function nextNew(prog: Record<string, ProgressEntry>, lang: Lang, jstart: string | undefined): GrammarPoint | undefined {
   const start = lang === "ja" ? Math.max(0, JLV.indexOf(jstart || "입문")) : 0;
   return POINTS[lang].find((p) => !prog[p.id] && (lang !== "ja" || JLV.indexOf(p.lv) >= start)) ?? POINTS[lang].find((p) => !prog[p.id]);
+}
+
+export interface LevelProgress {
+  /** 다음으로 채워야 할 레벨(예: "N5"). 이미 전부 익혔으면 없음(null 반환). */
+  level: string;
+  /** 그 레벨에서 아직 복습 4단계 이상(익힘)에 못 미친 문법 개수. */
+  remaining: number;
+  total: number;
+  mastered: number;
+}
+
+/**
+ * "N5까지 N개 남음"처럼 보여주기 위해, JLV/ELV 순서대로 아직 다 안 익힌 첫 레벨과
+ * 그 레벨에서 남은 개수를 찾는다. 전부 익혔으면 null.
+ */
+export function nextLevelProgress(prog: Record<string, ProgressEntry>, lang: Lang): LevelProgress | null {
+  for (const level of LEVELS[lang]) {
+    const ps = POINTS[lang].filter((p) => p.lv === level);
+    if (ps.length === 0) continue;
+    const mastered = ps.filter((p) => (prog[p.id]?.box || 0) >= 4).length;
+    if (mastered < ps.length) return { level, remaining: ps.length - mastered, total: ps.length, mastered };
+  }
+  return null;
 }
 
 /* ---------- 어렵다고 표시한 문법 (Anki 스타일 복습 카드) ---------- */

@@ -376,8 +376,9 @@ export function Session({
       <section className="quiz">
         <div className="qtop">
           {retryNote}
-          <span className="eyebrow">{s.p.t} · 빈칸에 알맞은 것</span>
+          <span className="eyebrow">{s.p.t}</span>
         </div>
+        <p className="qprompt">다음 {lang === "ja" ? "괄호" : "빈칸"}에 들어갈 말로 가장 알맞은 것은?</p>
         <p className="qtext">
           <span className={"sent big" + (lang === "ja" ? " ja" : "")}>
             <Ruby text={q.blank} furi={st.furi} />
