@@ -2,18 +2,20 @@ import { useState, type MouseEvent } from "react";
 import { today } from "../lib/date";
 import { POINTS } from "../data";
 import { starredPoints } from "../lib/srs";
-import { GRAMMAR_PAIR_GROUPS } from "../data/grammar-pairs";
+import { GRAMMAR_PAIR_GROUPS_JA } from "../data/grammar-pairs";
+import { GRAMMAR_PAIR_GROUPS_EN } from "../data/grammar-pairs-en";
 import type { AppState, Lang } from "../types";
 
-function GrammarPairs() {
+function GrammarPairs({ lang }: { lang: Lang }) {
   const [open, setOpen] = useState(false);
   const [lvF, setLvF] = useState("all");
-  const levels = [...new Set(GRAMMAR_PAIR_GROUPS.map((g) => g.lv))];
-  const groups = GRAMMAR_PAIR_GROUPS.filter((g) => lvF === "all" || g.lv === lvF);
+  const allGroups = lang === "ja" ? GRAMMAR_PAIR_GROUPS_JA : GRAMMAR_PAIR_GROUPS_EN;
+  const levels = [...new Set(allGroups.map((g) => g.lv))];
+  const groups = allGroups.filter((g) => lvF === "all" || g.lv === lvF);
   return (
     <section className="card">
       <button type="button" className="rh" style={{ width: "100%", textAlign: "left", background: "none" }} onClick={() => setOpen(!open)}>
-        <span className="eyebrow">헷갈리는 문법 비교 · {GRAMMAR_PAIR_GROUPS.length}묶음</span>
+        <span className="eyebrow">헷갈리는 문법 비교 · {allGroups.length}묶음</span>
         <span className="link">{open ? "접기" : "펼치기"}</span>
       </button>
       {open && (
@@ -138,7 +140,7 @@ export function GrammarList({
           </div>
         ))}
       </section>
-      {lang === "ja" && <GrammarPairs />}
+      <GrammarPairs lang={lang} />
       <div className="chips">
         {[["all", "전체"] as const, ...groups.map((g) => [g, g] as const)].map(([k, l]) => (
           <button type="button" key={k} className="chip" aria-pressed={lvF === k} onClick={() => setLvF(k)}>

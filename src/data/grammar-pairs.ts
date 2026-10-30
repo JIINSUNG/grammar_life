@@ -23,7 +23,7 @@ export interface GrammarPairGroup {
   items: GrammarPairItem[];
 }
 
-export const GRAMMAR_PAIR_GROUPS: GrammarPairGroup[] = [
+export const GRAMMAR_PAIR_GROUPS_JA: GrammarPairGroup[] = [
   {
     id: "teiru-tearu",
     lv: "N4",
