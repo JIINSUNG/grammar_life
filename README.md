@@ -66,11 +66,14 @@ npm run gen-ruby
 
 ### 헷갈리는 문법 비교
 
-일본어 문법 탭 상단에 `src/data/grammar-pairs.ts`(verb-pairs.ts와 같은 이유로 변환 스크립트를 거치지 않는
-새 콘텐츠) 기반 비교 카드가 있다. ている/てある, のに/ても, ために/ように, ようだ/そうだ/らしい, はずだ/べきだ
-같은 JLPT N4~N2 단골 혼동 쌍 16묶음(표현 38개)을 레벨별로 걸러보며, 핵심 규칙 → 자주 틀리는 포인트 → 각
-표현의 예문까지 한 번에 비교할 수 있다. 같은 혼동 쌍을 직접 테스트하는 빈칸 문제 12개를 `legacy/src/jp_more3.js`의
-`EXAM.ja`에 추가해(실전 탭에서 출제) 비교 카드로 익힌 걸 바로 확인해볼 수 있다.
+문법 탭 상단에 비교 카드가 있다(verb-pairs.ts와 같은 이유로 변환 스크립트를 거치지 않는 새 콘텐츠).
+일본어는 `src/data/grammar-pairs.ts`의 `GRAMMAR_PAIR_GROUPS_JA` — ている/てある, のに/ても, ために/ように,
+ようだ/そうだ/らしい, はずだ/べきだ 같은 JLPT N4~N2 단골 혼동 쌍 16묶음(표현 38개). 영어는
+`src/data/grammar-pairs-en.ts`의 `GRAMMAR_PAIR_GROUPS_EN` — 현재완료/과거, a few/few/a little/little,
+used to/would/be used to/get used to, although/despite 같은 토익·일반 영어 혼동 쌍 12묶음. 두 언어 모두
+레벨별로 걸러보며 핵심 규칙 → 자주 틀리는 포인트 → 각 표현의 예문까지 한 번에 비교할 수 있다(`GrammarList.tsx`의
+`GrammarPairs` 컴포넌트가 `lang`에 맞는 데이터셋을 고른다). 일본어 혼동 쌍을 직접 테스트하는 빈칸 문제 12개를
+`legacy/src/jp_more3.js`의 `EXAM.ja`에 추가해(실전 탭에서 출제) 비교 카드로 익힌 걸 바로 확인해볼 수 있다.
 
 ### 순간 메모
 
