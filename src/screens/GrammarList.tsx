@@ -2,7 +2,74 @@ import { useState, type MouseEvent } from "react";
 import { today } from "../lib/date";
 import { POINTS } from "../data";
 import { starredPoints } from "../lib/srs";
+import { GRAMMAR_PAIR_GROUPS } from "../data/grammar-pairs";
 import type { AppState, Lang } from "../types";
+
+function GrammarPairs() {
+  const [open, setOpen] = useState(false);
+  const [lvF, setLvF] = useState("all");
+  const levels = [...new Set(GRAMMAR_PAIR_GROUPS.map((g) => g.lv))];
+  const groups = GRAMMAR_PAIR_GROUPS.filter((g) => lvF === "all" || g.lv === lvF);
+  return (
+    <section className="card">
+      <button type="button" className="rh" style={{ width: "100%", textAlign: "left", background: "none" }} onClick={() => setOpen(!open)}>
+        <span className="eyebrow">헷갈리는 문법 비교 · {GRAMMAR_PAIR_GROUPS.length}묶음</span>
+        <span className="link">{open ? "접기" : "펼치기"}</span>
+      </button>
+      {open && (
+        <>
+          <p className="hint" style={{ margin: 0 }}>
+            뜻은 비슷해 보여도 핵심 차이가 분명히 있어요. 한 묶음씩 핵심 규칙 → 자주 틀리는 포인트 → 각 표현 예문 순서로 비교해보세요.
+          </p>
+          <div className="chips">
+            {[["all", "전체"] as const, ...levels.map((l) => [l, l] as const)].map(([k, l]) => (
+              <button type="button" key={k} className="chip" aria-pressed={lvF === k} onClick={() => setLvF(k)}>
+                {l}
+              </button>
+            ))}
+          </div>
+          {groups.map((g) => (
+            <div key={g.id} style={{ display: "flex", flexDirection: "column", gap: 10, boxShadow: "inset 0 0 0 1px var(--line)", borderRadius: 14, padding: "12px 14px" }}>
+              <div className="rh">
+                <b className="ja" style={{ fontSize: 15 }}>
+                  {g.title}
+                </b>
+                <small className="sub">{g.lv}</small>
+              </div>
+              <p className="hint" style={{ margin: 0 }}>
+                {g.rule}
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                {g.items.map((it) => (
+                  <div
+                    key={it.id}
+                    style={{ flex: "1 1 220px", minWidth: 200, display: "flex", flexDirection: "column", gap: 4, background: "var(--field)", borderRadius: 10, padding: "10px 12px" }}
+                  >
+                    <span>
+                      <b className="ja">{it.form}</b>
+                      {it.reading && <small className="sub"> ({it.reading})</small>}
+                    </span>
+                    <small className="sub" style={{ fontWeight: 700, color: "var(--ink)" }}>
+                      {it.nuance}
+                    </small>
+                    <small className="sub">{it.detail}</small>
+                    <div className="ja" style={{ fontSize: 13.5 }}>
+                      {it.example.s}
+                    </div>
+                    <small className="sub">{it.example.ko}</small>
+                  </div>
+                ))}
+              </div>
+              <p className="hint" style={{ margin: 0 }}>
+                ⚠ {g.pitfall}
+              </p>
+            </div>
+          ))}
+        </>
+      )}
+    </section>
+  );
+}
 
 export function GrammarList({
   st,
@@ -71,6 +138,7 @@ export function GrammarList({
           </div>
         ))}
       </section>
+      {lang === "ja" && <GrammarPairs />}
       <div className="chips">
         {[["all", "전체"] as const, ...groups.map((g) => [g, g] as const)].map(([k, l]) => (
           <button type="button" key={k} className="chip" aria-pressed={lvF === k} onClick={() => setLvF(k)}>

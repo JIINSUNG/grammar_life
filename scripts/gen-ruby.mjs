@@ -95,6 +95,7 @@ const FIX = {
   "二点": "にてん",
   "3人": "さんにん",
   "申し上げ": "もうしあげ",
+  "日本": "にほん",
 };
 
 kuromoji.builder({ dicPath: path.join(path.dirname(require.resolve("kuromoji")), "..", "dict") }).build((err, tk) => {
