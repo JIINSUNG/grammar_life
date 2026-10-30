@@ -4710,5 +4710,293 @@
     "m": "호환되는",
     "lv": "접객",
     "c": "가전"
+  },
+  {
+    "id": "ve:Good morning!",
+    "w": "Good morning!",
+    "r": "",
+    "m": "좋은 아침이에요(아침 인사)",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Good afternoon.",
+    "w": "Good afternoon.",
+    "r": "",
+    "m": "안녕하세요(낮 인사)",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Good evening.",
+    "w": "Good evening.",
+    "r": "",
+    "m": "안녕하세요(저녁 인사)",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:How's it going?",
+    "w": "How's it going?",
+    "r": "",
+    "m": "요즘 어때요? (가벼운 안부)",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Long time no see.",
+    "w": "Long time no see.",
+    "r": "",
+    "m": "오랜만이에요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Have a good one!",
+    "w": "Have a good one!",
+    "r": "",
+    "m": "좋은 하루 보내요! (헤어질 때)",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Take care.",
+    "w": "Take care.",
+    "r": "",
+    "m": "조심히 가요 / 잘 지내요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:See you tomorrow.",
+    "w": "See you tomorrow.",
+    "r": "",
+    "m": "내일 봐요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Thanks for your hard work today.",
+    "w": "Thanks for your hard work today.",
+    "r": "",
+    "m": "오늘 고생하셨어요(수고 인사).",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:You did a great job today.",
+    "w": "You did a great job today.",
+    "r": "",
+    "m": "오늘 정말 잘했어요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Nice to meet you.",
+    "w": "Nice to meet you.",
+    "r": "",
+    "m": "만나서 반가워요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:It's been a while.",
+    "w": "It's been a while.",
+    "r": "",
+    "m": "오랜만이네요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Sounds good.",
+    "w": "Sounds good.",
+    "r": "",
+    "m": "좋아요 / 그렇게 해요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:No worries.",
+    "w": "No worries.",
+    "r": "",
+    "m": "괜찮아요 / 신경 쓰지 마세요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:No rush.",
+    "w": "No rush.",
+    "r": "",
+    "m": "서두르지 않아도 돼요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Take your time.",
+    "w": "Take your time.",
+    "r": "",
+    "m": "천천히 하세요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I'll be right back.",
+    "w": "I'll be right back.",
+    "r": "",
+    "m": "금방 돌아올게요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I'm on my way.",
+    "w": "I'm on my way.",
+    "r": "",
+    "m": "가는 중이에요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Let me know if you need anything.",
+    "w": "Let me know if you need anything.",
+    "r": "",
+    "m": "필요한 거 있으면 말씀해 주세요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I'll take care of it.",
+    "w": "I'll take care of it.",
+    "r": "",
+    "m": "제가 처리할게요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Could you give me a hand?",
+    "w": "Could you give me a hand?",
+    "r": "",
+    "m": "좀 도와줄 수 있어요?",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I've got it covered.",
+    "w": "I've got it covered.",
+    "r": "",
+    "m": "제가 알아서 할게요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Let's call it a day.",
+    "w": "Let's call it a day.",
+    "r": "",
+    "m": "오늘은 여기까지 해요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Keep up the good work.",
+    "w": "Keep up the good work.",
+    "r": "",
+    "m": "계속 잘해봐요(격려).",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:My bad.",
+    "w": "My bad.",
+    "r": "",
+    "m": "제 잘못이에요(가볍게 사과).",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Never mind.",
+    "w": "Never mind.",
+    "r": "",
+    "m": "신경 쓰지 마세요 / 됐어요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I'm running a bit late.",
+    "w": "I'm running a bit late.",
+    "r": "",
+    "m": "조금 늦을 것 같아요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Can I get back to you on that?",
+    "w": "Can I get back to you on that?",
+    "r": "",
+    "m": "그건 나중에 다시 말씀드려도 될까요?",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Let's touch base later.",
+    "w": "Let's touch base later.",
+    "r": "",
+    "m": "나중에 다시 얘기해봐요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I'll follow up with you.",
+    "w": "I'll follow up with you.",
+    "r": "",
+    "m": "제가 다시 연락드릴게요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:That makes sense.",
+    "w": "That makes sense.",
+    "r": "",
+    "m": "그 말이 맞네요 / 이해됐어요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I see what you mean.",
+    "w": "I see what you mean.",
+    "r": "",
+    "m": "무슨 말인지 알겠어요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:It is what it is.",
+    "w": "It is what it is.",
+    "r": "",
+    "m": "어쩔 수 없죠(받아들일 때).",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Better safe than sorry.",
+    "w": "Better safe than sorry.",
+    "r": "",
+    "m": "나중에 후회하지 않게 조심하는 게 좋죠.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:Let's play it by ear.",
+    "w": "Let's play it by ear.",
+    "r": "",
+    "m": "그때 가서 상황 봐서 해요.",
+    "lv": "표현",
+    "c": "표현"
+  },
+  {
+    "id": "ve:I'll keep you posted.",
+    "w": "I'll keep you posted.",
+    "r": "",
+    "m": "진행 상황 계속 알려드릴게요.",
+    "lv": "표현",
+    "c": "표현"
   }
 ]
