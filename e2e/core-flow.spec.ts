@@ -19,6 +19,12 @@ async function runSteps(page: Page) {
       await opt.click();
       await page.waitForTimeout(80);
     }
+    // 개념 확인 문제는 선택 후 "정답 확인"을 한 번 더 눌러야 정답/오답이 드러남(퀴즈 문제는 이 버튼이 없음).
+    const confirmConcept = page.locator("button.btn.pri.wide", { hasText: "정답 확인" });
+    if (await confirmConcept.count()) {
+      await confirmConcept.click();
+      await page.waitForTimeout(80);
+    }
     const conf = page.locator("button.conf-sure, button.btn.conf-sure").first();
     if (await conf.count()) {
       await conf.click();
