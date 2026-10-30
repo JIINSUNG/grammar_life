@@ -143,7 +143,7 @@ export function streak(days: Record<string, number>, todayStr: string): number {
 
 /* ---------- 단어 복습 상자 ---------- */
 
-export const VTRACKS: ByLang<string[]> = { en: ["기초", "토익", "여행", "접객"], ja: ["N5", "N4", "N3", "N2", "여행", "접객"] };
+export const VTRACKS: ByLang<string[]> = { en: ["기초", "토익", "여행", "접객"], ja: ["N5", "N4", "N3", "N2", "여행", "접객", "표현"] };
 /** 설정에서 고를 수 있는 "하루 새 단어" 개수. 기본값은 첫 번째 값(10). */
 export const VGOALS = [10, 15, 20, 30];
 export const VNEW = VGOALS[0];

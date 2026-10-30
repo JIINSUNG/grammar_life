@@ -7,7 +7,7 @@ import { MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
 import { VERB_PAIRS, VERB_PAIR_GROUPS } from "../data/verb-pairs";
 import type { AppState, Lang } from "../types";
 
-const TRACK_LABEL: Record<string, string> = { 토익: "토익 빈출", 기초: "기초 생활", 접객: "매장·접객", 여행: "여행 회화" };
+const TRACK_LABEL: Record<string, string> = { 토익: "토익 빈출", 기초: "기초 생활", 접객: "매장·접객", 여행: "여행 회화", 표현: "자주 쓰는 표현" };
 
 function VerbPairs() {
   const [open, setOpen] = useState(false);
