@@ -430,5 +430,149 @@
     "a": 1,
     "p": "E29",
     "ex": "장소 + where + 완전한 문장."
+  },
+  {
+    "q": "I ------- this movie three times before.",
+    "o": [
+      "have seen",
+      "saw",
+      "see",
+      "was seeing"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "정확한 시점이 없고 '전에 본 경험'을 말하니 현재완료 have seen이 맞아요. saw는 특정 과거 시점이 있을 때 써요."
+  },
+  {
+    "q": "Unfortunately, we have ------- time left before the deadline.",
+    "o": [
+      "little",
+      "a little",
+      "few",
+      "a few"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "time은 셀 수 없는 명사이고, '거의 없다'는 부정적 뉘앙스라 a 없는 little이 맞아요."
+  },
+  {
+    "q": "Please ------- sure you lock the door before you leave.",
+    "o": [
+      "make",
+      "do",
+      "take",
+      "have"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "make sure(확실히 하다)는 통째로 외워야 하는 관용표현(콜로케이션)이에요."
+  },
+  {
+    "q": "She has worked at this company ------- 2015.",
+    "o": [
+      "since",
+      "for",
+      "from",
+      "during"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "2015는 시작 시점이라 since를 써요. for 뒤에는 기간의 길이(10 years 같은)가 와요."
+  },
+  {
+    "q": "I'm still ------- the noise from the construction site next door.",
+    "o": [
+      "getting used to",
+      "used to",
+      "would",
+      "use to"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "아직 익숙해지는 과정(변화)을 말하니 get used to가 맞아요. used to는 과거의 습관을 말해요."
+  },
+  {
+    "q": "Lack of sleep can seriously ------- your concentration.",
+    "o": [
+      "affect",
+      "effect",
+      "affection",
+      "effective"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "can 뒤는 동사 자리라 affect(영향을 주다)가 맞아요. effect는 명사예요."
+  },
+  {
+    "q": "Could you ------- me some money until Friday?",
+    "o": [
+      "lend",
+      "borrow",
+      "owe",
+      "spend"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "주어(you)가 나에게 빌려주는 쪽이니 lend가 맞아요. borrow는 내가 빌려올 때 써요."
+  },
+  {
+    "q": "The flight was delayed ------- the heavy snow.",
+    "o": [
+      "because of",
+      "because",
+      "although",
+      "despite"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "뒤에 명사구(the heavy snow)만 오니 because of가 맞아요. because 뒤에는 '주어+동사' 문장이 와요."
+  },
+  {
+    "q": "------- the heavy traffic, we arrived on time.",
+    "o": [
+      "Despite",
+      "Although",
+      "Because",
+      "Since"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "뒤에 명사구(the heavy traffic)가 오니 despite가 맞아요. although 뒤에는 '주어+동사' 문장이 와요."
+  },
+  {
+    "q": "Gas prices ------- sharply last month.",
+    "o": [
+      "rose",
+      "raised",
+      "rise",
+      "raising"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "물가가 스스로 오른 것이라 자동사 rise의 과거형 rose가 맞아요. raise는 목적어가 필요한 타동사예요."
+  },
+  {
+    "q": "------- of the applicants was asked to submit a resume.",
+    "o": [
+      "Each",
+      "Every",
+      "All",
+      "Most"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "each of + 복수명사는 가능하지만 every of는 쓸 수 없어요."
+  },
+  {
+    "q": "------- the manager nor the staff knew about the change.",
+    "o": [
+      "Neither",
+      "Either",
+      "Not",
+      "No"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "nor와 짝을 이루는 건 neither예요(neither A nor B = A도 B도 아니다)."
   }
 ]
