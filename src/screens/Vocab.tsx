@@ -5,6 +5,7 @@ import { canSpeak, speak } from "../lib/speech";
 import { VNEW, VOCAB, VTRACKS, starredVocab, vDue, vNew, vTrack } from "../lib/srs";
 import { MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
 import { VERB_PAIRS, VERB_PAIR_GROUPS } from "../data/verb-pairs";
+import { DIALOGUES_JA } from "../data/dialogues";
 import type { AppState, Lang } from "../types";
 
 const TRACK_LABEL: Record<string, string> = { 토익: "토익 빈출", 기초: "기초 생활", 접객: "매장·접객", 여행: "여행 회화", 표현: "자주 쓰는 표현" };
@@ -43,6 +44,77 @@ function VerbPairs() {
               </div>
             );
           })}
+        </>
+      )}
+    </section>
+  );
+}
+
+function DialogueScenes({ st }: { st: AppState }) {
+  const [open, setOpen] = useState(false);
+  const [lvF, setLvF] = useState("all");
+  const levels = [...new Set(DIALOGUES_JA.map((d) => d.lv))];
+  const scenes = DIALOGUES_JA.filter((d) => lvF === "all" || d.lv === lvF);
+  const say = (s: string) => speak(s, "ja", { rate: st.voice?.rate, voiceName: st.voice?.ja });
+  return (
+    <section className="card">
+      <button type="button" className="rh" style={{ width: "100%", textAlign: "left", background: "none" }} onClick={() => setOpen(!open)}>
+        <span className="eyebrow">실전 회화 · {DIALOGUES_JA.length}개 상황</span>
+        <span className="link">{open ? "접기" : "펼치기"}</span>
+      </button>
+      {open && (
+        <>
+          <p className="hint" style={{ margin: 0 }}>
+            단어 하나하나보다 흐름이 중요해요. A·B가 주고받는 대화를 소리 내 따라 읽어보세요.
+          </p>
+          <div className="chips">
+            {[["all", "전체"] as const, ...levels.map((l) => [l, l] as const)].map(([k, l]) => (
+              <button type="button" key={k} className="chip" aria-pressed={lvF === k} onClick={() => setLvF(k)}>
+                {l}
+              </button>
+            ))}
+          </div>
+          {scenes.map((d) => (
+            <div key={d.id} style={{ display: "flex", flexDirection: "column", gap: 8, boxShadow: "inset 0 0 0 1px var(--line)", borderRadius: 14, padding: "12px 14px" }}>
+              <div className="rh">
+                <b style={{ fontSize: 15 }}>{d.title}</b>
+                <small className="sub">{d.lv}</small>
+              </div>
+              {d.lines.map((l, i) => (
+                <div
+                  key={i}
+                  style={{
+                    alignSelf: l.spk === "A" ? "flex-start" : "flex-end",
+                    maxWidth: "85%",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 2,
+                    background: l.spk === "A" ? "var(--field)" : "var(--h1)",
+                    borderRadius: 10,
+                    padding: "8px 10px",
+                  }}
+                >
+                  <span style={{ display: "flex", alignItems: "baseline", gap: 6 }}>
+                    <small className="sub" style={{ fontWeight: 700 }}>
+                      {l.spk}
+                    </small>
+                    <span className="ja" style={{ fontSize: 13.5 }}>
+                      {l.s}
+                    </span>
+                    {canSpeak && (
+                      <button type="button" className="spk" aria-label="발음 듣기" onClick={() => say(l.s)}>
+                        <svg viewBox="0 0 20 20" width={16} height={16} aria-hidden="true">
+                          <path d="M3 8h3l4-3v10l-4-3H3z" fill="currentColor" />
+                          <path d="M13 7.5a3.5 3.5 0 0 1 0 5M15 5a7 7 0 0 1 0 10" stroke="currentColor" strokeWidth={1.6} fill="none" strokeLinecap="round" />
+                        </svg>
+                      </button>
+                    )}
+                  </span>
+                  <small className="sub">{l.ko}</small>
+                </div>
+              ))}
+            </div>
+          ))}
         </>
       )}
     </section>
@@ -126,6 +198,7 @@ export function VocabTab({
         </button>
       </section>
       {lang === "ja" && <VerbPairs />}
+      {lang === "ja" && <DialogueScenes st={st} />}
       <section className="card">
         <span className="eyebrow">새 단어는 어디서 가져올까요</span>
         <div className="chips">
