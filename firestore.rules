@@ -1,0 +1,12 @@
+rules_version = '2';
+
+// 각자 자기 uid 아래 문서만 읽고 쓸 수 있다(하위 전체 — 여러 앱이 같은 Firebase 프로젝트를
+// 공유해도(예: daily_topic의 users/{uid}/progress, grammar_life의 users/{uid}/grammarLife)
+// 이 규칙 하나로 전부 커버된다). 다른 사람 학습 기록은 아예 접근 불가.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{uid}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}

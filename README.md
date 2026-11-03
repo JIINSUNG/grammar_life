@@ -88,6 +88,36 @@ used to/would/be used to/get used to, although/despite 같은 토익·일반 영
 저장만 하고 끝 — 영작·일작은 노트 탭에서 나중에 이어서 한다(기존 "적어 두기" 흐름 그대로, 새 데이터 구조 없음). 휴대폰에 설치한
 PWA 아이콘을 꾹 누르면 뜨는 "순간 메모" 바로가기(`/?quick=1`)로 들어오면 이 입력창이 바로 열린다.
 
+## 기기 간 동기화 (선택 사항)
+
+기본은 지금처럼 "나 › 기록 옮기기"의 백업 코드(수동 복사-붙여넣기)로만 기기를 옮긴다. Firebase 환경 변수를
+넣으면 Google 로그인으로 같은 계정의 여러 기기에서 진도·단어·노트·XP가 자동으로 맞춰진다. 안 넣으면 "나" 탭에
+로그인 버튼 자체가 안 보이고, 전부 지금처럼 로컬 전용으로 동작한다(firebase SDK도 번들에 안 실림 — 동적 import).
+
+**설정 순서**
+
+1. [Firebase 콘솔](https://console.firebase.google.com)에서 프로젝트를 만듭니다(daily_topic과 같은 프로젝트를
+   공유해도 됩니다 — Firestore 경로가 `users/{uid}/grammarLife/...`로 따로 쓰입니다).
+2. **Authentication → Sign-in method**에서 Google 로그인을 켭니다.
+3. **Firestore Database**를 만듭니다.
+4. 프로젝트 설정 → "내 앱"에서 웹 앱을 추가하면 나오는 설정값을 `.env.local`에 넣습니다(`.env.example` 참고):
+   ```
+   VITE_FIREBASE_API_KEY=...
+   VITE_FIREBASE_AUTH_DOMAIN=...
+   VITE_FIREBASE_PROJECT_ID=...
+   VITE_FIREBASE_STORAGE_BUCKET=...
+   VITE_FIREBASE_MESSAGING_SENDER_ID=...
+   VITE_FIREBASE_APP_ID=...
+   ```
+5. Firestore 보안 규칙을 배포합니다(자기 uid 아래 문서만 읽고 쓸 수 있게):
+   ```bash
+   firebase deploy --only firestore:rules
+   ```
+6. Vercel/Cloudflare Pages에 배포한다면 위 6개 `VITE_*` 값을 그 플랫폼의 환경 변수에도 똑같이 등록하세요.
+
+로그인은 Google 팝업만 지원한다(서버가 없는 정적 사이트라 서버 쪽 로그인은 못 씀). 처음 로그인할 때 이 기기와
+클라우드 양쪽에 기록이 있으면 더 최근에 바뀐 쪽을 따른다(`src/lib/sync.ts`).
+
 ## 테스트
 
 ```
@@ -116,16 +146,17 @@ npm run build
 
 ## 배포 (Vercel 또는 Cloudflare Pages)
 
-서버·환경 변수·백엔드가 전혀 없는 정적 사이트라 두 곳 다 설정이 거의 필요 없다.
+서버·백엔드가 전혀 없는 정적 사이트라 두 곳 다 설정이 거의 필요 없다. 기기 간 동기화(위 섹션)를 켜지 않으면
+환경 변수도 필요 없다.
 
 **Vercel**
 1. GitHub 저장소를 Vercel에 연결한다.
 2. Framework Preset: Vite. Build Command `npm run build`, Output Directory `dist` (기본값 그대로면 자동 인식됨).
-3. 환경 변수: 없음.
+3. 환경 변수: 기기 간 동기화를 켤 때만 `VITE_FIREBASE_*` 6개(위 섹션 참고).
 
 **Cloudflare Pages**
 1. 저장소 연결 후 Build command `npm run build`, Build output directory `dist`.
-2. 환경 변수: 없음.
+2. 환경 변수: 기기 간 동기화를 켤 때만 `VITE_FIREBASE_*` 6개(위 섹션 참고).
 
 배포 전에 로컬에서 `npm run build && npx vite preview`로 한 번 띄워보고, PWA 설치·오프라인 동작까지 확인하는 걸 권장한다.
 

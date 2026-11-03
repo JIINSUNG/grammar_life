@@ -16,6 +16,7 @@ import { VocabFlashReview } from "./flows/VocabFlashReview";
 import { TabBar } from "./components/TabBar";
 import { QuickNote } from "./components/QuickNote";
 import { blankState, load, requestPersistentStorage, save } from "./lib/storage";
+import { useFirebaseSync } from "./lib/sync";
 import { today } from "./lib/date";
 import { dueList, nextNew } from "./lib/srs";
 import type { AppState, Profile } from "./types";
@@ -34,10 +35,14 @@ export default function App() {
   const [st, setSt] = useState<AppState>(() => load() ?? blankState());
   const up = (fn: (s: AppState) => AppState) =>
     setSt((p) => {
-      const n = fn(p);
+      const n = { ...fn(p), updatedAt: new Date().toISOString() };
       save(n);
       return n;
     });
+  const sync = useFirebaseSync(st, (next) => {
+    setSt(next);
+    save(next);
+  });
   const [gq, setGq] = useState("");
   const [tab, setTab] = useState("today");
   const [run, setRun] = useState<Run>(null);
@@ -146,7 +151,7 @@ export default function App() {
           />
         )}
         {tab === "exam" && <ExamHome st={st} lang={lang} start={() => setRun({ kind: "exam", key: Date.now() })} />}
-        {tab === "me" && <Me st={st} up={up} edit={() => setEditProf(true)} />}
+        {tab === "me" && <Me st={st} up={up} edit={() => setEditProf(true)} sync={sync} />}
       </main>
       <TabBar tab={tab} onChange={setTab} />
       <QuickNote st={st} up={up} autoOpen={autoQuick} />

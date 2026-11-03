@@ -1,13 +1,25 @@
 import { useState } from "react";
 import { VoiceCard } from "./Me/VoiceCard";
 import { Backup } from "./Me/Backup";
+import { SyncCard } from "./Me/SyncCard";
 import { addDays, today } from "../lib/date";
 import { blankState } from "../lib/storage";
 import { POINTS, HOBBIES, JOBS, PLANS, RIDES } from "../data";
 import { goalXp, streak, VNEW } from "../lib/srs";
+import type { SyncState } from "../lib/sync";
 import type { AppState, Lang } from "../types";
 
-export function Me({ st, up, edit }: { st: AppState; up: (fn: (s: AppState) => AppState) => void; edit: () => void }) {
+export function Me({
+  st,
+  up,
+  edit,
+  sync,
+}: {
+  st: AppState;
+  up: (fn: (s: AppState) => AppState) => void;
+  edit: () => void;
+  sync: SyncState;
+}) {
   const [ask, setAsk] = useState(false);
   const p = st.profile!;
   const job = JOBS.find((j) => j.id === p.job)!;
@@ -121,8 +133,9 @@ export function Me({ st, up, edit }: { st: AppState; up: (fn: (s: AppState) => A
           </dd>
         </dl>
       </section>
+      <SyncCard sync={sync} />
       <Backup st={st} up={up} />
-      <p className="hint center">학습 기록은 이 기기 브라우저에만 저장돼요.</p>
+      <p className="hint center">{sync.user ? "학습 기록은 로그인한 계정으로 기기 간에 맞춰져요." : "학습 기록은 이 기기 브라우저에만 저장돼요."}</p>
       {ask ? (
         <div className="card confirm">
           <p>학습 기록과 설문을 모두 지울까요?</p>

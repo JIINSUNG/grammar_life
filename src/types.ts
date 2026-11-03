@@ -185,6 +185,8 @@ export interface AppState {
   furi?: boolean;
   /** 단어별 내가 직접 적은 연상 암기 메모. key는 VocabWord.id. 추천 힌트(mnemonics-seed.ts)와 별개로, 적으면 그게 우선 보임. */
   mnemonics?: Record<string, string>;
+  /** 마지막으로 바뀐 시각(ISO). 로그인해서 기기 간 동기화를 켰을 때, 어느 쪽이 더 최신인지 비교하는 용도. */
+  updatedAt?: string;
 }
 
 /** 백업 코드 포맷: {app:"grammar-life", v:1, at, data:<AppState>} */
