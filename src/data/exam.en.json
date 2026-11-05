@@ -610,5 +610,53 @@
     "a": 0,
     "p": "E43",
     "ex": "비교급을 강조할 땐 very가 아니라 much/far/even/a lot을 써요."
+  },
+  {
+    "q": "Could you ------- him that the meeting starts at 9?",
+    "o": [
+      "tell",
+      "say",
+      "talk",
+      "speak"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "tell 뒤에는 전치사 없이 바로 사람 목적어가 와요. say는 say to him처럼 to가 필요해요."
+  },
+  {
+    "q": "Could you ------- these documents to the front desk?",
+    "o": [
+      "take",
+      "bring",
+      "carry away",
+      "send back"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "말하는 사람(여기)에게서 멀어지는 방향이라 take가 맞아요. bring은 이쪽으로 가져올 때 써요."
+  },
+  {
+    "q": "Please turn off your phones ------- the presentation.",
+    "o": [
+      "during",
+      "while",
+      "for",
+      "since"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "뒤에 명사(구)만 있으니 전치사 during이 맞아요. while 뒤에는 주어+동사가 와요."
+  },
+  {
+    "q": "I remember ------- this email last week, so it should have arrived.",
+    "o": [
+      "sending",
+      "to send",
+      "send",
+      "sent"
+    ],
+    "a": 0,
+    "p": null,
+    "ex": "이미 한 일을 기억하는 거라 remember + -ing예요. remember to send는 '아직 안 보낸 걸 잊지 말라'는 뜻이에요."
   }
 ]

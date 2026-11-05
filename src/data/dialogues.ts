@@ -114,6 +114,32 @@ export const DIALOGUES_JA: DialogueScene[] = [
       { spk: "A", s: "わかりました。お薬を出しますね。", ko: "알겠습니다. 약을 처방해 드릴게요." },
     ],
   },
+  {
+    id: "salon",
+    lv: "N4",
+    title: "미용실에서 머리 자르기",
+    lines: [
+      { spk: "A", s: "今日はどのようにカットいたしましょうか。", ko: "오늘은 어떻게 잘라드릴까요?" },
+      { spk: "B", s: "毛先を少し整えてもらえますか。", ko: "머리끝만 살짝 다듬어 주실 수 있나요?" },
+      { spk: "A", s: "長さはどのくらいにしますか。", ko: "길이는 어느 정도로 할까요?" },
+      { spk: "B", s: "3センチくらい切ってください。", ko: "3센티 정도 잘라주세요." },
+      { spk: "A", s: "前髪はどうしますか。", ko: "앞머리는 어떻게 할까요?" },
+      { spk: "B", s: "そのままで大丈夫です。", ko: "그대로 괜찮아요." },
+    ],
+  },
+  {
+    id: "refund",
+    lv: "N4",
+    title: "환불·교환 요청하기",
+    lines: [
+      { spk: "A", s: "すみません、これを返品したいのですが。", ko: "저기요, 이거 환불하고 싶은데요." },
+      { spk: "B", s: "かしこまりました。レシートはお持ちですか。", ko: "알겠습니다. 영수증 가지고 계신가요?" },
+      { spk: "A", s: "はい、こちらです。サイズが合わなくて。", ko: "네, 여기요. 사이즈가 안 맞아서요." },
+      { spk: "B", s: "では、返金か交換、どちらになさいますか。", ko: "그럼 환불과 교환 중 어느 쪽으로 해드릴까요?" },
+      { spk: "A", s: "交換でお願いします。", ko: "교환으로 부탁드려요." },
+      { spk: "B", s: "かしこまりました。少々お待ちください。", ko: "알겠습니다. 잠시만 기다려 주세요." },
+    ],
+  },
 ];
 
 export const DIALOGUES_EN: DialogueScene[] = [
@@ -214,6 +240,32 @@ export const DIALOGUES_EN: DialogueScene[] = [
       { spk: "A", s: "How long has this been going on?", ko: "언제부터 그러셨나요?" },
       { spk: "B", s: "Since last night.", ko: "어제 밤부터예요." },
       { spk: "A", s: "Okay, I'll prescribe you some medicine.", ko: "알겠습니다, 약을 처방해 드릴게요." },
+    ],
+  },
+  {
+    id: "salon",
+    lv: "기초",
+    title: "미용실에서 머리 자르기",
+    lines: [
+      { spk: "A", s: "How would you like your hair cut today?", ko: "오늘 머리 어떻게 잘라드릴까요?" },
+      { spk: "B", s: "Just a trim, please.", ko: "그냥 끝만 다듬어 주세요." },
+      { spk: "A", s: "How much would you like off?", ko: "얼마나 잘라드릴까요?" },
+      { spk: "B", s: "About an inch should be fine.", ko: "1인치 정도면 될 것 같아요." },
+      { spk: "A", s: "Would you like your bangs trimmed too?", ko: "앞머리도 다듬어드릴까요?" },
+      { spk: "B", s: "No, that's fine as it is.", ko: "아니요, 그대로 괜찮아요." },
+    ],
+  },
+  {
+    id: "refund",
+    lv: "기초",
+    title: "환불·교환 요청하기",
+    lines: [
+      { spk: "A", s: "Hi, I'd like to return this, please.", ko: "안녕하세요, 이거 환불하고 싶은데요." },
+      { spk: "B", s: "Sure, do you have the receipt?", ko: "네, 영수증 가지고 계신가요?" },
+      { spk: "A", s: "Yes, here it is. It doesn't fit.", ko: "네, 여기요. 사이즈가 안 맞아서요." },
+      { spk: "B", s: "Would you like a refund or an exchange?", ko: "환불과 교환 중 어느 쪽으로 해드릴까요?" },
+      { spk: "A", s: "An exchange, please.", ko: "교환으로 부탁드려요." },
+      { spk: "B", s: "No problem. Give me just a moment.", ko: "알겠습니다. 잠시만 기다려주세요." },
     ],
   },
 ];

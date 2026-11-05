@@ -139,4 +139,52 @@ export const GRAMMAR_PAIR_GROUPS_EN: GrammarPairGroup[] = [
       { id: "eitheror", form: "either A or B", nuance: "A 또는 B 중 하나", detail: "A와 B 중 하나를 선택하는 의미예요.", example: { s: "Either he or I am right.", ko: "그나 나, 둘 중 하나가 맞다." } },
     ],
   },
+  {
+    id: "say-tell-talk-speak",
+    lv: "기초",
+    title: "say / tell / talk / speak",
+    rule: "say는 '무엇을 말했는지'(내용) 자체에 초점을 맞추고, tell은 '누구에게' 말했는지(사람 목적어가 꼭 필요)에 초점을 맞춰요. talk·speak는 '말하는 행위' 자체를 가리키고, speak가 좀 더 격식 있는 느낌이에요.",
+    pitfall: "say 뒤에 사람을 전치사 없이 바로 쓰거나(say him), tell 뒤에 to를 붙이는(tell to him) 실수가 흔해요 — say는 'say to 사람', tell은 'tell 사람'으로 전치사 유무가 정반대예요.",
+    items: [
+      { id: "say", form: "say (+ to 사람) + 내용", nuance: "무엇을 말했는지(내용 중심)", detail: "say 뒤에는 바로 말한 내용이 와요. 사람에게 말한 걸 밝히고 싶으면 to를 붙여요(say to him).", example: { s: "She said she was busy.", ko: "그녀는 바쁘다고 말했다." } },
+      { id: "tell", form: "tell + 사람 (+ 내용)", nuance: "누구에게 말했는지(사람 목적어 필수)", detail: "tell 뒤에는 전치사 없이 바로 사람이 와요(tell him).", example: { s: "She told me she was busy.", ko: "그녀는 나에게 바쁘다고 말했다." } },
+      { id: "talk", form: "talk (+ to/with 사람) + about", nuance: "대화를 나누다(격식 없음)", detail: "자동사라서 말한 내용을 밝히려면 about이 필요해요.", example: { s: "We talked about the project.", ko: "우리는 그 프로젝트에 대해 이야기했다." } },
+      { id: "speak", form: "speak (+ to 사람) + 언어", nuance: "말하다(더 격식 있음), 언어를 구사하다", detail: "speak는 언어를 말할 때(speak English)나 공식적인 자리에서 자주 써요.", example: { s: "He can speak three languages.", ko: "그는 세 가지 언어를 할 수 있다." } },
+    ],
+  },
+  {
+    id: "bring-take",
+    lv: "기초",
+    title: "bring / take",
+    rule: "bring은 '(말하는 사람이 있는 쪽으로) 가져오다', take는 '(말하는 사람에게서 멀어지는 쪽으로) 가져가다'예요. 화자를 기준으로 방향이 정반대예요.",
+    pitfall: "'이거 가져갈게요'처럼 화자에게서 멀어지는 상황에서 bring을 써버리는 실수가 흔해요. 화자가 있는 곳으로 오면 bring, 화자에게서 멀어지면 take로 기억하세요.",
+    items: [
+      { id: "bring", form: "bring", nuance: "이쪽으로 가져오다", detail: "말하는 사람이나 듣는 사람이 있는 곳으로 가져오는 방향이에요.", example: { s: "Please bring your ID card tomorrow.", ko: "내일 신분증을 가져와 주세요." } },
+      { id: "take", form: "take", nuance: "저쪽으로 가져가다", detail: "말하는 사람에게서 멀어지는 방향으로 가져가는 거예요.", example: { s: "Can you take this to the manager?", ko: "이거 매니저에게 가져다줄 수 있어?" } },
+    ],
+  },
+  {
+    id: "during-while",
+    lv: "중급",
+    title: "during / while",
+    rule: "during 뒤에는 명사(구)가, while 뒤에는 '주어+동사'를 갖춘 문장이 와요. because/because of, although/despite와 같은 패턴이에요.",
+    pitfall: "during 뒤에 문장을 통째로 쓰거나(during I was there), while 뒤에 명사만 쓰는(while the meeting) 실수가 흔해요.",
+    items: [
+      { id: "during", form: "during + 명사", nuance: "명사(구)가 시간의 배경", detail: "during the meeting, during the sale처럼 명사(구)만 받아요.", example: { s: "Please stay quiet during the meeting.", ko: "회의 중에는 조용히 해 주세요." } },
+      { id: "while", form: "while + 주어 + 동사", nuance: "문장이 시간의 배경", detail: "while 뒤에는 완전한 문장이 와요.", example: { s: "Please stay quiet while I am talking.", ko: "제가 말하는 동안에는 조용히 해 주세요." } },
+    ],
+  },
+  {
+    id: "remember-stop-to-ing",
+    lv: "중급",
+    title: "remember / stop + to부정사 vs -ing",
+    rule: "remember·stop 뒤에 to부정사가 오면 '(아직 안 한) 미래의 일'을, -ing가 오면 '(이미 한) 과거의 일·행위 자체'를 가리켜요. 뒤에 오는 형태에 따라 뜻이 완전히 달라져요.",
+    pitfall: "'문 잠근 거 기억나'와 '문 잠가야 하는 거 기억해'를 구분 못 하고 아무 형태나 쓰는 실수가 흔해요. to부정사 = 아직 안 한 일, -ing = 이미 한 일로 기억하세요.",
+    items: [
+      { id: "remember-to", form: "remember to + 동사원형", nuance: "(앞으로) ~할 것을 기억하다", detail: "아직 하지 않은 일을 잊지 않고 하겠다는 뜻이에요.", example: { s: "Remember to lock the door.", ko: "문 잠그는 거 잊지 마세요." } },
+      { id: "remember-ing", form: "remember + -ing", nuance: "(이미) ~했던 것을 기억하다", detail: "과거에 이미 한 행동을 기억한다는 뜻이에요.", example: { s: "I remember locking the door.", ko: "나는 문을 잠갔던 걸 기억한다." } },
+      { id: "stop-to", form: "stop to + 동사원형", nuance: "~하기 위해 (하던 일을) 멈추다", detail: "stop 다음의 to부정사는 '목적'을 나타내요 — 하던 일을 멈추고 다른 일을 하러 간다는 뜻이에요.", example: { s: "I stopped to check my phone.", ko: "나는 휴대폰을 확인하려고 (하던 일을) 멈췄다." } },
+      { id: "stop-ing", form: "stop + -ing", nuance: "~하던 것을 그만두다", detail: "stop 뒤의 -ing는 '하고 있던 행동 자체를 그만둔다'는 뜻이에요.", example: { s: "I stopped checking my phone.", ko: "나는 휴대폰 확인하는 걸 그만뒀다." } },
+    ],
+  },
 ];
