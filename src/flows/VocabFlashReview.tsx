@@ -4,7 +4,7 @@ import { Speak } from "../components/Speak";
 import { today } from "../lib/date";
 import { gradeFlash, starredVocab } from "../lib/srs";
 import { shuffle } from "../lib/util";
-import { MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
+import { MNEMONICS_SEED_EN, MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
 import type { AppState, FlashRating, Lang } from "../types";
 
 const RATE_BTN: [FlashRating, string, string][] = [
@@ -60,7 +60,7 @@ export function VocabFlashReview({ st, lang, up, onExit }: { st: AppState; lang:
   }
 
   const w = list[i];
-  const mnemonic = st.mnemonics?.[w.id] || (lang === "ja" ? MNEMONICS_SEED_JA[w.id] : undefined);
+  const mnemonic = st.mnemonics?.[w.id] || (lang === "ja" ? MNEMONICS_SEED_JA[w.id] : MNEMONICS_SEED_EN[w.id]);
 
   return (
     <main className="wrap main sess">

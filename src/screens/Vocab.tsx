@@ -3,9 +3,9 @@ import { VWord } from "../components/VWord";
 import { today } from "../lib/date";
 import { canSpeak, speak } from "../lib/speech";
 import { VNEW, VOCAB, VTRACKS, starredVocab, vDue, vNew, vTrack } from "../lib/srs";
-import { MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
+import { MNEMONICS_SEED_EN, MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
 import { VERB_PAIRS, VERB_PAIR_GROUPS } from "../data/verb-pairs";
-import { DIALOGUES_JA } from "../data/dialogues";
+import { DIALOGUES_EN, DIALOGUES_JA, type DialogueScene } from "../data/dialogues";
 import type { AppState, Lang } from "../types";
 
 const TRACK_LABEL: Record<string, string> = { 토익: "토익 빈출", 기초: "기초 생활", 접객: "매장·접객", 여행: "여행 회화", 표현: "자주 쓰는 표현" };
@@ -50,16 +50,16 @@ function VerbPairs() {
   );
 }
 
-function DialogueScenes({ st }: { st: AppState }) {
+function DialogueScenes({ st, lang, dialogues }: { st: AppState; lang: Lang; dialogues: DialogueScene[] }) {
   const [open, setOpen] = useState(false);
   const [lvF, setLvF] = useState("all");
-  const levels = [...new Set(DIALOGUES_JA.map((d) => d.lv))];
-  const scenes = DIALOGUES_JA.filter((d) => lvF === "all" || d.lv === lvF);
-  const say = (s: string) => speak(s, "ja", { rate: st.voice?.rate, voiceName: st.voice?.ja });
+  const levels = [...new Set(dialogues.map((d) => d.lv))];
+  const scenes = dialogues.filter((d) => lvF === "all" || d.lv === lvF);
+  const say = (s: string) => speak(s, lang, { rate: st.voice?.rate, voiceName: st.voice?.[lang] });
   return (
     <section className="card">
       <button type="button" className="rh" style={{ width: "100%", textAlign: "left", background: "none" }} onClick={() => setOpen(!open)}>
-        <span className="eyebrow">실전 회화 · {DIALOGUES_JA.length}개 상황</span>
+        <span className="eyebrow">실전 회화 · {dialogues.length}개 상황</span>
         <span className="link">{open ? "접기" : "펼치기"}</span>
       </button>
       {open && (
@@ -98,7 +98,7 @@ function DialogueScenes({ st }: { st: AppState }) {
                     <small className="sub" style={{ fontWeight: 700 }}>
                       {l.spk}
                     </small>
-                    <span className="ja" style={{ fontSize: 13.5 }}>
+                    <span className={lang === "ja" ? "ja" : undefined} style={{ fontSize: 13.5 }}>
                       {l.s}
                     </span>
                     {canSpeak && (
@@ -198,7 +198,7 @@ export function VocabTab({
         </button>
       </section>
       {lang === "ja" && <VerbPairs />}
-      {lang === "ja" && <DialogueScenes st={st} />}
+      <DialogueScenes st={st} lang={lang} dialogues={lang === "ja" ? DIALOGUES_JA : DIALOGUES_EN} />
       <section className="card">
         <span className="eyebrow">새 단어는 어디서 가져올까요</span>
         <div className="chips">
@@ -254,7 +254,7 @@ export function VocabTab({
         {list.slice(0, more).map((w) => {
           const g = pr[w.id];
           const due = g && g.due <= t;
-          const mnemonic = st.mnemonics?.[w.id] || (lang === "ja" ? MNEMONICS_SEED_JA[w.id] : undefined);
+          const mnemonic = st.mnemonics?.[w.id] || (lang === "ja" ? MNEMONICS_SEED_JA[w.id] : MNEMONICS_SEED_EN[w.id]);
           const editing = editingId === w.id;
           return (
             <div key={w.id} className="card prow vrowc" style={{ flexWrap: "wrap" }}>

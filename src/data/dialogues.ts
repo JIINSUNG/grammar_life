@@ -115,3 +115,105 @@ export const DIALOGUES_JA: DialogueScene[] = [
     ],
   },
 ];
+
+export const DIALOGUES_EN: DialogueScene[] = [
+  {
+    id: "cafe",
+    lv: "입문",
+    title: "카페에서 주문하기",
+    lines: [
+      { spk: "A", s: "Hi, what can I get for you?", ko: "안녕하세요, 뭐 드릴까요?" },
+      { spk: "B", s: "Can I get a hot coffee, please?", ko: "뜨거운 커피 하나 주시겠어요?" },
+      { spk: "A", s: "What size would you like?", ko: "사이즈는 어떤 걸로 해드릴까요?" },
+      { spk: "B", s: "Medium, please.", ko: "미디엄 사이즈로 부탁드려요." },
+      { spk: "A", s: "For here or to go?", ko: "매장에서 드시나요, 포장이신가요?" },
+      { spk: "B", s: "To go, thanks.", ko: "포장이요, 감사합니다." },
+    ],
+  },
+  {
+    id: "convenience",
+    lv: "입문",
+    title: "편의점에서 계산하기",
+    lines: [
+      { spk: "A", s: "Would you like a bag?", ko: "봉투 필요하세요?" },
+      { spk: "B", s: "No, I'm good, thanks.", ko: "아니요, 괜찮아요." },
+      { spk: "A", s: "Do you need a receipt?", ko: "영수증 필요하세요?" },
+      { spk: "B", s: "Yes, please.", ko: "네, 주세요." },
+      { spk: "A", s: "Would you like me to heat this up?", ko: "데워드릴까요?" },
+      { spk: "B", s: "Yes, that'd be great.", ko: "네, 그렇게 해주세요." },
+    ],
+  },
+  {
+    id: "directions",
+    lv: "기초",
+    title: "길 묻기",
+    lines: [
+      { spk: "A", s: "Excuse me, how do I get to the station?", ko: "저기요, 역까지 어떻게 가나요?" },
+      { spk: "B", s: "Go straight and turn right at the second light.", ko: "쭉 가셔서 두 번째 신호등에서 오른쪽으로 꺾으세요." },
+      { spk: "A", s: "How long does it take on foot?", ko: "걸어서 얼마나 걸리나요?" },
+      { spk: "B", s: "About five minutes.", ko: "5분 정도예요." },
+      { spk: "A", s: "Thank you, that's really helpful.", ko: "감사합니다, 정말 도움이 됐어요." },
+    ],
+  },
+  {
+    id: "plans",
+    lv: "기초",
+    title: "친구와 약속 잡기",
+    lines: [
+      { spk: "A", s: "Are you free this weekend?", ko: "이번 주말에 시간 있어?" },
+      { spk: "B", s: "Yeah, I am. What's up?", ko: "응, 있어. 무슨 일이야?" },
+      { spk: "A", s: "Want to check out that new cafe?", ko: "새로 생긴 카페 가볼래?" },
+      { spk: "B", s: "Sounds great! What time works?", ko: "좋아! 몇 시가 좋을까?" },
+      { spk: "A", s: "How about 2 p.m.?", ko: "오후 2시 어때?" },
+      { spk: "B", s: "Works for me. Let's meet in front of the station.", ko: "좋아. 역 앞에서 만나자." },
+    ],
+  },
+  {
+    id: "smalltalk",
+    lv: "기초",
+    title: "직장에서 동료와 스몰톡",
+    lines: [
+      { spk: "A", s: "Hey, how was your weekend?", ko: "주말 어떻게 보냈어요?" },
+      { spk: "B", s: "I went to see a movie with a friend. How about you?", ko: "친구랑 영화 보러 갔어요. 당신은요?" },
+      { spk: "A", s: "I just stayed home and relaxed.", ko: "저는 그냥 집에서 쉬었어요." },
+      { spk: "B", s: "That sounds nice too.", ko: "그것도 좋네요." },
+    ],
+  },
+  {
+    id: "taxi",
+    lv: "기초",
+    title: "택시 타기",
+    lines: [
+      { spk: "A", s: "Where to?", ko: "어디까지 가세요?" },
+      { spk: "B", s: "Downtown, please.", ko: "시내까지 부탁드려요." },
+      { spk: "A", s: "Are you in a hurry?", ko: "급하신가요?" },
+      { spk: "B", s: "Yes, a bit.", ko: "네, 조금요." },
+      { spk: "A", s: "Got it, I'll get you there as fast as I can.", ko: "알겠습니다, 최대한 빨리 모셔다드릴게요." },
+    ],
+  },
+  {
+    id: "reservation",
+    lv: "토익 빈출",
+    title: "전화로 예약하기",
+    lines: [
+      { spk: "A", s: "Hi, I'd like to make a reservation.", ko: "안녕하세요, 예약하고 싶은데요." },
+      { spk: "B", s: "Sure, how many people will there be?", ko: "네, 몇 분이신가요?" },
+      { spk: "A", s: "Two, please.", ko: "두 명이요." },
+      { spk: "B", s: "What day and time works for you?", ko: "어느 날짜와 시간이 괜찮으세요?" },
+      { spk: "A", s: "This Saturday at 7 p.m., please.", ko: "이번 주 토요일 저녁 7시로 부탁드려요." },
+      { spk: "B", s: "Got it. Can I get your name, please?", ko: "알겠습니다. 성함을 여쭤봐도 될까요?" },
+    ],
+  },
+  {
+    id: "clinic",
+    lv: "토익 빈출",
+    title: "병원에서 증상 설명하기",
+    lines: [
+      { spk: "A", s: "What brings you in today?", ko: "어떻게 오셨나요?" },
+      { spk: "B", s: "I've had a headache and a fever since yesterday.", ko: "어제부터 머리가 아프고 열도 있어요." },
+      { spk: "A", s: "How long has this been going on?", ko: "언제부터 그러셨나요?" },
+      { spk: "B", s: "Since last night.", ko: "어제 밤부터예요." },
+      { spk: "A", s: "Okay, I'll prescribe you some medicine.", ko: "알겠습니다, 약을 처방해 드릴게요." },
+    ],
+  },
+];

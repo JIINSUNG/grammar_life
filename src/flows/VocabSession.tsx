@@ -4,7 +4,7 @@ import { canSpeak, speak } from "../lib/speech";
 import { today, addDays } from "../lib/date";
 import { CONF, INTERVAL, VNEW, VREV, vDue, vNew, vOpts, vStep, vTrack, type VocabStep } from "../lib/srs";
 import { shuffle } from "../lib/util";
-import { MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
+import { MNEMONICS_SEED_EN, MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
 import type { AppState, Lang, ProgressEntry } from "../types";
 import type { VocabWordRw } from "../data";
 
@@ -30,7 +30,7 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
   const s = steps[i];
   const reveal = pick != null && conf != null;
 
-  const mnemonicOf = (w: VocabWordRw) => st.mnemonics?.[w.id] || (lang === "ja" ? MNEMONICS_SEED_JA[w.id] : undefined);
+  const mnemonicOf = (w: VocabWordRw) => st.mnemonics?.[w.id] || (lang === "ja" ? MNEMONICS_SEED_JA[w.id] : MNEMONICS_SEED_EN[w.id]);
   const saveHint = (w: VocabWordRw) => {
     up((p) => ({ ...p, mnemonics: { ...p.mnemonics, [w.id]: hintDraft.trim() } }));
     setEditingHint(false);
