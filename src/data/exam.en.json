@@ -574,5 +574,41 @@
     "a": 0,
     "p": null,
     "ex": "nor와 짝을 이루는 건 neither예요(neither A nor B = A도 B도 아니다)."
+  },
+  {
+    "q": "The manager insisted that the report ------- submitted by Friday.",
+    "o": [
+      "be",
+      "is",
+      "was",
+      "will be"
+    ],
+    "a": 0,
+    "p": "E41",
+    "ex": "insist·suggest·recommend 뒤 that절은 주어와 상관없이 (should) + 동사원형을 써요."
+  },
+  {
+    "q": "The number of complaints we received this month ------- lower than last month.",
+    "o": [
+      "is",
+      "are",
+      "were",
+      "have been"
+    ],
+    "a": 0,
+    "p": "E42",
+    "ex": "the number of + 복수명사는 단수 취급이라 동사도 단수(is)예요."
+  },
+  {
+    "q": "This month's sales are ------- higher than last month's.",
+    "o": [
+      "much",
+      "very",
+      "so",
+      "too"
+    ],
+    "a": 0,
+    "p": "E43",
+    "ex": "비교급을 강조할 땐 very가 아니라 much/far/even/a lot을 써요."
   }
 ]

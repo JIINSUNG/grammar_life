@@ -101,6 +101,21 @@ G("E40","기초","부가의문문 (~, isn't it?)","문장 끝에 붙여 '그렇�
   T("You work tomorrow, [don't] you?","내일 출근하시죠?",["aren't","do","won't"]),
   T("The new {prod} came out last week, [didn't] they?","새 {prod|은} 지난주에 나왔죠?",["don't","weren't","did"])],
  ["'You work here, ___ you?' 빈칸은?",["don't","aren't","do","won't"],"일반동사 현재 긍정문 → don't."]),
+G("E41","토익 빈출","제안·요구 동사 + that + 동사원형","suggest·recommend·insist·demand·require 같은 동사 뒤 that절에는 주어가 몇 인칭이든 (should) + 동사원형을 써요.","suggest/recommend that + 주어 + (should) + 동사원형",["that절 동사는 항상 원형 — 3인칭 단수라도 -s를 안 붙여요.","insist가 '이미 벌어진 사실을 주장'할 땐 이 규칙 대신 보통 시제를 써요."],["I suggested that he comes early.","I suggested that he come early."],
+ [T("The manager recommended that every {wp} [be] cleaned before opening.","매니저는 열기 전에 {wp|이} 청소되어야 한다고 권했어요.",["is","was","will be"]),
+  T("I suggested that {cust} [not be] charged twice.","{cust|이} 두 번 청구되지 않아야 한다고 제안했어요.",["are not","were not","will not be"]),
+  T("The company requires that every employee [submit] a report about {prod}.","회사는 모든 직원이 {prod|에} 대한 보고서를 제출해야 한다고 요구해요.",["submits","submitted","will submit"])],
+ ["suggest/recommend 뒤 that절 동사의 형태는?",["항상 동사원형(should 생략 가능)","주어에 맞춘 현재형","항상 과거형","항상 be to 부정사"],"제안·요구 동사의 that절은 (should) + 동사원형."]),
+G("E42","토익 빈출","a number of vs the number of","a number of + 복수명사는 '많은 ~'(복수 취급), the number of + 복수명사는 '~의 수'(단수 취급)예요.","A number of + 복수명사 + 복수동사 / The number of + 복수명사 + 단수동사",["a number of 뒤 동사는 복수(are/have)예요.","the number of 뒤 동사는 단수(is/has)예요."],["A number of customers was waiting.","A number of customers were waiting."],
+ [T("A number of {cust} [are] waiting outside our {wp}.","많은 {cust|이} {wp} 밖에서 기다리고 있어요.",["is","was","has been"]),
+  T("The number of {prod} we sold today [is] higher than usual.","오늘 판매한 {prod|의} 수가 평소보다 많아요.",["are","were","have been"]),
+  T("A number of {cust} [have] asked about {prod} this week.","이번 주에 많은 {cust|이} {prod|에} 대해 물어봤어요.",["has","is","was"])],
+ ["'a number of customers' 뒤에 오는 동사는?",["복수동사(are/have)","단수동사(is/has)","동사원형","to부정사"],"a number of + 복수명사는 복수 취급."]),
+G("E43","중급","비교급 강조 (much / far / even / a lot)","비교급을 강조할 때는 very가 아니라 much, far, even, a lot, still을 써요.","much/far/even/a lot + 비교급 + than",["very는 원급만 꾸며요(very busier는 틀려요).","much/far/a lot/even/still + 비교급(much better, far more popular)."],["Today is very busier than yesterday.","Today is much busier than yesterday."],
+ [T("The {wp} is [much] busier on weekends than on weekdays.","{wp|은} 평일보다 주말에 훨씬 바빠요.",["very","so","too"]),
+  T("These {prod} are [far] more popular than last month's.","이 {prod|은} 지난달 것보다 훨씬 인기가 많아요.",["very","so","too"]),
+  T("I feel [even] more tired today than yesterday.","오늘은 어제보다 훨씬 더 피곤해요.",["very","so","too"])],
+ ["비교급을 강조할 때 쓸 수 없는 것은?",["very","much","far","even"],"very는 원급만 꾸며요; 비교급 강조는 much/far/even/a lot."]),
 ];
 EN_MORE.forEach(p=>{ CQ[p.id]=p.cq; POINTS.en.push(p); });
 EXAM.en.push(

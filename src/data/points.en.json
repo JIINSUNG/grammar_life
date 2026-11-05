@@ -2770,5 +2770,167 @@
       ],
       "ex": "일반동사 현재 긍정문 → don't."
     }
+  },
+  {
+    "id": "E41",
+    "lv": "토익 빈출",
+    "t": "제안·요구 동사 + that + 동사원형",
+    "sum": "suggest·recommend·insist·demand·require 같은 동사 뒤 that절에는 주어가 몇 인칭이든 (should) + 동사원형을 써요.",
+    "form": "suggest/recommend that + 주어 + (should) + 동사원형",
+    "tips": [
+      "that절 동사는 항상 원형 — 3인칭 단수라도 -s를 안 붙여요.",
+      "insist가 '이미 벌어진 사실을 주장'할 땐 이 규칙 대신 보통 시제를 써요."
+    ],
+    "bad": [
+      "I suggested that he comes early.",
+      "I suggested that he come early."
+    ],
+    "tpl": [
+      {
+        "s": "The manager recommended that every {wp} [be] cleaned before opening.",
+        "ko": "매니저는 열기 전에 {wp|이} 청소되어야 한다고 권했어요.",
+        "o": [
+          "is",
+          "was",
+          "will be"
+        ]
+      },
+      {
+        "s": "I suggested that {cust} [not be] charged twice.",
+        "ko": "{cust|이} 두 번 청구되지 않아야 한다고 제안했어요.",
+        "o": [
+          "are not",
+          "were not",
+          "will not be"
+        ]
+      },
+      {
+        "s": "The company requires that every employee [submit] a report about {prod}.",
+        "ko": "회사는 모든 직원이 {prod|에} 대한 보고서를 제출해야 한다고 요구해요.",
+        "o": [
+          "submits",
+          "submitted",
+          "will submit"
+        ]
+      }
+    ],
+    "cq": {
+      "q": "suggest/recommend 뒤 that절 동사의 형태는?",
+      "o": [
+        "항상 동사원형(should 생략 가능)",
+        "주어에 맞춘 현재형",
+        "항상 과거형",
+        "항상 be to 부정사"
+      ],
+      "ex": "제안·요구 동사의 that절은 (should) + 동사원형."
+    }
+  },
+  {
+    "id": "E42",
+    "lv": "토익 빈출",
+    "t": "a number of vs the number of",
+    "sum": "a number of + 복수명사는 '많은 ~'(복수 취급), the number of + 복수명사는 '~의 수'(단수 취급)예요.",
+    "form": "A number of + 복수명사 + 복수동사 / The number of + 복수명사 + 단수동사",
+    "tips": [
+      "a number of 뒤 동사는 복수(are/have)예요.",
+      "the number of 뒤 동사는 단수(is/has)예요."
+    ],
+    "bad": [
+      "A number of customers was waiting.",
+      "A number of customers were waiting."
+    ],
+    "tpl": [
+      {
+        "s": "A number of {cust} [are] waiting outside our {wp}.",
+        "ko": "많은 {cust|이} {wp} 밖에서 기다리고 있어요.",
+        "o": [
+          "is",
+          "was",
+          "has been"
+        ]
+      },
+      {
+        "s": "The number of {prod} we sold today [is] higher than usual.",
+        "ko": "오늘 판매한 {prod|의} 수가 평소보다 많아요.",
+        "o": [
+          "are",
+          "were",
+          "have been"
+        ]
+      },
+      {
+        "s": "A number of {cust} [have] asked about {prod} this week.",
+        "ko": "이번 주에 많은 {cust|이} {prod|에} 대해 물어봤어요.",
+        "o": [
+          "has",
+          "is",
+          "was"
+        ]
+      }
+    ],
+    "cq": {
+      "q": "'a number of customers' 뒤에 오는 동사는?",
+      "o": [
+        "복수동사(are/have)",
+        "단수동사(is/has)",
+        "동사원형",
+        "to부정사"
+      ],
+      "ex": "a number of + 복수명사는 복수 취급."
+    }
+  },
+  {
+    "id": "E43",
+    "lv": "중급",
+    "t": "비교급 강조 (much / far / even / a lot)",
+    "sum": "비교급을 강조할 때는 very가 아니라 much, far, even, a lot, still을 써요.",
+    "form": "much/far/even/a lot + 비교급 + than",
+    "tips": [
+      "very는 원급만 꾸며요(very busier는 틀려요).",
+      "much/far/a lot/even/still + 비교급(much better, far more popular)."
+    ],
+    "bad": [
+      "Today is very busier than yesterday.",
+      "Today is much busier than yesterday."
+    ],
+    "tpl": [
+      {
+        "s": "The {wp} is [much] busier on weekends than on weekdays.",
+        "ko": "{wp|은} 평일보다 주말에 훨씬 바빠요.",
+        "o": [
+          "very",
+          "so",
+          "too"
+        ]
+      },
+      {
+        "s": "These {prod} are [far] more popular than last month's.",
+        "ko": "이 {prod|은} 지난달 것보다 훨씬 인기가 많아요.",
+        "o": [
+          "very",
+          "so",
+          "too"
+        ]
+      },
+      {
+        "s": "I feel [even] more tired today than yesterday.",
+        "ko": "오늘은 어제보다 훨씬 더 피곤해요.",
+        "o": [
+          "very",
+          "so",
+          "too"
+        ]
+      }
+    ],
+    "cq": {
+      "q": "비교급을 강조할 때 쓸 수 없는 것은?",
+      "o": [
+        "very",
+        "much",
+        "far",
+        "even"
+      ],
+      "ex": "very는 원급만 꾸며요; 비교급 강조는 much/far/even/a lot."
+    }
   }
 ]
