@@ -1,5 +1,5 @@
 const fs=require('fs');process.chdir(require('path').join(__dirname,'..','src'));
-const files=['data.js','more_data.js','jp_n3.js','jp_n2.js','jp_more1.js','jp_more2.js','jp_more3.js','basics.js','en_more.js','vocab_ja.js','vocab_en.js','vocab_more.js'];
+const files=['data.js','more_data.js','jp_n3.js','jp_n2.js','jp_n1.js','jp_more1.js','jp_more2.js','jp_more3.js','basics.js','en_more.js','vocab_ja.js','vocab_en.js','vocab_more.js'];
 const app=fs.readFileSync('app.js','utf8');
 const fns=app.slice(app.indexOf('/* ---------- 한국어 조사'),app.indexOf('/* ---------- 문장 표시'));
 eval(files.map(f=>fs.readFileSync(f,'utf8')).join('\n')+fns+`

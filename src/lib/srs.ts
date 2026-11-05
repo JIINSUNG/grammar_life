@@ -9,7 +9,7 @@ export { POINTS, VOCAB };
 /** 복습 상자 0~5 → 다음 복습까지 며칠 (0=즉시, 상자가 오를수록 간격이 늘어남) */
 export const INTERVAL = [0, 1, 2, 4, 7, 15];
 
-export const JLV = ["입문", "N5", "N4", "N3", "N2"];
+export const JLV = ["입문", "N5", "N4", "N3", "N2", "N1"];
 export const ELV = ["입문", "기초", "중급", "토익 빈출"];
 export const LEVELS: ByLang<string[]> = { en: ELV, ja: JLV };
 export const LANG_LABEL: Record<Lang, string> = { en: "English", ja: "日本語" };
@@ -153,7 +153,7 @@ export function vTrack(track: string | undefined, jstart: string | undefined, la
   if (track) return track;
   if (lang !== "ja") return "기초";
   if (jstart === "N4") return "N4";
-  if (jstart === "N3" || jstart === "N2") return "N3";
+  if (jstart === "N3" || jstart === "N2" || jstart === "N1") return "N3";
   return "N5";
 }
 
