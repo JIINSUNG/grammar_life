@@ -28,5 +28,17 @@
     "ko": "친구 결혼식",
     "en": "a friend's wedding",
     "ja": "友達の結婚式"
+  },
+  {
+    "id": "concert",
+    "ko": "콘서트 관람",
+    "en": "the concert",
+    "ja": "コンサート"
+  },
+  {
+    "id": "reunion",
+    "ko": "동창회",
+    "en": "the school reunion",
+    "ja": "同窓会"
   }
 ]

@@ -35,33 +35,38 @@ describe("josa", () => {
  * 현재 데이터 기준으로 계산한다 — 중요한 건 bad가 항상 0이라는 것.
  */
 describe("check-templates (설문 조합 전수검사)", () => {
-  it("모든 설문 조합에서 슬롯 누락·오답 중복이 없다", () => {
-    let built = 0;
-    const bad: string[] = [];
-    for (const lang of ["en", "ja"] as const) {
-      for (const p of POINTS[lang]) {
-        p.tpl.forEach((_, ti) => {
-          for (const job of JOBS)
-            for (const ride of RIDES)
-              for (const hob of HOBBIES)
-                for (const plan of PLANS) {
-                  const prof: Profile = { job: job.id, ride: ride.id, hobbies: [hob.id], plans: [plan.id], goal: 10, toeic: "800", jlpt: "N2" };
-                  const b = build(p, ti, prof, lang, 0);
-                  built++;
-                  if (/[{}]/.test(b.raw + b.ko + b.wrong.join(""))) {
-                    bad.push(`slot ${p.id} ${ti} ${b.raw} ${b.ko}`);
-                    return;
+  // 설문 선택지가 늘수록 전수조합 수가 곱으로 늘어나 기본 5초 타임아웃을 넘길 수 있다 — 넉넉히 잡는다.
+  it(
+    "모든 설문 조합에서 슬롯 누락·오답 중복이 없다",
+    () => {
+      let built = 0;
+      const bad: string[] = [];
+      for (const lang of ["en", "ja"] as const) {
+        for (const p of POINTS[lang]) {
+          p.tpl.forEach((_, ti) => {
+            for (const job of JOBS)
+              for (const ride of RIDES)
+                for (const hob of HOBBIES)
+                  for (const plan of PLANS) {
+                    const prof: Profile = { job: job.id, ride: ride.id, hobbies: [hob.id], plans: [plan.id], goal: 10, toeic: "800", jlpt: "N2" };
+                    const b = build(p, ti, prof, lang, 0);
+                    built++;
+                    if (/[{}]/.test(b.raw + b.ko + b.wrong.join(""))) {
+                      bad.push(`slot ${p.id} ${ti} ${b.raw} ${b.ko}`);
+                      return;
+                    }
+                    if (b.wrong.includes(b.ans) || new Set(b.wrong).size !== 3) {
+                      bad.push(`dup ${p.id} ${ti} ${b.ans} ${b.wrong.join(",")}`);
+                    }
                   }
-                  if (b.wrong.includes(b.ans) || new Set(b.wrong).size !== 3) {
-                    bad.push(`dup ${p.id} ${ti} ${b.ans} ${b.wrong.join(",")}`);
-                  }
-                }
-        });
+          });
+        }
       }
-    }
-    const templateCount = (["en", "ja"] as const).reduce((sum, lang) => sum + POINTS[lang].reduce((s, p) => s + p.tpl.length, 0), 0);
-    const expected = templateCount * JOBS.length * RIDES.length * HOBBIES.length * PLANS.length;
-    expect(bad.slice(0, 10)).toEqual([]);
-    expect(built).toBe(expected);
-  });
+      const templateCount = (["en", "ja"] as const).reduce((sum, lang) => sum + POINTS[lang].reduce((s, p) => s + p.tpl.length, 0), 0);
+      const expected = templateCount * JOBS.length * RIDES.length * HOBBIES.length * PLANS.length;
+      expect(bad.slice(0, 10)).toEqual([]);
+      expect(built).toBe(expected);
+    },
+    30000,
+  );
 });

@@ -7,6 +7,8 @@ const JOBS=[
   {id:"cloth",ko:"옷 가게",en:{place:"a clothing store",wp:"store",cust:"customers",prod:"jackets",prodS:"jacket"},ja:{place:"アパレルショップ",wp:"店",cust:"お客様",prod:"ジャケット"},k:{place:"옷 가게",wp:"가게",cust:"손님",prod:"재킷"}},
   {id:"office",ko:"회사",en:{place:"an office",wp:"office",cust:"clients",prod:"reports",prodS:"report"},ja:{place:"会社",wp:"会社",cust:"クライアント",prod:"資料"},k:{place:"회사",wp:"회사",cust:"클라이언트",prod:"자료"}},
   {id:"dev",ko:"프로그래머",en:{place:"a software company",wp:"company",cust:"clients",prod:"apps",prodS:"app"},ja:{place:"IT企業",wp:"会社",cust:"クライアント",prod:"アプリ"},k:{place:"IT 회사",wp:"회사",cust:"클라이언트",prod:"앱"}},
+  {id:"book",ko:"서점",en:{place:"a bookstore",wp:"bookstore",cust:"customers",prod:"books",prodS:"book"},ja:{place:"書店",wp:"店",cust:"お客様",prod:"本"},k:{place:"서점",wp:"서점",cust:"손님",prod:"책"}},
+  {id:"rest",ko:"음식점",en:{place:"a restaurant",wp:"restaurant",cust:"customers",prod:"dishes",prodS:"dish"},ja:{place:"レストラン",wp:"店",cust:"お客様",prod:"料理"},k:{place:"음식점",wp:"가게",cust:"손님",prod:"음식"}},
 ];
 const RIDES=[
   {id:"bike",ko:"자전거",en:"by bike",ja:"自転車で",k:"자전거로"},
@@ -14,6 +16,7 @@ const RIDES=[
   {id:"bus",ko:"버스",en:"by bus",ja:"バスで",k:"버스로"},
   {id:"walk",ko:"걸어서",en:"on foot",ja:"歩いて",k:"걸어서"},
   {id:"car",ko:"자동차",en:"by car",ja:"車で",k:"차로"},
+  {id:"moto",ko:"오토바이",en:"by motorcycle",ja:"バイクで",k:"오토바이로"},
 ];
 const HOBBIES=[
   {id:"game",ko:"게임",en:"playing games",enB:"play games",ja:"ゲーム"},
@@ -29,6 +32,9 @@ const HOBBIES=[
   {id:"piano",ko:"피아노",en:"playing piano",enB:"play piano",ja:"ピアノ"},
   {id:"anime",ko:"애니",en:"watching anime",enB:"watch anime",ja:"アニメ鑑賞"},
   {id:"ott",ko:"OTT 감상",en:"watching OTT shows",enB:"watch OTT shows",ja:"配信視聴"},
+  {id:"swim",ko:"수영",en:"swimming",enB:"swim",ja:"水泳"},
+  {id:"camp",ko:"캠핑",en:"camping",enB:"camp",ja:"キャンプ"},
+  {id:"baking",ko:"베이킹",en:"baking",enB:"bake",ja:"お菓子作り"},
 ];
 const PLANS=[
   {id:"jptrip",ko:"일본 여행",en:"the trip to Japan",ja:"日本旅行"},
@@ -36,6 +42,8 @@ const PLANS=[
   {id:"biz",ko:"출장",en:"the business trip",ja:"出張"},
   {id:"interview",ko:"면접",en:"the job interview",ja:"面接"},
   {id:"wedding",ko:"친구 결혼식",en:"a friend's wedding",ja:"友達の結婚式"},
+  {id:"concert",ko:"콘서트 관람",en:"the concert",ja:"コンサート"},
+  {id:"reunion",ko:"동창회",en:"the school reunion",ja:"同窓会"},
 ];
 const GOALS=[[5,"5분",40],[10,"10분",80],[20,"20분",160]];
 const TOEIC_GOALS=["600","700","800","900"], JLPT_GOALS=["N5","N4","N3","N2","N1"];

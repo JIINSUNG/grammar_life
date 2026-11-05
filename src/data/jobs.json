@@ -159,5 +159,51 @@
       "cust": "클라이언트",
       "prod": "앱"
     }
+  },
+  {
+    "id": "book",
+    "ko": "서점",
+    "en": {
+      "place": "a bookstore",
+      "wp": "bookstore",
+      "cust": "customers",
+      "prod": "books",
+      "prodS": "book"
+    },
+    "ja": {
+      "place": "書店",
+      "wp": "店",
+      "cust": "お客様",
+      "prod": "本"
+    },
+    "k": {
+      "place": "서점",
+      "wp": "서점",
+      "cust": "손님",
+      "prod": "책"
+    }
+  },
+  {
+    "id": "rest",
+    "ko": "음식점",
+    "en": {
+      "place": "a restaurant",
+      "wp": "restaurant",
+      "cust": "customers",
+      "prod": "dishes",
+      "prodS": "dish"
+    },
+    "ja": {
+      "place": "レストラン",
+      "wp": "店",
+      "cust": "お客様",
+      "prod": "料理"
+    },
+    "k": {
+      "place": "음식점",
+      "wp": "가게",
+      "cust": "손님",
+      "prod": "음식"
+    }
   }
 ]
