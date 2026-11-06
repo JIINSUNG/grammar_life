@@ -13,6 +13,8 @@ import { NoteReview } from "./flows/NoteReview";
 import { Exam } from "./flows/Exam";
 import { FlashReview } from "./flows/FlashReview";
 import { VocabFlashReview } from "./flows/VocabFlashReview";
+import { QuickPeekGrammar } from "./flows/QuickPeekGrammar";
+import { QuickPeekVocab } from "./flows/QuickPeekVocab";
 import { TabBar } from "./components/TabBar";
 import { QuickNote } from "./components/QuickNote";
 import { blankState, load, requestPersistentStorage, save } from "./lib/storage";
@@ -29,6 +31,8 @@ type Run =
   | { kind: "exam"; key: number }
   | { kind: "flash"; key: number }
   | { kind: "vflash"; key: number }
+  | { kind: "peek"; key: number }
+  | { kind: "vpeek"; key: number }
   | null;
 
 export default function App() {
@@ -48,10 +52,13 @@ export default function App() {
   const [run, setRun] = useState<Run>(null);
   const [editProf, setEditProf] = useState(false);
   const lang = st.lang;
+  const hasProfile = !!st.profile;
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [tab, run]);
+    // 설문 화면은 길어서 끝까지 스크롤한 채로 "시작하기"를 누르는 경우가 많다. tab/run은
+    // 안 바뀌어도(처음엔 둘 다 그대로) 프로필이 생기는 순간은 꼭 맨 위로 되돌려야 한다.
+  }, [tab, run, hasProfile]);
 
   useEffect(() => {
     requestPersistentStorage();
@@ -82,6 +89,8 @@ export default function App() {
   if (run?.kind === "nreview") return <NoteReview key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
   if (run?.kind === "flash") return <FlashReview key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
   if (run?.kind === "vflash") return <VocabFlashReview key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
+  if (run?.kind === "peek") return <QuickPeekGrammar key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
+  if (run?.kind === "vpeek") return <QuickPeekVocab key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
   if (run?.kind === "exam")
     return (
       <Exam
@@ -129,6 +138,8 @@ export default function App() {
             goVocab={() => setRun({ kind: "vocab", key: Date.now() })}
             goNote={() => setTab("note")}
             goFlash={() => setRun({ kind: "flash", key: Date.now() })}
+            goPeekGrammar={() => setRun({ kind: "peek", key: Date.now() })}
+            goPeekVocab={() => setRun({ kind: "vpeek", key: Date.now() })}
           />
         )}
         {tab === "grammar" && (

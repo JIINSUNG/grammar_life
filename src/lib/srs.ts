@@ -77,6 +77,26 @@ export function nextNew(prog: Record<string, ProgressEntry>, lang: Lang, jstart:
   return POINTS[lang].find((p) => !prog[p.id] && (lang !== "ja" || JLV.indexOf(p.lv) >= start)) ?? POINTS[lang].find((p) => !prog[p.id]);
 }
 
+/**
+ * 손님 없을 때 1~2개씩 가볍게 훑어보는 용도 — 퀴즈·확신도 없이 카드만 넘겨본다(채점 없음, prog를
+ * 안 건드림). 복습 예정인 것 → 아직 안 배운 것(가볍게 미리보기) → 이미 배운 것 중 무작위 순으로
+ * 채워서 매번 적당히 쓸모 있는 조합이 나오게 한다.
+ */
+export function quickPeekPoints(prog: Record<string, ProgressEntry>, lang: Lang, todayStr: string, count = 2): GrammarPoint[] {
+  const due = dueList(prog, lang, todayStr);
+  const notSeen = POINTS[lang].filter((p) => !prog[p.id]);
+  const rest = shuffle(POINTS[lang].filter((p) => prog[p.id] && !due.includes(p)));
+  const seen = new Set<string>();
+  const result: GrammarPoint[] = [];
+  for (const p of [...due, ...notSeen, ...rest]) {
+    if (seen.has(p.id)) continue;
+    seen.add(p.id);
+    result.push(p);
+    if (result.length >= count) break;
+  }
+  return result;
+}
+
 export interface LevelProgress {
   /** 다음으로 채워야 할 레벨(예: "N5"). 이미 전부 익혔으면 없음(null 반환). */
   level: string;
@@ -168,6 +188,22 @@ export function vNew(vprog: Record<string, ProgressEntry>, lang: Lang, track: st
   const fresh = VOCAB[lang].filter((w) => !vprog[w.id]);
   const order = [track, ...VTRACKS[lang].filter((x) => x !== track)];
   return order.flatMap((lv) => fresh.filter((w) => w.lv === lv)).slice(0, limit);
+}
+
+/** quickPeekPoints와 같은 생각, 단어용. 복습 예정 → 아직 안 외운 것(트랙 우선) → 이미 아는 것 무작위. */
+export function quickPeekVocab(vprog: Record<string, ProgressEntry>, lang: Lang, track: string, todayStr: string, count = 2): VocabWordRw[] {
+  const due = vDue(vprog, lang, todayStr);
+  const notSeen = vNew(vprog, lang, track, VOCAB[lang].length);
+  const rest = shuffle(VOCAB[lang].filter((w) => vprog[w.id] && !due.includes(w)));
+  const seen = new Set<string>();
+  const result: VocabWordRw[] = [];
+  for (const w of [...due, ...notSeen, ...rest]) {
+    if (seen.has(w.id)) continue;
+    seen.add(w.id);
+    result.push(w);
+    if (result.length >= count) break;
+  }
+  return result;
 }
 
 /** 어렵다고 표시(⭐)한 단어 전부, 복습 예정일이 빠른 순으로. 문법의 starredPoints와 같은 구조. */

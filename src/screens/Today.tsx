@@ -18,6 +18,8 @@ export function Today({
   goVocab,
   goNote,
   goFlash,
+  goPeekGrammar,
+  goPeekVocab,
 }: {
   st: AppState;
   lang: Lang;
@@ -27,6 +29,8 @@ export function Today({
   goVocab: () => void;
   goNote: () => void;
   goFlash: () => void;
+  goPeekGrammar: () => void;
+  goPeekVocab: () => void;
 }) {
   const t = today();
   const prof = st.profile!;
@@ -87,6 +91,19 @@ export function Today({
             <small className="sub">{levelProgress ? `${levelProgress.level}까지 ${levelProgress.remaining}개` : "모든 레벨 완료!"}</small>
           </div>
         </div>
+      </section>
+
+      <section className="mini">
+        <button type="button" className="card minic" onClick={goPeekGrammar}>
+          <span className="eyebrow">⏱ 짬짬이 훑어보기</span>
+          <b>문법 1~2개</b>
+          <small className="sub">손님 없을 때 가볍게, 채점 없이</small>
+        </button>
+        <button type="button" className="card minic" onClick={goPeekVocab}>
+          <span className="eyebrow">⏱ 짬짬이 훑어보기</span>
+          <b>단어 1~2개</b>
+          <small className="sub">손님 없을 때 가볍게, 채점 없이</small>
+        </button>
       </section>
 
       <section className="card routine">

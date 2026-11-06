@@ -1,5 +1,18 @@
 import { describe, expect, it } from "vitest";
-import { INTERVAL, POINTS, VOCAB, dueStarredPoints, dueStarredVocab, gradeFlash, gradePoint, starredPoints, starredVocab, vOpts } from "./srs";
+import {
+  INTERVAL,
+  POINTS,
+  VOCAB,
+  dueStarredPoints,
+  dueStarredVocab,
+  gradeFlash,
+  gradePoint,
+  quickPeekPoints,
+  quickPeekVocab,
+  starredPoints,
+  starredVocab,
+  vOpts,
+} from "./srs";
 import { addDays } from "./date";
 
 describe("gradePoint", () => {
@@ -130,5 +143,51 @@ describe("starredVocab / dueStarredVocab (단어판 Anki 복습, 문법과 같�
     };
     expect(starredVocab(vprog, lang).map((w) => w.id)).toEqual([w2.id, w1.id]);
     expect(dueStarredVocab(vprog, lang, "2026-01-05").map((w) => w.id)).toEqual([w2.id]);
+  });
+});
+
+describe("quickPeekPoints (짬짬이 훑어보기, 채점 없음)", () => {
+  it("복습 예정인 것을 가장 먼저 채운다", () => {
+    const lang = "en";
+    const [p1, p2] = POINTS[lang];
+    const prog = {
+      [p1.id]: { box: 1, ok: 0, tot: 0, due: "2026-01-01" }, // 오늘 복습 예정
+      [p2.id]: { box: 1, ok: 0, tot: 0, due: "2026-02-01" }, // 아직 멀었음
+    };
+    const list = quickPeekPoints(prog, lang, "2026-01-05", 1);
+    expect(list.map((p) => p.id)).toEqual([p1.id]);
+  });
+
+  it("복습할 게 없으면 아직 안 배운 것으로 채운다(POINTS 맨 앞부터)", () => {
+    const lang = "en";
+    const list = quickPeekPoints({}, lang, "2026-01-05", 2);
+    expect(list.map((p) => p.id)).toEqual(POINTS[lang].slice(0, 2).map((p) => p.id));
+  });
+
+  it("요청한 개수만큼, 중복 없이 돌려준다", () => {
+    const lang = "en";
+    const list = quickPeekPoints({}, lang, "2026-01-05", 3);
+    expect(list).toHaveLength(3);
+    expect(new Set(list.map((p) => p.id)).size).toBe(3);
+  });
+});
+
+describe("quickPeekVocab (짬짬이 훑어보기, 단어)", () => {
+  it("복습 예정인 단어를 가장 먼저 채운다", () => {
+    const lang = "en";
+    const [w1, w2] = VOCAB[lang];
+    const vprog = {
+      [w1.id]: { box: 1, ok: 0, tot: 0, due: "2026-01-01" },
+      [w2.id]: { box: 1, ok: 0, tot: 0, due: "2026-02-01" },
+    };
+    const list = quickPeekVocab(vprog, lang, "기초", "2026-01-05", 1);
+    expect(list.map((w) => w.id)).toEqual([w1.id]);
+  });
+
+  it("요청한 개수만큼, 중복 없이 돌려준다", () => {
+    const lang = "en";
+    const list = quickPeekVocab({}, lang, "기초", "2026-01-05", 2);
+    expect(list).toHaveLength(2);
+    expect(new Set(list.map((w) => w.id)).size).toBe(2);
   });
 });
