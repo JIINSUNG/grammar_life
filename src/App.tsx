@@ -15,6 +15,7 @@ import { FlashReview } from "./flows/FlashReview";
 import { VocabFlashReview } from "./flows/VocabFlashReview";
 import { QuickPeekGrammar } from "./flows/QuickPeekGrammar";
 import { QuickPeekVocab } from "./flows/QuickPeekVocab";
+import { CramQuiz } from "./flows/CramQuiz";
 import { TabBar } from "./components/TabBar";
 import { QuickNote } from "./components/QuickNote";
 import { blankState, load, requestPersistentStorage, save } from "./lib/storage";
@@ -33,6 +34,7 @@ type Run =
   | { kind: "vflash"; key: number }
   | { kind: "peek"; key: number }
   | { kind: "vpeek"; key: number }
+  | { kind: "cram"; key: number }
   | null;
 
 export default function App() {
@@ -91,6 +93,7 @@ export default function App() {
   if (run?.kind === "vflash") return <VocabFlashReview key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
   if (run?.kind === "peek") return <QuickPeekGrammar key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
   if (run?.kind === "vpeek") return <QuickPeekVocab key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
+  if (run?.kind === "cram") return <CramQuiz key={run.key} st={st} lang={lang} onExit={() => setRun(null)} />;
   if (run?.kind === "exam")
     return (
       <Exam
@@ -140,6 +143,7 @@ export default function App() {
             goFlash={() => setRun({ kind: "flash", key: Date.now() })}
             goPeekGrammar={() => setRun({ kind: "peek", key: Date.now() })}
             goPeekVocab={() => setRun({ kind: "vpeek", key: Date.now() })}
+            goCram={() => setRun({ kind: "cram", key: Date.now() })}
           />
         )}
         {tab === "grammar" && (

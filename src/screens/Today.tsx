@@ -20,6 +20,7 @@ export function Today({
   goFlash,
   goPeekGrammar,
   goPeekVocab,
+  goCram,
 }: {
   st: AppState;
   lang: Lang;
@@ -31,6 +32,7 @@ export function Today({
   goFlash: () => void;
   goPeekGrammar: () => void;
   goPeekVocab: () => void;
+  goCram: () => void;
 }) {
   const t = today();
   const prof = st.profile!;
@@ -103,6 +105,11 @@ export function Today({
           <span className="eyebrow">⏱ 짬짬이 훑어보기</span>
           <b>단어 1~2개</b>
           <small className="sub">손님 없을 때 가볍게, 채점 없이</small>
+        </button>
+        <button type="button" className="card minic" onClick={goCram}>
+          <span className="eyebrow">📝 깜지 모드</span>
+          <b>문법 개념 객관식 5문제</b>
+          <small className="sub">모양·성질 같은 정의를 빠르게 체크</small>
         </button>
       </section>
 
