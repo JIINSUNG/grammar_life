@@ -22,6 +22,7 @@ import { blankState, load, requestPersistentStorage, save } from "./lib/storage"
 import { useFirebaseSync } from "./lib/sync";
 import { today } from "./lib/date";
 import { dueList, nextNew } from "./lib/srs";
+import { loadResume } from "./lib/session-resume";
 import type { AppState, Profile } from "./types";
 
 type Run =
@@ -38,7 +39,20 @@ type Run =
   | null;
 
 export default function App() {
-  const [st, setSt] = useState<AppState>(() => load() ?? blankState());
+  // 세션 도중 페이지가 새로고침돼도(모바일에서 앱 전환 후 복귀 시 흔함) 오늘 화면으로 튕기지
+  // 않고 풀던 문제 그대로 복귀시킨다 — Session/VocabSession이 각자 진행 상황을 저장해두면,
+  // 여기선 그걸 보고 바로 그 화면으로 들어가기만 하면 된다(언어도 그 세션 기준으로 맞춘다).
+  const [st, setSt] = useState<AppState>(() => {
+    const loaded = load() ?? blankState();
+    if (!loaded.profile) return loaded;
+    const resumedLang = loadResume("grammar")?.lang ?? loadResume("vocab")?.lang;
+    return resumedLang && resumedLang !== loaded.lang ? { ...loaded, lang: resumedLang } : loaded;
+  });
+  const [run, setRun] = useState<Run>(() => {
+    if (loadResume("grammar")) return { kind: "session", key: Date.now(), plan: [] };
+    if (loadResume("vocab")) return { kind: "vocab", key: Date.now() };
+    return null;
+  });
   const up = (fn: (s: AppState) => AppState) =>
     setSt((p) => {
       const n = { ...fn(p), updatedAt: new Date().toISOString() };
@@ -51,7 +65,6 @@ export default function App() {
   });
   const [gq, setGq] = useState("");
   const [tab, setTab] = useState("today");
-  const [run, setRun] = useState<Run>(null);
   const [editProf, setEditProf] = useState(false);
   const lang = st.lang;
   const hasProfile = !!st.profile;

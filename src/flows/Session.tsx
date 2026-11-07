@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Sent } from "../components/Sent";
 import { Speak } from "../components/Speak";
 import { Ruby } from "../components/Ruby";
@@ -6,6 +6,7 @@ import { build, toQuiz, type QuizExample } from "../lib/template";
 import { shuffle } from "../lib/util";
 import { today } from "../lib/date";
 import { CONF, LANG_LABEL, POINTS, gradePoint, type GradeInput } from "../lib/srs";
+import { clearResume, loadResume, saveResume } from "../lib/session-resume";
 import type { AppState, GrammarPoint, Lang } from "../types";
 
 export interface SessionPlanItem {
@@ -30,6 +31,15 @@ interface QuizStep {
   q: QuizExample;
 }
 type Step = LearnStep | ConceptStep | QuizStep;
+
+interface ResumeData {
+  plan: SessionPlanItem[];
+  steps: Step[];
+  i: number;
+  res: Record<number, { ok: boolean; conf: string | null; pick: number }>;
+  xp: number;
+  seedBump: Record<string, number>;
+}
 
 function cqStep(p: GrammarPoint, retry: number): ConceptStep {
   const c = p.cq;
@@ -60,7 +70,14 @@ export function Session({
   onExit: () => void;
 }) {
   const prof = st.profile;
+  // 손님 응대 등으로 앱을 나갔다가 모바일 브라우저가 페이지를 새로고침해버려도, 풀던 문제 그대로
+  // 이어갈 수 있게 직전 진행 상황을 한 번만 읽어온다(언어가 다르면 다른 세션이니 무시).
+  const [resumed] = useState<ResumeData | null>(() => {
+    const r = loadResume<ResumeData>("grammar");
+    return r && r.lang === lang ? r.data : null;
+  });
   const [steps, setSteps] = useState<Step[]>(() => {
+    if (resumed) return resumed.steps;
     const out: Step[] = [];
     plan.forEach(({ id, mode }) => {
       const p = POINTS[lang].find((x) => x.id === id);
@@ -73,16 +90,27 @@ export function Session({
     });
     return out;
   });
-  const [i, setI] = useState(0);
+  const [i, setI] = useState(resumed?.i ?? 0);
   const [pick, setPick] = useState<number | null>(null);
   const [conf, setConf] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
-  const [res, setRes] = useState<Record<number, { ok: boolean; conf: string | null; pick: number }>>({});
-  const [xp, setXp] = useState(0);
+  const [res, setRes] = useState<Record<number, { ok: boolean; conf: string | null; pick: number }>>(resumed?.res ?? {});
+  const [xp, setXp] = useState(resumed?.xp ?? 0);
   const [ended, setEnded] = useState(false);
-  const [seedBump, setSeedBump] = useState<Record<string, number>>({});
+  const [seedBump, setSeedBump] = useState<Record<string, number>>(resumed?.seedBump ?? {});
   const s = steps[i];
   const reveal = s && s.type === "concept" ? pick != null && submitted : pick != null && conf != null;
+
+  // 질문/선택/확신도를 바꿀 때마다 진행 상황을 저장해둔다 — 다음에 열었을 때 이어서 풀 수 있게.
+  useEffect(() => {
+    if (ended) return;
+    saveResume<ResumeData>("grammar", lang, { plan, steps, i, res, xp, seedBump });
+  }, [plan, lang, steps, i, res, xp, seedBump, ended]);
+
+  const exit = () => {
+    clearResume();
+    onExit();
+  };
 
   const gain = (add: number) => {
     const t = today();
@@ -116,6 +144,7 @@ export function Session({
     gain(20);
     setXp((x) => x + 20);
     setEnded(true);
+    clearResume();
   };
 
   const loadStep = (idx: number) => {
@@ -223,7 +252,7 @@ export function Session({
               );
             })}
           </ul>
-          <button type="button" className="btn pri wide" onClick={onExit}>
+          <button type="button" className="btn pri wide" onClick={exit}>
             완료
           </button>
         </section>
@@ -233,7 +262,7 @@ export function Session({
 
   const bar = (
     <div className="sbar">
-      <button type="button" className="link" onClick={onExit} aria-label="그만하기">
+      <button type="button" className="link" onClick={exit} aria-label="그만하기">
         ✕
       </button>
       {i > 0 && (

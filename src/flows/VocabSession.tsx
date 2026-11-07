@@ -1,17 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { VWord } from "../components/VWord";
 import { canSpeak, speak } from "../lib/speech";
 import { today, addDays } from "../lib/date";
 import { CONF, INTERVAL, VNEW, VREV, vDue, vNew, vOpts, vStep, vTrack, type VocabStep } from "../lib/srs";
 import { shuffle } from "../lib/util";
 import { MNEMONICS_SEED_EN, MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
+import { clearResume, loadResume, saveResume } from "../lib/session-resume";
 import type { AppState, Lang, ProgressEntry } from "../types";
 import type { VocabWordRw } from "../data";
 
 type Step = { type: "card"; w: VocabWordRw } | VocabStep;
 
+interface ResumeData {
+  steps: Step[];
+  i: number;
+  res: Record<number, { ok: boolean; conf: string | null }>;
+  xp: number;
+}
+
 export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lang; up: (fn: (s: AppState) => AppState) => void; onExit: () => void }) {
+  // Session.tsx와 같은 이유 — 모바일에서 앱을 나갔다 오면 페이지가 새로고침돼서 풀던 단어가
+  // 날아가던 문제를 막기 위해 직전 진행 상황을 한 번만 읽어온다.
+  const [resumed] = useState<ResumeData | null>(() => {
+    const r = loadResume<ResumeData>("vocab");
+    return r && r.lang === lang ? r.data : null;
+  });
   const [steps, setSteps] = useState<Step[]>(() => {
+    if (resumed) return resumed.steps;
     const pr = st.vprog[lang];
     const track = vTrack(st.vtrack[lang], st.profile?.jstart, lang);
     const nw = vNew(pr, lang, track, st.profile?.vgoal || VNEW);
@@ -19,16 +34,26 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
     const boxOf = (w: VocabWordRw) => pr[w.id]?.box || 0;
     return [...nw.map((w) => ({ type: "card" as const, w })), ...shuffle([...nw, ...due]).map((w) => vStep(w, lang, boxOf(w), 0))];
   });
-  const [i, setI] = useState(0);
+  const [i, setI] = useState(resumed?.i ?? 0);
   const [pick, setPick] = useState<number | null>(null);
   const [conf, setConf] = useState<string | null>(null);
-  const [res, setRes] = useState<Record<number, { ok: boolean; conf: string | null }>>({});
-  const [xp, setXp] = useState(0);
+  const [res, setRes] = useState<Record<number, { ok: boolean; conf: string | null }>>(resumed?.res ?? {});
+  const [xp, setXp] = useState(resumed?.xp ?? 0);
   const [ended, setEnded] = useState(false);
   const [editingHint, setEditingHint] = useState(false);
   const [hintDraft, setHintDraft] = useState("");
   const s = steps[i];
   const reveal = pick != null && conf != null;
+
+  useEffect(() => {
+    if (ended) return;
+    saveResume<ResumeData>("vocab", lang, { steps, i, res, xp });
+  }, [lang, steps, i, res, xp, ended]);
+
+  const exit = () => {
+    clearResume();
+    onExit();
+  };
 
   const mnemonicOf = (w: VocabWordRw) => st.mnemonics?.[w.id] || (lang === "ja" ? MNEMONICS_SEED_JA[w.id] : MNEMONICS_SEED_EN[w.id]);
   const saveHint = (w: VocabWordRw) => {
@@ -61,6 +86,7 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
     gain(10);
     setXp((x) => x + 10);
     setEnded(true);
+    clearResume();
   };
 
   const next = () => {
@@ -104,7 +130,7 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
       <main className="wrap main sess">
         <section className="card result">
           <h1>오늘 단어 끝!</h1>
-          <button type="button" className="btn pri wide" onClick={onExit}>
+          <button type="button" className="btn pri wide" onClick={exit}>
             닫기
           </button>
         </section>
@@ -160,7 +186,7 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
               );
             })}
           </ul>
-          <button type="button" className="btn pri wide" onClick={onExit}>
+          <button type="button" className="btn pri wide" onClick={exit}>
             완료
           </button>
         </section>
@@ -170,7 +196,7 @@ export function VocabSession({ st, lang, up, onExit }: { st: AppState; lang: Lan
 
   const bar = (
     <div className="sbar">
-      <button type="button" className="link" onClick={onExit} aria-label="그만하기">
+      <button type="button" className="link" onClick={exit} aria-label="그만하기">
         ✕
       </button>
       <div className="prog">
