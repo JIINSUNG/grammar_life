@@ -16,6 +16,7 @@ import { VocabFlashReview } from "./flows/VocabFlashReview";
 import { QuickPeekGrammar } from "./flows/QuickPeekGrammar";
 import { QuickPeekVocab } from "./flows/QuickPeekVocab";
 import { CramQuiz } from "./flows/CramQuiz";
+import { TravelPhrases } from "./flows/TravelPhrases";
 import { TabBar } from "./components/TabBar";
 import { QuickNote } from "./components/QuickNote";
 import { blankState, load, requestPersistentStorage, save } from "./lib/storage";
@@ -36,6 +37,7 @@ type Run =
   | { kind: "peek"; key: number }
   | { kind: "vpeek"; key: number }
   | { kind: "cram"; key: number }
+  | { kind: "phrases"; key: number }
   | null;
 
 export default function App() {
@@ -106,6 +108,7 @@ export default function App() {
   if (run?.kind === "vflash") return <VocabFlashReview key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
   if (run?.kind === "peek") return <QuickPeekGrammar key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
   if (run?.kind === "vpeek") return <QuickPeekVocab key={run.key} st={st} lang={lang} up={up} onExit={() => setRun(null)} />;
+  if (run?.kind === "phrases") return <TravelPhrases key={run.key} st={st} onExit={() => setRun(null)} />;
   if (run?.kind === "cram") return <CramQuiz key={run.key} st={st} lang={lang} onExit={() => setRun(null)} />;
   if (run?.kind === "exam")
     return (
@@ -163,7 +166,14 @@ export default function App() {
           <GrammarList key={gq} initQ={gq} st={st} lang={lang} up={up} openPoint={openPoint} startFlash={() => setRun({ kind: "flash", key: Date.now() })} />
         )}
         {tab === "vocab" && (
-          <VocabTab st={st} lang={lang} up={up} start={() => setRun({ kind: "vocab", key: Date.now() })} startFlash={() => setRun({ kind: "vflash", key: Date.now() })} />
+          <VocabTab
+            st={st}
+            lang={lang}
+            up={up}
+            start={() => setRun({ kind: "vocab", key: Date.now() })}
+            startFlash={() => setRun({ kind: "vflash", key: Date.now() })}
+            openPhrases={() => setRun({ kind: "phrases", key: Date.now() })}
+          />
         )}
         {tab === "note" && (
           <NoteTab

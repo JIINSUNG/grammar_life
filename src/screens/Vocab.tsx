@@ -6,6 +6,7 @@ import { VNEW, VOCAB, VTRACKS, starredVocab, vDue, vNew, vTrack } from "../lib/s
 import { MNEMONICS_SEED_EN, MNEMONICS_SEED_JA } from "../data/mnemonics-seed";
 import { VERB_PAIRS, VERB_PAIR_GROUPS } from "../data/verb-pairs";
 import { DIALOGUES_EN, DIALOGUES_JA, type DialogueScene } from "../data/dialogues";
+import { TRAVEL_PHRASES } from "../data/travel-phrases";
 import type { AppState, Lang } from "../types";
 
 const TRACK_LABEL: Record<string, string> = { 토익: "토익 빈출", 기초: "기초 생활", 접객: "매장·접객", 여행: "여행 회화", 표현: "자주 쓰는 표현" };
@@ -127,12 +128,14 @@ export function VocabTab({
   up,
   start,
   startFlash,
+  openPhrases,
 }: {
   st: AppState;
   lang: Lang;
   up: (fn: (s: AppState) => AppState) => void;
   start: () => void;
   startFlash: () => void;
+  openPhrases: () => void;
 }) {
   const pr = st.vprog[lang];
   const tr = vTrack(st.vtrack[lang], st.profile?.jstart, lang);
@@ -171,6 +174,18 @@ export function VocabTab({
       <h1 className="ptitle">
         {lang === "en" ? "영어" : "일본어"} 자주 쓰는 단어 {VOCAB[lang].length}개
       </h1>
+      <button type="button" className="card" onClick={openPhrases} style={{ flexDirection: "row", alignItems: "center", gap: 12, cursor: "pointer" }}>
+        <span style={{ fontSize: 28 }} aria-hidden>
+          ✈️
+        </span>
+        <span style={{ display: "flex", flexDirection: "column", gap: 2, flex: 1, minWidth: 0 }}>
+          <b style={{ fontSize: 15.5 }}>여행 회화 멘트 {TRAVEL_PHRASES.length}개</b>
+          <span className="sub" style={{ fontSize: 12.5 }}>
+            식당·숙소·교통·쇼핑 — 일본어·영어 같이, 인원 수 맞춰서
+          </span>
+        </span>
+        <span className="link">열기 ›</span>
+      </button>
       {starred > 0 && (
         <section className="card routine">
           <div className="rh">
